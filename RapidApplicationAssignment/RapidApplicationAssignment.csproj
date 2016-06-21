@@ -59,29 +59,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppointmentLog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppointmentLog.Designer.cs">
-      <DependentUpon>AppointmentLog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerDirectory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerDirectory.Designer.cs">
-      <DependentUpon>CustomerDirectory.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ApptHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApptHistory.Designer.cs">
+      <DependentUpon>ApptHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerProfile.Designer.cs">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Directory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Directory.Designer.cs">
+      <DependentUpon>Directory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditCustomer.Designer.cs">
+      <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="furzaflynDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -96,21 +108,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SearchCustomer.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SearchCustomer.Designer.cs">
-      <DependentUpon>SearchCustomer.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AppointmentLog.resx">
-      <DependentUpon>AppointmentLog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerDirectory.resx">
-      <DependentUpon>CustomerDirectory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AddCustomer.resx">
-      <DependentUpon>AddCustomer.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -124,9 +121,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SearchCustomer.resx">
-      <DependentUpon>SearchCustomer.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="furzaflynDataSet.xsc">
       <DependentUpon>furzaflynDataSet.xsd</DependentUpon>
     </None>
