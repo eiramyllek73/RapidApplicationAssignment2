@@ -40,11 +40,11 @@ namespace RapidApplicationAssignment
         /**
         * This method will take the radio button that was clicked, and assign the event to a new RadioButton.
         */
-        private void radioButton_Checked(object sender, EventArgs e)
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            selectedRadioButton = (RadioButton)sender;
+            // Save the name of the selected radio button
+            selectedRadioButton = (RadioButton)sender;       
         }
-
 
         /**
         * This method will activate once the OK button is clicked; redirecting the user to the selected form in the application.
@@ -61,31 +61,30 @@ namespace RapidApplicationAssignment
                 }
                 else
                 {
-                    // Switch to check which radio button has been clicked, then perform directed task
-                    switch (selectedRadioButton.Name)
+                    if (ViewDirectoryRadioButton.Checked)
                     {
-                        case "ViewDirectoryRadioButton":
-                            Directory directory = new Directory();
-                            Show(directory);
-                            this.Hide();
-
-                            break;
-                        case "AddNewRadioButton":
-                            this.Hide();
-
-                            break;
-                        case "LogApptRadioButton":
-                            this.Hide();
-
-                            break;
-
+                       Directory directory = new Directory();
+                       this.Hide();
+                       directory.ShowDialog();   
+                    }
+                    else if (AddNewRadioButton.Checked)
+                    {
+                        AddCustomerForm addCust = new AddCustomerForm();
+                        this.Hide();
+                        addCust.ShowDialog();
+                    }
+                    else if (LogApptRadioButton.Checked)
+                    {
+                        LogAppointmentForm logAppt = new LogAppointmentForm();
+                        this.Hide();
+                        logAppt.ShowDialog();
                     }
 
-                }  
-                
-            }
+                } // End of else     
+                            
+            } // End of try
 
-            // Catch exception not previously caught
+            // Catch exceptions not previously caught
             catch (Exception ex)
             {
                 MessageBox.Show("An unexpected error occurred. Error: " +
