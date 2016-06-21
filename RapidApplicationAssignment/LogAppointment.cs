@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RapidApplicationAssignment
 {
-    public partial class LogAppointment : Form
+    public partial class LogAppointmentForm : Form
     {
-        public LogAppointment()
+        public LogAppointmentForm()
         {
             InitializeComponent();
         }

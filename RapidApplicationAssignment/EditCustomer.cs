@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RapidApplicationAssignment
 {
-    public partial class EditCustomer : Form
+    public partial class EditCustomerForm : Form
     {
-        public EditCustomer()
+        public EditCustomerForm()
         {
             InitializeComponent();
         }

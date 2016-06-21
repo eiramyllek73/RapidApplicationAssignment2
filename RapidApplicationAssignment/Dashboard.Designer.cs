@@ -94,7 +94,6 @@
             this.LogApptRadioButton.TabStop = true;
             this.LogApptRadioButton.Text = "Log New Appointment for Customer";
             this.LogApptRadioButton.UseVisualStyleBackColor = true;
-            this.LogApptRadioButton.CheckedChanged += new System.EventHandler(this.LogApptRadioButton_CheckedChanged);
             // 
             // AddNewRadioButton
             // 
@@ -106,7 +105,6 @@
             this.AddNewRadioButton.TabStop = true;
             this.AddNewRadioButton.Text = "Add New Customer";
             this.AddNewRadioButton.UseVisualStyleBackColor = true;
-            this.AddNewRadioButton.CheckedChanged += new System.EventHandler(this.AddNewRadioButton_CheckedChanged);
             // 
             // ViewDirectoryRadioButton
             // 
@@ -118,7 +116,6 @@
             this.ViewDirectoryRadioButton.TabStop = true;
             this.ViewDirectoryRadioButton.Text = "View Customer Directory";
             this.ViewDirectoryRadioButton.UseVisualStyleBackColor = true;
-            this.ViewDirectoryRadioButton.CheckedChanged += new System.EventHandler(this.ViewDirectoryRadioButton_CheckedChanged);
             // 
             // MainMenuToolTipLabel
             // 
