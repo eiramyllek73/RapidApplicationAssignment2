@@ -28,16 +28,24 @@ namespace RapidApplicationAssignment
         }
 
         /**
-         * This method will set the default values to null on the dashboard form
+         * This method will set the current date and time as well as set all radio buttons to be unchecked when the dashboard loads.
          */
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            // Set current date & time
-
-
-            selectedRadioButton.Checked = false;
+            Timer.Start();
+            CurrentDateLabel.Text = DateTime.Now.ToLongDateString();
+            CurrentTimeLabel.Text = DateTime.Now.ToLongTimeString();
+            selectedRadioButton = null;
         }
 
+        /**
+         * This method sets the timer for the current time label
+         */
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            CurrentTimeLabel.Text = DateTime.Now.ToLongTimeString();
+            Timer.Start();
+        }
         /**
         * This method will take the radio button that was clicked, and assign the event to a new RadioButton.
         */
@@ -112,5 +120,24 @@ namespace RapidApplicationAssignment
             }
 
         }
+
+        /**
+         * This method will also close the application if the user clicks the 'X' at the top right corner of the form
+         */
+        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            DialogResult returnDialogueResult;
+
+            returnDialogueResult = MessageBox.Show("Are you sure you want to quit this application?", "Confirmation Required:",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            // If user clicks yes, close application - if no, remain on current form
+            if (returnDialogueResult == DialogResult.Yes)
+            {
+                // Exit the application
+                Application.Exit();
+            }
+        }
+
     }
 }

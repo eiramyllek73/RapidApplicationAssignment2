@@ -28,45 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.HelloLabel = new System.Windows.Forms.Label();
-            this.DateTimeLabel = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.CurrentDateLabel = new System.Windows.Forms.Label();
             this.MainMenuGroupBox = new System.Windows.Forms.GroupBox();
             this.LogApptRadioButton = new System.Windows.Forms.RadioButton();
             this.AddNewRadioButton = new System.Windows.Forms.RadioButton();
             this.ViewDirectoryRadioButton = new System.Windows.Forms.RadioButton();
             this.MainMenuToolTipLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
-            this.DateTimeTextBox = new System.Windows.Forms.TextBox();
             this.OKButton = new System.Windows.Forms.Button();
-            this.NameTextBox = new System.Windows.Forms.TextBox();
             this.CompanyLogoBox = new System.Windows.Forms.PictureBox();
+            this.CurrentTimeLabel = new System.Windows.Forms.Label();
+            this.Timer = new System.Windows.Forms.Timer(this.components);
             this.MainMenuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyLogoBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // HelloLabel
+            // CurrentDateLabel
             // 
-            this.HelloLabel.AccessibleDescription = "This is a greeting label.";
-            this.HelloLabel.AccessibleName = "HelloLabel";
-            this.HelloLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.HelloLabel.AutoSize = true;
-            this.HelloLabel.Location = new System.Drawing.Point(35, 15);
-            this.HelloLabel.Name = "HelloLabel";
-            this.HelloLabel.Size = new System.Drawing.Size(31, 13);
-            this.HelloLabel.TabIndex = 0;
-            this.HelloLabel.Text = "Hello";
-            // 
-            // DateTimeLabel
-            // 
-            this.DateTimeLabel.AccessibleDescription = "This label describes the current date.";
-            this.DateTimeLabel.AccessibleName = "CurrentDateLabel";
-            this.DateTimeLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
-            this.DateTimeLabel.AutoSize = true;
-            this.DateTimeLabel.Location = new System.Drawing.Point(333, 15);
-            this.DateTimeLabel.Name = "DateTimeLabel";
-            this.DateTimeLabel.Size = new System.Drawing.Size(50, 13);
-            this.DateTimeLabel.TabIndex = 0;
-            this.DateTimeLabel.Text = "Today is:";
+            this.CurrentDateLabel.AccessibleDescription = "This label describes the current date.";
+            this.CurrentDateLabel.AccessibleName = "CurrentDateLabel";
+            this.CurrentDateLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
+            this.CurrentDateLabel.AutoSize = true;
+            this.CurrentDateLabel.Location = new System.Drawing.Point(253, 15);
+            this.CurrentDateLabel.Name = "CurrentDateLabel";
+            this.CurrentDateLabel.Size = new System.Drawing.Size(36, 13);
+            this.CurrentDateLabel.TabIndex = 0;
+            this.CurrentDateLabel.Text = "(Date)";
             // 
             // MainMenuGroupBox
             // 
@@ -120,7 +108,7 @@
             // MainMenuToolTipLabel
             // 
             this.MainMenuToolTipLabel.AutoSize = true;
-            this.MainMenuToolTipLabel.Location = new System.Drawing.Point(6, 16);
+            this.MainMenuToolTipLabel.Location = new System.Drawing.Point(6, 27);
             this.MainMenuToolTipLabel.Name = "MainMenuToolTipLabel";
             this.MainMenuToolTipLabel.Size = new System.Drawing.Size(200, 13);
             this.MainMenuToolTipLabel.TabIndex = 0;
@@ -136,16 +124,6 @@
             this.ExitButton.UseVisualStyleBackColor = true;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // DateTimeTextBox
-            // 
-            this.DateTimeTextBox.AccessibleDescription = "This text box displays the current date and time upon application load";
-            this.DateTimeTextBox.AccessibleName = "CurrentDateAndTime";
-            this.DateTimeTextBox.Location = new System.Drawing.Point(389, 12);
-            this.DateTimeTextBox.Name = "DateTimeTextBox";
-            this.DateTimeTextBox.ReadOnly = true;
-            this.DateTimeTextBox.Size = new System.Drawing.Size(100, 20);
-            this.DateTimeTextBox.TabIndex = 0;
-            // 
             // OKButton
             // 
             this.OKButton.Location = new System.Drawing.Point(247, 217);
@@ -156,45 +134,50 @@
             this.OKButton.UseVisualStyleBackColor = true;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
-            // NameTextBox
-            // 
-            this.NameTextBox.AccessibleDescription = "This texbox will show the name of the user.";
-            this.NameTextBox.AccessibleName = "UserNameTextBox";
-            this.NameTextBox.AccessibleRole = System.Windows.Forms.AccessibleRole.Text;
-            this.NameTextBox.Location = new System.Drawing.Point(72, 12);
-            this.NameTextBox.Name = "NameTextBox";
-            this.NameTextBox.ReadOnly = true;
-            this.NameTextBox.Size = new System.Drawing.Size(100, 20);
-            this.NameTextBox.TabIndex = 0;
-            this.NameTextBox.Text = "Wendy";
-            // 
             // CompanyLogoBox
             // 
             this.CompanyLogoBox.AccessibleDescription = "This is a picture box that  displays the company logo.";
             this.CompanyLogoBox.AccessibleName = "LogoPictureBox";
             this.CompanyLogoBox.Image = global::RapidApplicationAssignment.Properties.Resources.FurzaFlyn_Logo_WebSize;
-            this.CompanyLogoBox.Location = new System.Drawing.Point(38, 79);
+            this.CompanyLogoBox.Location = new System.Drawing.Point(12, 12);
             this.CompanyLogoBox.Name = "CompanyLogoBox";
-            this.CompanyLogoBox.Size = new System.Drawing.Size(170, 161);
+            this.CompanyLogoBox.Size = new System.Drawing.Size(201, 199);
             this.CompanyLogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CompanyLogoBox.TabIndex = 9;
             this.CompanyLogoBox.TabStop = false;
+            // 
+            // CurrentTimeLabel
+            // 
+            this.CurrentTimeLabel.AccessibleDescription = "This label describes the current time.";
+            this.CurrentTimeLabel.AccessibleName = "CurrentTimeLabel";
+            this.CurrentTimeLabel.AutoSize = true;
+            this.CurrentTimeLabel.Location = new System.Drawing.Point(417, 15);
+            this.CurrentTimeLabel.Name = "CurrentTimeLabel";
+            this.CurrentTimeLabel.Size = new System.Drawing.Size(36, 13);
+            this.CurrentTimeLabel.TabIndex = 0;
+            this.CurrentTimeLabel.Text = "(Time)";
+            // 
+            // Timer
+            // 
+            this.Timer.Enabled = true;
+            this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(531, 257);
-            this.Controls.Add(this.NameTextBox);
+            this.Controls.Add(this.CurrentTimeLabel);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.CompanyLogoBox);
-            this.Controls.Add(this.DateTimeTextBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.MainMenuGroupBox);
-            this.Controls.Add(this.DateTimeLabel);
-            this.Controls.Add(this.HelloLabel);
+            this.Controls.Add(this.CurrentDateLabel);
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome!";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.MainMenuGroupBox.ResumeLayout(false);
             this.MainMenuGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyLogoBox)).EndInit();
@@ -204,19 +187,17 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label HelloLabel;
-        private System.Windows.Forms.Label DateTimeLabel;
+        private System.Windows.Forms.Label CurrentDateLabel;
         private System.Windows.Forms.GroupBox MainMenuGroupBox;
         private System.Windows.Forms.RadioButton LogApptRadioButton;
         private System.Windows.Forms.RadioButton AddNewRadioButton;
         private System.Windows.Forms.RadioButton ViewDirectoryRadioButton;
         private System.Windows.Forms.Label MainMenuToolTipLabel;
         private System.Windows.Forms.Button ExitButton;
-        private System.Windows.Forms.TextBox DateTimeTextBox;
         private System.Windows.Forms.PictureBox CompanyLogoBox;
         private System.Windows.Forms.Button OKButton;
-        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.Label CurrentTimeLabel;
+        private System.Windows.Forms.Timer Timer;
     }
 }
 
