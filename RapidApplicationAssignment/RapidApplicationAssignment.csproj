@@ -88,26 +88,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>furzaflynDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="furzaflynDataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>furzaflynDataSet1.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="furzaflynDataSet2.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>furzaflynDataSet2.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="furzaflynDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>furzaflynDataSet3.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="FurzAFlynShopDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>FurzAFlynShopDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="LogAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,50 +138,6 @@
     <None Include="furzaflynDataSet.xss">
       <DependentUpon>furzaflynDataSet.xsd</DependentUpon>
     </None>
-    <None Include="furzaflynDataSet1.xsc">
-      <DependentUpon>furzaflynDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet1.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>furzaflynDataSet1.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="furzaflynDataSet1.xss">
-      <DependentUpon>furzaflynDataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet2.xsc">
-      <DependentUpon>furzaflynDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet2.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>furzaflynDataSet2.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="furzaflynDataSet2.xss">
-      <DependentUpon>furzaflynDataSet2.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet3.xsc">
-      <DependentUpon>furzaflynDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>furzaflynDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="furzaflynDataSet3.xss">
-      <DependentUpon>furzaflynDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="FurzAFlynShopDBDataSet.xsc">
-      <DependentUpon>FurzAFlynShopDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="FurzAFlynShopDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>FurzAFlynShopDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="FurzAFlynShopDBDataSet.xss">
-      <DependentUpon>FurzAFlynShopDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -235,13 +171,6 @@
   <ItemGroup>
     <Content Include="furzaflyn.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FurzAFlynShopDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="FurzAFlynShopDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>FurzAFlynShopDB.mdf</DependentUpon>
     </Content>
     <Content Include="furzaflyn_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
