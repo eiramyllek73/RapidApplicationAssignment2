@@ -82,7 +82,7 @@ namespace RapidApplicationAssignment
         {
             try
             {
-                this.customersTableAdapter.FillBy(this.furzaflynDataSet.Customers);
+                this.customersTableAdapter.Fill(this.furzaflynDataSet.Customers);
             }
             catch (System.Exception ex)
             {

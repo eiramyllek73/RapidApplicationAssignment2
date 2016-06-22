@@ -235,6 +235,14 @@ namespace RapidApplicationAssignment {
             base.Tables.Add(this.tableAppointmentLog);
             this.tableCustomers = new CustomersDataTable();
             base.Tables.Add(this.tableCustomers);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_AppointmentLog_ToTable", new global::System.Data.DataColumn[] {
+                        this.tableCustomers.NameOfPetColumn}, new global::System.Data.DataColumn[] {
+                        this.tableAppointmentLog.NameOfPetColumn});
+            this.tableAppointmentLog.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             this.relationFK_AppointmentLog_ToTable = new global::System.Data.DataRelation("FK_AppointmentLog_ToTable", new global::System.Data.DataColumn[] {
                         this.tableCustomers.NameOfPetColumn}, new global::System.Data.DataColumn[] {
                         this.tableAppointmentLog.NameOfPetColumn}, false);
@@ -441,11 +449,11 @@ namespace RapidApplicationAssignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public AppointmentLogRow AddAppointmentLogRow(CustomersRow parentCustomersRowByFK_AppointmentLog_ToTable, int AppointmentID, System.DateTime AppointmentDate, decimal TimeTotal, string Comments) {
+            public AppointmentLogRow AddAppointmentLogRow(CustomersRow parentCustomersRowByFK_AppointmentLog_ToTable, System.DateTime AppointmentDate, decimal TimeTotal, string Comments) {
                 AppointmentLogRow rowAppointmentLogRow = ((AppointmentLogRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        AppointmentID,
+                        null,
                         AppointmentDate,
                         TimeTotal,
                         Comments};
@@ -505,6 +513,9 @@ namespace RapidApplicationAssignment {
                                 this.columnAppointmentID}, true));
                 this.columnNameOfPet.AllowDBNull = false;
                 this.columnNameOfPet.MaxLength = 50;
+                this.columnAppointmentID.AutoIncrement = true;
+                this.columnAppointmentID.AutoIncrementSeed = -1;
+                this.columnAppointmentID.AutoIncrementStep = -1;
                 this.columnAppointmentID.AllowDBNull = false;
                 this.columnAppointmentID.Unique = true;
                 this.columnAppointmentDate.AllowDBNull = false;
@@ -933,12 +944,16 @@ namespace RapidApplicationAssignment {
                 base.Columns.Add(this.columnImage);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCustomerID}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnNameOfPet}, false));
                 this.columnCustomerID.AutoIncrement = true;
-                this.columnCustomerID.AutoIncrementSeed = 1;
+                this.columnCustomerID.AutoIncrementSeed = -1;
+                this.columnCustomerID.AutoIncrementStep = -1;
                 this.columnCustomerID.AllowDBNull = false;
                 this.columnCustomerID.ReadOnly = true;
                 this.columnCustomerID.Unique = true;
                 this.columnNameOfPet.AllowDBNull = false;
+                this.columnNameOfPet.Unique = true;
                 this.columnNameOfPet.MaxLength = 50;
                 this.columnBreedType.AllowDBNull = false;
                 this.columnBreedType.MaxLength = 50;
@@ -2054,7 +2069,7 @@ SELECT NameOfPet, AppointmentID, AppointmentDate, TimeTotal, Comments FROM Appoi
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Customers] WHERE (([CustomerID] = @Original_CustomerID) AND ([NameOfPet] = @Original_NameOfPet) AND ([BreedType] = @Original_BreedType) AND ([SizeCategory] = @Original_SizeCategory) AND ((@IsNull_AgeAtFirstAppt = 1 AND [AgeAtFirstAppt] IS NULL) OR ([AgeAtFirstAppt] = @Original_AgeAtFirstAppt)) AND ([PrimaryContactFirstName] = @Original_PrimaryContactFirstName) AND ([PrimaryContactLastName] = @Original_PrimaryContactLastName) AND ([PrimaryContactPhone] = @Original_PrimaryContactPhone) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Customers] WHERE (([CustomerID] = @Original_CustomerID) AND ([NameOfPet] = @Original_NameOfPet) AND ([BreedType] = @Original_BreedType) AND ([SizeCategory] = @Original_SizeCategory) AND ((@IsNull_AgeAtFirstAppt = 1 AND [AgeAtFirstAppt] IS NULL) OR ([AgeAtFirstAppt] = @Original_AgeAtFirstAppt)) AND ([PrimaryContactFirstName] = @Original_PrimaryContactFirstName) AND ([PrimaryContactLastName] = @Original_PrimaryContactLastName) AND ([PrimaryContactPhone] = @Original_PrimaryContactPhone) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_NameOfPet", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "NameOfPet", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2069,7 +2084,7 @@ SELECT NameOfPet, AppointmentID, AppointmentDate, TimeTotal, Comments FROM Appoi
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Customers] ([CustomerID], [NameOfPet], [BreedType], [SizeCategory], [AgeAtFirstAppt], [PrimaryContactFirstName], [PrimaryContactLastName], [PrimaryContactPhone], [Email], [SecondaryContactInfo], [VetInfo], [ImportantNotes], [Image]) VALUES (@CustomerID, @NameOfPet, @BreedType, @SizeCategory, @AgeAtFirstAppt, @PrimaryContactFirstName, @PrimaryContactLastName, @PrimaryContactPhone, @Email, @SecondaryContactInfo, @VetInfo, @ImportantNotes, @Image);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Customers] ([CustomerID], [NameOfPet], [BreedType], [SizeCategory], [AgeAtFirstAppt], [PrimaryContactFirstName], [PrimaryContactLastName], [PrimaryContactPhone], [Email], [SecondaryContactInfo], [VetInfo], [ImportantNotes], [Image]) VALUES (@CustomerID, @NameOfPet, @BreedType, @SizeCategory, @AgeAtFirstAppt, @PrimaryContactFirstName, @PrimaryContactLastName, @PrimaryContactPhone, @Email, @SecondaryContactInfo, @VetInfo, @ImportantNotes, @Image);
 SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryContactFirstName, PrimaryContactLastName, PrimaryContactPhone, Email, SecondaryContactInfo, VetInfo, ImportantNotes, Image FROM Customers WHERE (CustomerID = @CustomerID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2087,7 +2102,7 @@ SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryCo
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Image", global::System.Data.SqlDbType.Image, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Image", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Customers] SET [CustomerID] = @CustomerID, [NameOfPet] = @NameOfPet, [BreedType] = @BreedType, [SizeCategory] = @SizeCategory, [AgeAtFirstAppt] = @AgeAtFirstAppt, [PrimaryContactFirstName] = @PrimaryContactFirstName, [PrimaryContactLastName] = @PrimaryContactLastName, [PrimaryContactPhone] = @PrimaryContactPhone, [Email] = @Email, [SecondaryContactInfo] = @SecondaryContactInfo, [VetInfo] = @VetInfo, [ImportantNotes] = @ImportantNotes, [Image] = @Image WHERE (([CustomerID] = @Original_CustomerID) AND ([NameOfPet] = @Original_NameOfPet) AND ([BreedType] = @Original_BreedType) AND ([SizeCategory] = @Original_SizeCategory) AND ((@IsNull_AgeAtFirstAppt = 1 AND [AgeAtFirstAppt] IS NULL) OR ([AgeAtFirstAppt] = @Original_AgeAtFirstAppt)) AND ([PrimaryContactFirstName] = @Original_PrimaryContactFirstName) AND ([PrimaryContactLastName] = @Original_PrimaryContactLastName) AND ([PrimaryContactPhone] = @Original_PrimaryContactPhone) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Customers] SET [CustomerID] = @CustomerID, [NameOfPet] = @NameOfPet, [BreedType] = @BreedType, [SizeCategory] = @SizeCategory, [AgeAtFirstAppt] = @AgeAtFirstAppt, [PrimaryContactFirstName] = @PrimaryContactFirstName, [PrimaryContactLastName] = @PrimaryContactLastName, [PrimaryContactPhone] = @PrimaryContactPhone, [Email] = @Email, [SecondaryContactInfo] = @SecondaryContactInfo, [VetInfo] = @VetInfo, [ImportantNotes] = @ImportantNotes, [Image] = @Image WHERE (([CustomerID] = @Original_CustomerID) AND ([NameOfPet] = @Original_NameOfPet) AND ([BreedType] = @Original_BreedType) AND ([SizeCategory] = @Original_SizeCategory) AND ((@IsNull_AgeAtFirstAppt = 1 AND [AgeAtFirstAppt] IS NULL) OR ([AgeAtFirstAppt] = @Original_AgeAtFirstAppt)) AND ([PrimaryContactFirstName] = @Original_PrimaryContactFirstName) AND ([PrimaryContactLastName] = @Original_PrimaryContactLastName) AND ([PrimaryContactPhone] = @Original_PrimaryContactPhone) AND ((@IsNull_Email = 1 AND [Email] IS NULL) OR ([Email] = @Original_Email)));
 SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryContactFirstName, PrimaryContactLastName, PrimaryContactPhone, Email, SecondaryContactInfo, VetInfo, ImportantNotes, Image FROM Customers WHERE (CustomerID = @CustomerID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@CustomerID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "CustomerID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2126,19 +2141,13 @@ SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryCo
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryCon" +
-                "tactFirstName, PrimaryContactLastName, PrimaryContactPhone, Email, SecondaryCont" +
-                "actInfo, VetInfo, ImportantNotes, Image FROM dbo.Customers";
+            this._commandCollection[0].CommandText = "SELECT        CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, Pri" +
+                "maryContactFirstName, PrimaryContactLastName, PrimaryContactPhone, Email, Second" +
+                "aryContactInfo, VetInfo, ImportantNotes, Image\r\nFROM            Customers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryCon" +
-                "tactFirstName, PrimaryContactLastName, PrimaryContactPhone, Email, SecondaryCont" +
-                "actInfo, VetInfo, ImportantNotes, Image FROM dbo.Customers";
-            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2163,19 +2172,6 @@ SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryCo
             furzaflynDataSet.CustomersDataTable dataTable = new furzaflynDataSet.CustomersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
-        public virtual int FillBy(furzaflynDataSet.CustomersDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[1];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

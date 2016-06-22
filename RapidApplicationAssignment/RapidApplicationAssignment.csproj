@@ -95,6 +95,9 @@
     <Compile Include="EditCustomer.Designer.cs">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="furzaflynDataSet.cs">
+      <DependentUpon>furzaflynDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="furzaflynDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

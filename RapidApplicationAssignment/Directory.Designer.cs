@@ -53,28 +53,24 @@
             this.customersBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.customersBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.customersDataGridView = new System.Windows.Forms.DataGridView();
-            this.CustIDGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BreedTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SizeCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AgeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PcFnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PcLnameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PcPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailDataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sContactGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.VetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NotesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
-            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).BeginInit();
             this.customersBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
-            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // furzaflynDataSet
@@ -285,169 +281,101 @@
             // 
             // customersDataGridView
             // 
+            this.customersDataGridView.AllowUserToOrderColumns = true;
             this.customersDataGridView.AutoGenerateColumns = false;
+            this.customersDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.customersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.customersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CustIDGridViewTextBoxColumn,
-            this.PetNameDataGridViewTextBoxColumn,
-            this.BreedTypeDataGridViewTextBoxColumn,
-            this.SizeCategoryDataGridViewTextBoxColumn,
-            this.AgeDataGridViewTextBoxColumn,
-            this.PcFnameDataGridViewTextBoxColumn,
-            this.PcLnameDataGridViewTextBoxColumn7,
-            this.PcPhoneDataGridViewTextBoxColumn,
-            this.EmailDataGridViewTextBoxColumn9,
-            this.sContactGridViewTextBoxColumn,
-            this.VetDataGridViewTextBoxColumn,
-            this.NotesDataGridViewTextBoxColumn,
-            this.ImageDataGridViewImageColumn});
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewImageColumn1});
             this.customersDataGridView.DataSource = this.customersBindingSource;
-            this.customersDataGridView.Location = new System.Drawing.Point(12, 52);
+            this.customersDataGridView.Location = new System.Drawing.Point(12, 61);
             this.customersDataGridView.Name = "customersDataGridView";
+            this.customersDataGridView.RowHeadersWidth = 135;
             this.customersDataGridView.Size = new System.Drawing.Size(1338, 220);
             this.customersDataGridView.TabIndex = 2;
             // 
-            // CustIDGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.CustIDGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.CustIDGridViewTextBoxColumn.DataPropertyName = "CustomerID";
-            this.CustIDGridViewTextBoxColumn.HeaderText = "ID#";
-            this.CustIDGridViewTextBoxColumn.MaxInputLength = 2000;
-            this.CustIDGridViewTextBoxColumn.Name = "CustIDGridViewTextBoxColumn";
-            this.CustIDGridViewTextBoxColumn.ReadOnly = true;
-            this.CustIDGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CustIDGridViewTextBoxColumn.ToolTipText = "ID# given when customer is added to the database";
-            this.CustIDGridViewTextBoxColumn.Visible = false;
-            this.CustIDGridViewTextBoxColumn.Width = 50;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NameOfPet";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NameOfPet";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // PetNameDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.PetNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.PetNameDataGridViewTextBoxColumn.DataPropertyName = "NameOfPet";
-            this.PetNameDataGridViewTextBoxColumn.HeaderText = "Pet\'s Name:";
-            this.PetNameDataGridViewTextBoxColumn.MaxInputLength = 100;
-            this.PetNameDataGridViewTextBoxColumn.Name = "PetNameDataGridViewTextBoxColumn";
-            this.PetNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.PetNameDataGridViewTextBoxColumn.Width = 89;
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "BreedType";
+            this.dataGridViewTextBoxColumn3.HeaderText = "BreedType";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // BreedTypeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.BreedTypeDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.BreedTypeDataGridViewTextBoxColumn.DataPropertyName = "BreedType";
-            this.BreedTypeDataGridViewTextBoxColumn.HeaderText = "Breed/Mix Type:";
-            this.BreedTypeDataGridViewTextBoxColumn.MaxInputLength = 100;
-            this.BreedTypeDataGridViewTextBoxColumn.Name = "BreedTypeDataGridViewTextBoxColumn";
-            this.BreedTypeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.BreedTypeDataGridViewTextBoxColumn.Width = 102;
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "SizeCategory";
+            this.dataGridViewTextBoxColumn4.HeaderText = "SizeCategory";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             // 
-            // SizeCategoryDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn5
             // 
-            this.SizeCategoryDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.SizeCategoryDataGridViewTextBoxColumn.DataPropertyName = "SizeCategory";
-            this.SizeCategoryDataGridViewTextBoxColumn.HeaderText = "Size Category:";
-            this.SizeCategoryDataGridViewTextBoxColumn.MaxInputLength = 100;
-            this.SizeCategoryDataGridViewTextBoxColumn.Name = "SizeCategoryDataGridViewTextBoxColumn";
-            this.SizeCategoryDataGridViewTextBoxColumn.ReadOnly = true;
-            this.SizeCategoryDataGridViewTextBoxColumn.Width = 92;
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "AgeAtFirstAppt";
+            this.dataGridViewTextBoxColumn5.HeaderText = "AgeAtFirstAppt";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
-            // AgeDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn6
             // 
-            this.AgeDataGridViewTextBoxColumn.DataPropertyName = "AgeAtFirstAppt";
-            this.AgeDataGridViewTextBoxColumn.HeaderText = "Age @ 1st Appt:";
-            this.AgeDataGridViewTextBoxColumn.MaxInputLength = 100;
-            this.AgeDataGridViewTextBoxColumn.Name = "AgeDataGridViewTextBoxColumn";
-            this.AgeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.AgeDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "PrimaryContactFirstName";
+            this.dataGridViewTextBoxColumn6.HeaderText = "PrimaryContactFirstName";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             // 
-            // PcFnameDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn7
             // 
-            this.PcFnameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.PcFnameDataGridViewTextBoxColumn.DataPropertyName = "PrimaryContactFirstName";
-            this.PcFnameDataGridViewTextBoxColumn.HeaderText = "Primary Contact 1st Name:";
-            this.PcFnameDataGridViewTextBoxColumn.MaxInputLength = 100;
-            this.PcFnameDataGridViewTextBoxColumn.Name = "PcFnameDataGridViewTextBoxColumn";
-            this.PcFnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.PcFnameDataGridViewTextBoxColumn.Width = 115;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "PrimaryContactLastName";
+            this.dataGridViewTextBoxColumn7.HeaderText = "PrimaryContactLastName";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             // 
-            // PcLnameDataGridViewTextBoxColumn7
+            // dataGridViewTextBoxColumn8
             // 
-            this.PcLnameDataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.PcLnameDataGridViewTextBoxColumn7.DataPropertyName = "PrimaryContactLastName";
-            this.PcLnameDataGridViewTextBoxColumn7.HeaderText = "Primary Last Name:";
-            this.PcLnameDataGridViewTextBoxColumn7.MaxInputLength = 100;
-            this.PcLnameDataGridViewTextBoxColumn7.Name = "PcLnameDataGridViewTextBoxColumn7";
-            this.PcLnameDataGridViewTextBoxColumn7.ReadOnly = true;
-            this.PcLnameDataGridViewTextBoxColumn7.Width = 113;
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "PrimaryContactPhone";
+            this.dataGridViewTextBoxColumn8.HeaderText = "PrimaryContactPhone";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
-            // PcPhoneDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn9
             // 
-            this.PcPhoneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.PcPhoneDataGridViewTextBoxColumn.DataPropertyName = "PrimaryContactPhone";
-            this.PcPhoneDataGridViewTextBoxColumn.HeaderText = "Primary Phone:";
-            this.PcPhoneDataGridViewTextBoxColumn.MaxInputLength = 100;
-            this.PcPhoneDataGridViewTextBoxColumn.Name = "PcPhoneDataGridViewTextBoxColumn";
-            this.PcPhoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.PcPhoneDataGridViewTextBoxColumn.Width = 95;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Email";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             // 
-            // EmailDataGridViewTextBoxColumn9
+            // dataGridViewTextBoxColumn10
             // 
-            this.EmailDataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.EmailDataGridViewTextBoxColumn9.DataPropertyName = "Email";
-            this.EmailDataGridViewTextBoxColumn9.HeaderText = "Primary Email:";
-            this.EmailDataGridViewTextBoxColumn9.MaxInputLength = 100;
-            this.EmailDataGridViewTextBoxColumn9.Name = "EmailDataGridViewTextBoxColumn9";
-            this.EmailDataGridViewTextBoxColumn9.Width = 89;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "SecondaryContactInfo";
+            this.dataGridViewTextBoxColumn10.HeaderText = "SecondaryContactInfo";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // sContactGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn11
             // 
-            this.sContactGridViewTextBoxColumn.DataPropertyName = "SecondaryContactInfo";
-            this.sContactGridViewTextBoxColumn.HeaderText = "SecondaryContactInfo";
-            this.sContactGridViewTextBoxColumn.Name = "sContactGridViewTextBoxColumn";
-            this.sContactGridViewTextBoxColumn.ReadOnly = true;
-            this.sContactGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "VetInfo";
+            this.dataGridViewTextBoxColumn11.HeaderText = "VetInfo";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
             // 
-            // VetDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn12
             // 
-            this.VetDataGridViewTextBoxColumn.DataPropertyName = "VetInfo";
-            this.VetDataGridViewTextBoxColumn.HeaderText = "VetInfo";
-            this.VetDataGridViewTextBoxColumn.MaxInputLength = 1000;
-            this.VetDataGridViewTextBoxColumn.Name = "VetDataGridViewTextBoxColumn";
-            this.VetDataGridViewTextBoxColumn.ReadOnly = true;
-            this.VetDataGridViewTextBoxColumn.Visible = false;
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "ImportantNotes";
+            this.dataGridViewTextBoxColumn12.HeaderText = "ImportantNotes";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
-            // NotesDataGridViewTextBoxColumn
+            // dataGridViewImageColumn1
             // 
-            this.NotesDataGridViewTextBoxColumn.DataPropertyName = "ImportantNotes";
-            this.NotesDataGridViewTextBoxColumn.HeaderText = "ImportantNotes";
-            this.NotesDataGridViewTextBoxColumn.Name = "NotesDataGridViewTextBoxColumn";
-            this.NotesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.NotesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ImageDataGridViewImageColumn
-            // 
-            this.ImageDataGridViewImageColumn.DataPropertyName = "Image";
-            this.ImageDataGridViewImageColumn.HeaderText = "Image";
-            this.ImageDataGridViewImageColumn.Name = "ImageDataGridViewImageColumn";
-            this.ImageDataGridViewImageColumn.ReadOnly = true;
-            this.ImageDataGridViewImageColumn.Visible = false;
-            // 
-            // fillByToolStrip
-            // 
-            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fillByToolStripButton});
-            this.fillByToolStrip.Location = new System.Drawing.Point(0, 49);
-            this.fillByToolStrip.Name = "fillByToolStrip";
-            this.fillByToolStrip.Size = new System.Drawing.Size(1362, 25);
-            this.fillByToolStrip.TabIndex = 3;
-            this.fillByToolStrip.Text = "fillByToolStrip";
-            // 
-            // fillByToolStripButton
-            // 
-            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.fillByToolStripButton.Name = "fillByToolStripButton";
-            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
-            this.fillByToolStripButton.Text = "FillBy";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            this.dataGridViewImageColumn1.DataPropertyName = "Image";
+            this.dataGridViewImageColumn1.HeaderText = "Image";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // Directory
             // 
@@ -455,14 +383,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1362, 379);
-            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.customersDataGridView);
             this.Controls.Add(this.customersBindingNavigator);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Directory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Directory";
+            this.Text = "Customer Directory";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Directory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet)).EndInit();
@@ -473,8 +400,6 @@
             this.customersBindingNavigator.ResumeLayout(false);
             this.customersBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).EndInit();
-            this.fillByToolStrip.ResumeLayout(false);
-            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -505,20 +430,30 @@
         private System.Windows.Forms.ToolStripButton customersBindingNavigatorSaveItem;
         private System.Windows.Forms.BindingNavigator customersBindingNavigator;
         private System.Windows.Forms.DataGridView customersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CustIDGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PetNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BreedTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SizeCategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn AgeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PcFnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PcLnameDataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PcPhoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmailDataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sContactGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn VetDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NotesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn ImageDataGridViewImageColumn;
-        private System.Windows.Forms.ToolStrip fillByToolStrip;
-        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }
