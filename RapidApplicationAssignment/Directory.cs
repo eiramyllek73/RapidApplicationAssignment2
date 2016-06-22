@@ -14,6 +14,7 @@ namespace RapidApplicationAssignment
     {
         //   PRIVATE VARIABLES
         private ToolStripMenuItem selectedToolStripMenuItem = null;
+        private ToolStripButton addNew = null;
 
         public Directory()
         {
@@ -65,6 +66,29 @@ namespace RapidApplicationAssignment
                 // Exit the application
                 Application.Exit();
             }
+        }
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            
+            addNew = (ToolStripButton)sender;
+
+            AddCustomerForm addCust = new AddCustomerForm();
+            this.Hide();
+            addCust.ShowDialog();
+        }
+
+        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.customersTableAdapter.FillBy(this.furzaflynDataSet.Customers);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

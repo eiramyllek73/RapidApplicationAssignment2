@@ -842,10 +842,10 @@ namespace RapidApplicationAssignment {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public CustomersRow AddCustomersRow(int CustomerID, string NameOfPet, string BreedType, string SizeCategory, string AgeAtFirstAppt, string PrimaryContactFirstName, string PrimaryContactLastName, string PrimaryContactPhone, string Email, string SecondaryContactInfo, string VetInfo, string ImportantNotes, byte[] Image) {
+            public CustomersRow AddCustomersRow(string NameOfPet, string BreedType, string SizeCategory, string AgeAtFirstAppt, string PrimaryContactFirstName, string PrimaryContactLastName, string PrimaryContactPhone, string Email, string SecondaryContactInfo, string VetInfo, string ImportantNotes, byte[] Image) {
                 CustomersRow rowCustomersRow = ((CustomersRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        CustomerID,
+                        null,
                         NameOfPet,
                         BreedType,
                         SizeCategory,
@@ -933,7 +933,10 @@ namespace RapidApplicationAssignment {
                 base.Columns.Add(this.columnImage);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnCustomerID}, true));
+                this.columnCustomerID.AutoIncrement = true;
+                this.columnCustomerID.AutoIncrementSeed = 1;
                 this.columnCustomerID.AllowDBNull = false;
+                this.columnCustomerID.ReadOnly = true;
                 this.columnCustomerID.Unique = true;
                 this.columnNameOfPet.AllowDBNull = false;
                 this.columnNameOfPet.MaxLength = 50;
@@ -2123,13 +2126,19 @@ SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryCo
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryCon" +
                 "tactFirstName, PrimaryContactLastName, PrimaryContactPhone, Email, SecondaryCont" +
                 "actInfo, VetInfo, ImportantNotes, Image FROM dbo.Customers";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryCon" +
+                "tactFirstName, PrimaryContactLastName, PrimaryContactPhone, Email, SecondaryCont" +
+                "actInfo, VetInfo, ImportantNotes, Image FROM dbo.Customers";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2154,6 +2163,19 @@ SELECT CustomerID, NameOfPet, BreedType, SizeCategory, AgeAtFirstAppt, PrimaryCo
             furzaflynDataSet.CustomersDataTable dataTable = new furzaflynDataSet.CustomersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(furzaflynDataSet.CustomersDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

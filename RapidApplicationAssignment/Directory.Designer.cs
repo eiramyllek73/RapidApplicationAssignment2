@@ -66,12 +66,15 @@
             this.VetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NotesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ImageDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
+            this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingNavigator)).BeginInit();
             this.customersBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).BeginInit();
+            this.fillByToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // furzaflynDataSet
@@ -221,12 +224,16 @@
             // 
             // bindingNavigatorAddNewItem
             // 
+            this.bindingNavigatorAddNewItem.AccessibleDescription = "This image of a plus sign is a button that will take the user to the add new cust" +
+    "omer form";
+            this.bindingNavigatorAddNewItem.AccessibleName = "AddNewImageButton";
             this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
+            this.bindingNavigatorAddNewItem.Text = "Add new customer";
+            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
             // bindingNavigatorDeleteItem
             // 
@@ -424,12 +431,31 @@
             this.ImageDataGridViewImageColumn.ReadOnly = true;
             this.ImageDataGridViewImageColumn.Visible = false;
             // 
+            // fillByToolStrip
+            // 
+            this.fillByToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fillByToolStripButton});
+            this.fillByToolStrip.Location = new System.Drawing.Point(0, 49);
+            this.fillByToolStrip.Name = "fillByToolStrip";
+            this.fillByToolStrip.Size = new System.Drawing.Size(1362, 25);
+            this.fillByToolStrip.TabIndex = 3;
+            this.fillByToolStrip.Text = "fillByToolStrip";
+            // 
+            // fillByToolStripButton
+            // 
+            this.fillByToolStripButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.fillByToolStripButton.Name = "fillByToolStripButton";
+            this.fillByToolStripButton.Size = new System.Drawing.Size(39, 22);
+            this.fillByToolStripButton.Text = "FillBy";
+            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            // 
             // Directory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1362, 362);
+            this.ClientSize = new System.Drawing.Size(1362, 379);
+            this.Controls.Add(this.fillByToolStrip);
             this.Controls.Add(this.customersDataGridView);
             this.Controls.Add(this.customersBindingNavigator);
             this.Controls.Add(this.menuStrip1);
@@ -447,6 +473,8 @@
             this.customersBindingNavigator.ResumeLayout(false);
             this.customersBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customersDataGridView)).EndInit();
+            this.fillByToolStrip.ResumeLayout(false);
+            this.fillByToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -490,5 +518,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn VetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NotesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn ImageDataGridViewImageColumn;
+        private System.Windows.Forms.ToolStrip fillByToolStrip;
+        private System.Windows.Forms.ToolStripButton fillByToolStripButton;
     }
 }

@@ -51,7 +51,6 @@ namespace RapidApplicationAssignment
         */
         private void radioButton_CheckedChanged(object sender, EventArgs e)
         {
-            // Save the name of the selected radio button
             selectedRadioButton = (RadioButton)sender;       
         }
 
