@@ -65,6 +65,8 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.editSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteSelectedCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -97,7 +99,9 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MainMenuToolStripMenuItem});
+            this.MainMenuToolStripMenuItem,
+            this.editSelectionToolStripMenuItem,
+            this.deleteSelectedCustomerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
@@ -377,6 +381,18 @@
             this.dataGridViewImageColumn1.HeaderText = "Image";
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
+            // editSelectionToolStripMenuItem
+            // 
+            this.editSelectionToolStripMenuItem.Name = "editSelectionToolStripMenuItem";
+            this.editSelectionToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
+            this.editSelectionToolStripMenuItem.Text = "Edit Customer Details";
+            // 
+            // deleteSelectedCustomerToolStripMenuItem
+            // 
+            this.deleteSelectedCustomerToolStripMenuItem.Name = "deleteSelectedCustomerToolStripMenuItem";
+            this.deleteSelectedCustomerToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
+            this.deleteSelectedCustomerToolStripMenuItem.Text = "View Customer Appt Log";
+            // 
             // Directory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -386,6 +402,7 @@
             this.Controls.Add(this.customersDataGridView);
             this.Controls.Add(this.customersBindingNavigator);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Directory";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -455,5 +472,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.ToolStripMenuItem editSelectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteSelectedCustomerToolStripMenuItem;
     }
 }

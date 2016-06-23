@@ -16,5 +16,15 @@ namespace RapidApplicationAssignment
         {
             InitializeComponent();
         }
+
+        private void HomeScreenToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AboutThisApplicationToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

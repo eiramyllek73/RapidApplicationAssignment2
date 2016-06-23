@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace RapidApplicationAssignment
 {
-    public partial class ApptHistory : Form
+    public partial class ApptHistoryForm : Form
     {
-        public ApptHistory()
+        public ApptHistoryForm()
         {
             InitializeComponent();
+        }
+
+        private void appointmentLogBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.appointmentLogBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.furzaflynDataSet);
+
+        }
+
+        private void ApptHistoryForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'furzaflynDataSet.AppointmentLog' table. You can move, or remove it, as needed.
+            this.appointmentLogTableAdapter.Fill(this.furzaflynDataSet.AppointmentLog);
+
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.CurrentDateLabel = new System.Windows.Forms.Label();
             this.MainMenuGroupBox = new System.Windows.Forms.GroupBox();
             this.LogApptRadioButton = new System.Windows.Forms.RadioButton();
@@ -37,9 +38,9 @@
             this.MainMenuToolTipLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
             this.OKButton = new System.Windows.Forms.Button();
-            this.CompanyLogoBox = new System.Windows.Forms.PictureBox();
             this.CurrentTimeLabel = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
+            this.CompanyLogoBox = new System.Windows.Forms.PictureBox();
             this.MainMenuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyLogoBox)).BeginInit();
             this.SuspendLayout();
@@ -116,35 +117,29 @@
             // 
             // ExitButton
             // 
-            this.ExitButton.Location = new System.Drawing.Point(417, 217);
+            this.ExitButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExitButton.Location = new System.Drawing.Point(387, 217);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(75, 23);
+            this.ExitButton.Size = new System.Drawing.Size(105, 38);
             this.ExitButton.TabIndex = 5;
             this.ExitButton.Text = "Exit";
-            this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // OKButton
             // 
+            this.OKButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.OKButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.OKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.OKButton.Location = new System.Drawing.Point(247, 217);
             this.OKButton.Name = "OKButton";
-            this.OKButton.Size = new System.Drawing.Size(75, 23);
+            this.OKButton.Size = new System.Drawing.Size(101, 38);
             this.OKButton.TabIndex = 4;
             this.OKButton.Text = "OK";
-            this.OKButton.UseVisualStyleBackColor = true;
+            this.OKButton.UseVisualStyleBackColor = false;
             this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
-            // 
-            // CompanyLogoBox
-            // 
-            this.CompanyLogoBox.AccessibleDescription = "This is a picture box that  displays the company logo.";
-            this.CompanyLogoBox.AccessibleName = "LogoPictureBox";
-            this.CompanyLogoBox.Image = global::RapidApplicationAssignment.Properties.Resources.FurzaFlyn_Logo_WebSize;
-            this.CompanyLogoBox.Location = new System.Drawing.Point(12, 12);
-            this.CompanyLogoBox.Name = "CompanyLogoBox";
-            this.CompanyLogoBox.Size = new System.Drawing.Size(201, 199);
-            this.CompanyLogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.CompanyLogoBox.TabIndex = 9;
-            this.CompanyLogoBox.TabStop = false;
             // 
             // CurrentTimeLabel
             // 
@@ -162,17 +157,33 @@
             this.Timer.Enabled = true;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
+            // CompanyLogoBox
+            // 
+            this.CompanyLogoBox.AccessibleDescription = "This is a picture box that  displays the company logo.";
+            this.CompanyLogoBox.AccessibleName = "LogoPictureBox";
+            this.CompanyLogoBox.Image = global::RapidApplicationAssignment.Properties.Resources.FurzaFlyn_Logo_WebSize;
+            this.CompanyLogoBox.Location = new System.Drawing.Point(3, 12);
+            this.CompanyLogoBox.Name = "CompanyLogoBox";
+            this.CompanyLogoBox.Size = new System.Drawing.Size(229, 236);
+            this.CompanyLogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.CompanyLogoBox.TabIndex = 9;
+            this.CompanyLogoBox.TabStop = false;
+            // 
             // Dashboard
             // 
+            this.AcceptButton = this.OKButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(531, 257);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(531, 263);
             this.Controls.Add(this.CurrentTimeLabel);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.CompanyLogoBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.MainMenuGroupBox);
             this.Controls.Add(this.CurrentDateLabel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome!";

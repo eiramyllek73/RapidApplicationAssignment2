@@ -63,9 +63,29 @@ namespace RapidApplicationAssignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DefaultImage {
+            get {
+                object obj = ResourceManager.GetObject("DefaultImage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FurzaFlyn_Logo_WebSize {
             get {
                 object obj = ResourceManager.GetObject("FurzaFlyn-Logo-WebSize", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Glyphish_Glyphish_82_dog_paw {
+            get {
+                object obj = ResourceManager.GetObject("Glyphish-Glyphish-82-dog-paw", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

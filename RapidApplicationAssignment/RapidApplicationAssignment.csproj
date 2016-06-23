@@ -114,6 +114,12 @@
     <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ApptHistory.resx">
+      <DependentUpon>ApptHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerProfile.resx">
+      <DependentUpon>CustomerProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +191,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>furzaflyn.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\Glyphish-Glyphish-82-dog-paw.ico" />
+    <None Include="Resources\DefaultImage.jpg" />
     <None Include="Resources\FurzaFlyn-Logo-WebSize.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
