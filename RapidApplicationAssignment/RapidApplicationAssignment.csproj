@@ -59,6 +59,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="About.Designer.cs">
+      <DependentUpon>About.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>furzaflynDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Invoice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Invoice.Designer.cs">
+      <DependentUpon>Invoice.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogAppointment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +123,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="About.resx">
+      <DependentUpon>About.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,6 +143,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Invoice.resx">
+      <DependentUpon>Invoice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogAppointment.resx">
       <DependentUpon>LogAppointment.cs</DependentUpon>
@@ -191,6 +209,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>furzaflyn.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\iPhone-0461.jpg" />
+    <None Include="Resources\iPhone-046.jpg" />
     <None Include="Resources\Glyphish-Glyphish-82-dog-paw.ico" />
     <None Include="Resources\DefaultImage.jpg" />
     <None Include="Resources\FurzaFlyn-Logo-WebSize.jpg" />

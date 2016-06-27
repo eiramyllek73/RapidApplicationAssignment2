@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Programmer: Kelly McAlpine (200269425)
+ * Due Date: June 23, 2016
+ * Purpose: This application will manage customers and their appointment information
+ * Purpose of this form:  This form displays the Customer data from the customers table in the local db, with enabled CRUD functionality
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,11 +42,13 @@ namespace RapidApplicationAssignment
 
         }
 
+        // This method enables the ability to take the user to another form or exit application based on main menu selection
         private void MainMenuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             selectedToolStripMenuItem = (ToolStripMenuItem)sender;
         }
 
+        // Directs the user back to main dashboard upon Home Screen selection from main menu
         private void HomeScreenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Dashboard dashboard = new Dashboard();
@@ -48,9 +56,12 @@ namespace RapidApplicationAssignment
             dashboard.ShowDialog();
         }
 
+        // Directs the user to an information screen about the application
         private void AboutThisApplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            About about = new About();
+            this.Hide();
+            about.ShowDialog();
         }
 
         private void ExitAppToolStripMenuItem_Click(object sender, EventArgs e)

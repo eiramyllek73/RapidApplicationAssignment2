@@ -62,7 +62,7 @@ namespace RapidApplicationAssignment
             try
             {
                 // if user does not make a selection
-                if (!ViewDirectoryRadioButton.Checked && !AddNewRadioButton.Checked && !LogApptRadioButton.Checked)
+                if (!ViewDirectoryRadioButton.Checked && !LogApptRadioButton.Checked)
                 {
 
                     MessageBox.Show("A selection is required in order to proceed.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -75,17 +75,12 @@ namespace RapidApplicationAssignment
                        this.Hide();
                        directory.ShowDialog();   
                     }
-                    else if (AddNewRadioButton.Checked)
-                    {
-                        AddCustomerForm addCust = new AddCustomerForm();
-                        this.Hide();
-                        addCust.ShowDialog();
-                    }
+
                     else if (LogApptRadioButton.Checked)
                     {
-                        LogAppointmentForm logAppt = new LogAppointmentForm();
+                        ApptHistoryForm appt = new ApptHistoryForm();
                         this.Hide();
-                        logAppt.ShowDialog();
+                        appt.ShowDialog();
                     }
 
                 } // End of else     
@@ -118,24 +113,6 @@ namespace RapidApplicationAssignment
                 Application.Exit();
             }
 
-        }
-
-        /**
-         * This method will also close the application if the user clicks the 'X' at the top right corner of the form
-         */
-        private void Dashboard_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            DialogResult returnDialogueResult;
-
-            returnDialogueResult = MessageBox.Show("Are you sure you want to quit this application?", "Confirmation Required:",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
-            // If user clicks yes, close application - if no, remain on current form
-            if (returnDialogueResult == DialogResult.Yes)
-            {
-                // Exit the application
-                Application.Exit();
-            }
         }
 
     }

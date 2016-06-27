@@ -12,9 +12,11 @@ namespace RapidApplicationAssignment
 {
     public partial class ApptHistoryForm : Form
     {
+       
         public ApptHistoryForm()
         {
             InitializeComponent();
+
         }
 
         private void appointmentLogBindingNavigatorSaveItem_Click(object sender, EventArgs e)

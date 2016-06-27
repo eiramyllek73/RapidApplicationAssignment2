@@ -39,6 +39,8 @@
             this.HomeScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutThisApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteSelectedCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -65,8 +67,6 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.editSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteSelectedCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -154,6 +154,18 @@
             this.ExitAppToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
             this.ExitAppToolStripMenuItem.Text = "Exit Application";
             this.ExitAppToolStripMenuItem.Click += new System.EventHandler(this.ExitAppToolStripMenuItem_Click);
+            // 
+            // editSelectionToolStripMenuItem
+            // 
+            this.editSelectionToolStripMenuItem.Name = "editSelectionToolStripMenuItem";
+            this.editSelectionToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
+            this.editSelectionToolStripMenuItem.Text = "Edit Customer Details";
+            // 
+            // deleteSelectedCustomerToolStripMenuItem
+            // 
+            this.deleteSelectedCustomerToolStripMenuItem.Name = "deleteSelectedCustomerToolStripMenuItem";
+            this.deleteSelectedCustomerToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
+            this.deleteSelectedCustomerToolStripMenuItem.Text = "View Customer Appt Log";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -250,7 +262,8 @@
             this.customersBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("customersBindingNavigatorSaveItem.Image")));
             this.customersBindingNavigatorSaveItem.Name = "customersBindingNavigatorSaveItem";
             this.customersBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.customersBindingNavigatorSaveItem.Text = "Save Data";
+            this.customersBindingNavigatorSaveItem.Text = "Save  Data";
+            this.customersBindingNavigatorSaveItem.ToolTipText = "Save Entered Data";
             this.customersBindingNavigatorSaveItem.Click += new System.EventHandler(this.customersBindingNavigatorSaveItem_Click);
             // 
             // customersBindingNavigator
@@ -380,18 +393,6 @@
             this.dataGridViewImageColumn1.DataPropertyName = "Image";
             this.dataGridViewImageColumn1.HeaderText = "Image";
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            // 
-            // editSelectionToolStripMenuItem
-            // 
-            this.editSelectionToolStripMenuItem.Name = "editSelectionToolStripMenuItem";
-            this.editSelectionToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
-            this.editSelectionToolStripMenuItem.Text = "Edit Customer Details";
-            // 
-            // deleteSelectedCustomerToolStripMenuItem
-            // 
-            this.deleteSelectedCustomerToolStripMenuItem.Name = "deleteSelectedCustomerToolStripMenuItem";
-            this.deleteSelectedCustomerToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
-            this.deleteSelectedCustomerToolStripMenuItem.Text = "View Customer Appt Log";
             // 
             // Directory
             // 

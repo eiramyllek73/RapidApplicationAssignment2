@@ -33,7 +33,6 @@
             this.CurrentDateLabel = new System.Windows.Forms.Label();
             this.MainMenuGroupBox = new System.Windows.Forms.GroupBox();
             this.LogApptRadioButton = new System.Windows.Forms.RadioButton();
-            this.AddNewRadioButton = new System.Windows.Forms.RadioButton();
             this.ViewDirectoryRadioButton = new System.Windows.Forms.RadioButton();
             this.MainMenuToolTipLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
@@ -63,7 +62,6 @@
             this.MainMenuGroupBox.AccessibleName = "OptionsBox";
             this.MainMenuGroupBox.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.MainMenuGroupBox.Controls.Add(this.LogApptRadioButton);
-            this.MainMenuGroupBox.Controls.Add(this.AddNewRadioButton);
             this.MainMenuGroupBox.Controls.Add(this.ViewDirectoryRadioButton);
             this.MainMenuGroupBox.Controls.Add(this.MainMenuToolTipLabel);
             this.MainMenuGroupBox.Location = new System.Drawing.Point(247, 79);
@@ -84,21 +82,10 @@
             this.LogApptRadioButton.Text = "Log New Appointment for Customer";
             this.LogApptRadioButton.UseVisualStyleBackColor = true;
             // 
-            // AddNewRadioButton
-            // 
-            this.AddNewRadioButton.AutoSize = true;
-            this.AddNewRadioButton.Location = new System.Drawing.Point(9, 67);
-            this.AddNewRadioButton.Name = "AddNewRadioButton";
-            this.AddNewRadioButton.Size = new System.Drawing.Size(116, 17);
-            this.AddNewRadioButton.TabIndex = 2;
-            this.AddNewRadioButton.TabStop = true;
-            this.AddNewRadioButton.Text = "Add New Customer";
-            this.AddNewRadioButton.UseVisualStyleBackColor = true;
-            // 
             // ViewDirectoryRadioButton
             // 
             this.ViewDirectoryRadioButton.AutoSize = true;
-            this.ViewDirectoryRadioButton.Location = new System.Drawing.Point(9, 43);
+            this.ViewDirectoryRadioButton.Location = new System.Drawing.Point(9, 57);
             this.ViewDirectoryRadioButton.Name = "ViewDirectoryRadioButton";
             this.ViewDirectoryRadioButton.Size = new System.Drawing.Size(140, 17);
             this.ViewDirectoryRadioButton.TabIndex = 1;
@@ -187,7 +174,6 @@
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Welcome!";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Dashboard_FormClosed);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.MainMenuGroupBox.ResumeLayout(false);
             this.MainMenuGroupBox.PerformLayout();
@@ -201,7 +187,6 @@
         private System.Windows.Forms.Label CurrentDateLabel;
         private System.Windows.Forms.GroupBox MainMenuGroupBox;
         private System.Windows.Forms.RadioButton LogApptRadioButton;
-        private System.Windows.Forms.RadioButton AddNewRadioButton;
         private System.Windows.Forms.RadioButton ViewDirectoryRadioButton;
         private System.Windows.Forms.Label MainMenuToolTipLabel;
         private System.Windows.Forms.Button ExitButton;
