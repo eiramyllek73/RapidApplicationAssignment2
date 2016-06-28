@@ -12,9 +12,21 @@ namespace RapidApplicationAssignment
 {
     public partial class InvoiceForm : Form
     {
+        // PRIVATE VARIABLES
+        private RadioButton selectedRadioButton = null;
+
         public InvoiceForm()
         {
             InitializeComponent();
+        }
+
+        /**
+        * This method will set the current date and time as well as set all radio buttons to be unchecked when the dashboard loads.
+        */
+        private void InvoiceForm_Load(object sender, EventArgs e)
+        {
+            DateLabel.Text = DateTime.Now.ToLongDateString();
+            selectedRadioButton = null;
         }
 
         // Directs the user back to main dashboard upon Home Screen selection from main menu
@@ -52,5 +64,6 @@ namespace RapidApplicationAssignment
         {
 
         }
+
     }
 }
