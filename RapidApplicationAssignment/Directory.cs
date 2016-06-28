@@ -101,5 +101,12 @@ namespace RapidApplicationAssignment
             }
 
         }
+
+        private void createCustomerInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InvoiceForm invoice = new InvoiceForm();
+            this.Hide();
+            invoice.ShowDialog();
+        }
     }
 }

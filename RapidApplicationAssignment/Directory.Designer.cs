@@ -67,6 +67,7 @@
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.createCustomerInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -101,7 +102,8 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MainMenuToolStripMenuItem,
             this.editSelectionToolStripMenuItem,
-            this.deleteSelectedCustomerToolStripMenuItem});
+            this.deleteSelectedCustomerToolStripMenuItem,
+            this.createCustomerInvoiceToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1362, 24);
@@ -394,6 +396,13 @@
             this.dataGridViewImageColumn1.HeaderText = "Image";
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
+            // createCustomerInvoiceToolStripMenuItem
+            // 
+            this.createCustomerInvoiceToolStripMenuItem.Name = "createCustomerInvoiceToolStripMenuItem";
+            this.createCustomerInvoiceToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
+            this.createCustomerInvoiceToolStripMenuItem.Text = "Create Customer Invoice";
+            this.createCustomerInvoiceToolStripMenuItem.Click += new System.EventHandler(this.createCustomerInvoiceToolStripMenuItem_Click);
+            // 
             // Directory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -475,5 +484,6 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
         private System.Windows.Forms.ToolStripMenuItem editSelectionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteSelectedCustomerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem createCustomerInvoiceToolStripMenuItem;
     }
 }
