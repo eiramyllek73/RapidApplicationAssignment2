@@ -13,10 +13,31 @@ namespace RapidApplicationAssignment
     public partial class InvoiceForm : Form
     {
         // PRIVATE VARIABLES
-        private const int MAX_SERVICES_Integer = 3;  // Number of services to be saved to invoice    
-        private ServicesUsed[] listedServices = new ServicesUsed[MAX_SERVICES_Integer];  // List Array to save services inputted
+        private RadioButton selectedRadioButton = null;
+        private ComboBox selectedComboBox = null;
         private string selectedRadioButtonString = null;
+        private string selectedComboBoxString = null;
+        private const int MAX_SERVICES_Integer = 12;  // Number of services to be saved to invoice    
+        private ServicesUsed[] listedServices = new ServicesUsed[MAX_SERVICES_Integer];  // List Array to save services inputted
         private int serviceListInteger = 0;
+        private decimal subTotalDecimal;
+        private decimal salesTaxDecimal;
+        private decimal amountDueDecimal;
+
+        // CONSTANT VARIABLES
+        const decimal smlSpaDecimal = 50.00m;
+        const decimal medSpaDecimal = 60.00m;
+        const decimal lrgSpaDecimal = 75.00m;
+        const decimal xlrgSpaDecimal = 90.00m;
+        const decimal smlShampDecimal = 2.00m;
+        const decimal medShampDecimal = 3.00m;
+        const decimal lrgShampDecimal = 4.50m;
+        const decimal xlrgShampDecimal = 5.75m;
+        const decimal smlFleaDecimal = 10.00m;
+        const decimal medFleaDecimal = 12.00m;
+        const decimal lrgFleaDecimal = 15.00m;
+        const decimal xlrgFleaDecimal = 20.00m;
+        const decimal TAX_RATE_Decimal = .13m;
 
         private struct ServicesUsed
         {
@@ -36,6 +57,8 @@ namespace RapidApplicationAssignment
         private void InvoiceForm_Load(object sender, EventArgs e)
         {
             DateLabel.Text = DateTime.Now.ToLongDateString();
+            FullSpaRadioButton.Select();
+            SizeOptionComboBox.Focus();
             
         }
 
@@ -101,7 +124,7 @@ namespace RapidApplicationAssignment
             }
         }
 
-        // This 1-D Array will display the price of service based on combo box selection
+        // This 2-D Array will display the price of service based on combo box selection
         private void SizeOptionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             decimal[,] priceDecimal = {
@@ -118,57 +141,145 @@ namespace RapidApplicationAssignment
             {
                 // Find Price of service based on selected size category
                 columnInteger = SizeOptionComboBox.SelectedIndex;
+                rowInteger = SizeOptionComboBox.SelectedIndex;
+
                 if (columnInteger != -1)
                 {
-                    switch (selectedRadioButtonString)
-                    {
-                        case "FullSpaRadioButton":
-                            rowInteger = 0;
-                            listedServices[serviceListInteger].sizeString = "Small";
-                            rowInteger = 1;
-                            listedServices[serviceListInteger].sizeString = "Medium";
-                            rowInteger = 2;
-                            listedServices[serviceListInteger].sizeString = "Large";
-                            rowInteger = 3;
-                            listedServices[serviceListInteger].sizeString = "XLarge";
-                            break;
-
-                        /**case "MedicatedRadioButton":
-                            rowInteger = 4;
-                            listedServices[serviceListInteger].sizeString = "Small";
-                            rowInteger = 5;
-                            listedServices[serviceListInteger].sizeString = "Medium";
-                            rowInteger = 6;
-                            listedServices[serviceListInteger].sizeString = "Large";
-                            rowInteger = 7;
-                            listedServices[serviceListInteger].sizeString = "XLarge";
-                            break;
-
-                        case "FleaTrtRadioButton":
-                            rowInteger = 8;
-                            listedServices[serviceListInteger].sizeString = "Small";
-                            rowInteger = 9;
-                            listedServices[serviceListInteger].sizeString = "Medium";
-                            rowInteger = 10;
-                            listedServices[serviceListInteger].sizeString = "Large";
-                            rowInteger = 11;
-                            listedServices[serviceListInteger].sizeString = "XLarge";
-                            break; */
-                        default:
-                            rowInteger = 0;
-                            listedServices[serviceListInteger].sizeString = "Small";
-                            break;
-                    } // End of Switch Statement
-
                     // Retrieve the price of service for the selected customer size
                     servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
                     listedServices[serviceListInteger].serviceString = SizeOptionComboBox.Items[columnInteger].ToString();
-                    listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-
                     serviceListInteger++;
 
                     // Display the price
                     PriceTextBox.Text = servicesPriceDecimal.ToString("c");
+
+                    // Determine the price based on which Service radio button is checked + which size is selected.
+                    switch (selectedRadioButtonString)
+                    {
+                        case "FullSpaRadioButton":
+                            switch (selectedComboBoxString)
+                            {
+                                case "Small":
+                                    listedServices[serviceListInteger].sizeString = "Small";
+                                    listedServices[serviceListInteger].serviceString = "FullSpaRadioButton";
+                                    listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                    columnInteger = 0;
+                                    rowInteger = 0;
+                                    priceDecimal.Equals(smlSpaDecimal);
+                                    smlSpaDecimal.Equals(PriceTextBox.Text);
+                                    break;
+                                case "Medium":
+                                    listedServices[serviceListInteger].sizeString = "Medium";
+                                    listedServices[serviceListInteger].serviceString = "FullSpaRadioButton";
+                                    columnInteger = 0;
+                                    rowInteger = 1;
+                                    priceDecimal.Equals(medSpaDecimal);
+                                    medSpaDecimal.Equals(PriceTextBox.Text);
+                                    break;
+                                case "Large":
+                                    listedServices[serviceListInteger].sizeString = "Large";
+                                    listedServices[serviceListInteger].serviceString = "FullSpaRadioButton";
+                                    columnInteger = 0;
+                                    rowInteger = 2;
+                                    priceDecimal.Equals(lrgSpaDecimal);
+                                    lrgSpaDecimal.Equals(PriceTextBox.Text);
+                                    break;
+                                case "XLarge":
+                                    columnInteger = 0;
+                                    rowInteger = 3;
+                                    listedServices[serviceListInteger].sizeString = "XLarge";
+                                    listedServices[serviceListInteger].serviceString = "FullSpaRadioButton";
+                                    priceDecimal.Equals(xlrgSpaDecimal);
+                                    xlrgSpaDecimal.Equals(PriceTextBox.Text);
+                                    break;
+                            }
+                            break;
+
+                            case "MedicatedRadioButton":
+                                switch (selectedComboBoxString)
+                                {
+                                case "Small":
+                                    listedServices[serviceListInteger].sizeString = "Small";
+                                    listedServices[serviceListInteger].serviceString = "MedicatedRadioButton";
+                                    columnInteger = 1;
+                                    rowInteger = 0;
+                                    priceDecimal.Equals(smlShampDecimal);
+                                    smlShampDecimal.Equals(PriceTextBox.Text);
+                                    break;
+                                case "Medium":
+                                    listedServices[serviceListInteger].sizeString = "Medium";
+                                    listedServices[serviceListInteger].serviceString = "MedicatedRadioButton";
+                                    columnInteger = 1;
+                                    rowInteger = 1;
+                                    priceDecimal.Equals(medShampDecimal);
+                                    medShampDecimal.Equals(PriceTextBox.Text);
+                                    break;
+                                case "Large":
+                                    listedServices[serviceListInteger].sizeString = "Large";
+                                    listedServices[serviceListInteger].serviceString = "MedicatedRadioButton";
+                                    columnInteger = 1;
+                                    rowInteger = 2;
+                                    priceDecimal.Equals(lrgShampDecimal);
+                                    lrgShampDecimal.Equals(PriceTextBox.Text);
+                                    break;
+                                case "XLarge":
+                                    columnInteger = 1;
+                                    rowInteger = 3;
+                                    listedServices[serviceListInteger].sizeString = "XLarge";
+                                    listedServices[serviceListInteger].serviceString = "MedicatedRadioButton";
+                                    priceDecimal.Equals(xlrgShampDecimal);
+                                    xlrgShampDecimal.Equals(PriceTextBox.Text);
+                                    break;
+
+                                case "FleaTrtRadioButton":
+                                    switch (selectedComboBoxString)
+                                    {
+                                        case "Small":
+                                            listedServices[serviceListInteger].sizeString = "Small";
+                                            listedServices[serviceListInteger].serviceString = "FleaTrtRadioButton";
+                                            columnInteger = 2;
+                                            rowInteger = 0;
+                                            priceDecimal.Equals(smlFleaDecimal);
+                                            smlFleaDecimal.Equals(PriceTextBox.Text);
+                                            break;
+                                        case "Medium":
+                                            listedServices[serviceListInteger].sizeString = "Medium";
+                                            listedServices[serviceListInteger].serviceString = "FleaTrtRadioButton";
+                                            columnInteger = 2;
+                                            rowInteger = 1;
+                                            priceDecimal.Equals(medFleaDecimal);
+                                            medFleaDecimal.Equals(PriceTextBox.Text);
+                                            break;
+                                        case "Large":
+                                            listedServices[serviceListInteger].sizeString = "Large";
+                                            listedServices[serviceListInteger].serviceString = "FleaTrtRadioButton";
+                                            columnInteger = 2;
+                                            rowInteger = 2;
+                                            priceDecimal.Equals(lrgFleaDecimal);
+                                            lrgFleaDecimal.Equals(PriceTextBox.Text);
+                                            break;
+                                        case "XLarge":
+                                            columnInteger = 2;
+                                            rowInteger = 3;
+                                            listedServices[serviceListInteger].sizeString = "XLarge";
+                                            listedServices[serviceListInteger].serviceString = "FleaTrtRadioButton";
+                                            priceDecimal.Equals(xlrgFleaDecimal);
+                                            xlrgFleaDecimal.Equals(PriceTextBox.Text);
+                                            break;
+                                    }
+                                    break;
+                            }
+                            break;
+
+                        default:
+                            listedServices[serviceListInteger].sizeString = "Small";
+                            listedServices[serviceListInteger].serviceString = "FullSpaRadioButton";
+                            columnInteger = 0;
+                            rowInteger = 0;
+                            priceDecimal.Equals(smlSpaDecimal);
+                            smlSpaDecimal.Equals(PriceTextBox.Text);
+                            break;
+                    } // End of Switch Statement
                       
                 } 
                 else
@@ -186,7 +297,33 @@ namespace RapidApplicationAssignment
 
         private void AddToInvoiceButton_Click(object sender, EventArgs e)
         {
+            
 
+
+            try
+            {
+
+
+
+                //SubtotalTextBox.Text = smlSpaDecimal.ToString("c");
+
+            }
+            // Catch Exceptions
+            catch (Exception invoiceException)
+            {
+                MessageBox.Show("The following error occurred:  " +
+                    invoiceException.Message, "Application Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                FullSpaRadioButton.Select();
+                SizeOptionComboBox.Focus();
+            }
+        }
+        /**
+ * This method will take the radio button that was clicked, and assign the event to a new RadioButton.
+ */
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            selectedRadioButton = (RadioButton)sender;
         }
     }
 }
