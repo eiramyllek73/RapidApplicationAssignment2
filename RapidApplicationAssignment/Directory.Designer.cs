@@ -30,68 +30,43 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Directory));
-            this.furzaflynDataSet = new RapidApplicationAssignment.furzaflynDataSet();
-            this.customersBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.customersTableAdapter = new RapidApplicationAssignment.furzaflynDataSetTableAdapters.CustomersTableAdapter();
-            this.tableAdapterManager = new RapidApplicationAssignment.furzaflynDataSetTableAdapters.TableAdapterManager();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HomeScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutThisApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteSelectedCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createCustomerInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.furzaflynDataSet1 = new RapidApplicationAssignment.furzaflynDataSet1();
-            this.furzaflynDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.petCustomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.petCustomersTableAdapter = new RapidApplicationAssignment.furzaflynDataSet1TableAdapters.PetCustomersTableAdapter();
             this.tableAdapterManager1 = new RapidApplicationAssignment.furzaflynDataSet1TableAdapters.TableAdapterManager();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameOfPetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.breedTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sizeCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageAtFirstVisitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primaryPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importantNotesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.photoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).BeginInit();
+            this.furzaflynDataSet3 = new RapidApplicationAssignment.furzaflynDataSet3();
+            this.petCustomersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.petCustomersTableAdapter1 = new RapidApplicationAssignment.furzaflynDataSet3TableAdapters.PetCustomersTableAdapter();
+            this.tableAdapterManager = new RapidApplicationAssignment.furzaflynDataSet3TableAdapters.TableAdapterManager();
+            this.petCustomersDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomersDataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // furzaflynDataSet
-            // 
-            this.furzaflynDataSet.DataSetName = "furzaflynDataSet";
-            this.furzaflynDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // customersBindingSource
-            // 
-            this.customersBindingSource.DataMember = "Customers";
-            this.customersBindingSource.DataSource = this.furzaflynDataSet;
-            // 
-            // customersTableAdapter
-            // 
-            this.customersTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AppointmentLogTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CustomersTableAdapter = this.customersTableAdapter;
-            this.tableAdapterManager.UpdateOrder = RapidApplicationAssignment.furzaflynDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.MainMenuToolStripMenuItem,
-            this.editSelectionToolStripMenuItem,
+            this.AddCustomerToolStripMenuItem,
             this.deleteSelectedCustomerToolStripMenuItem,
             this.createCustomerInvoiceToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -147,11 +122,12 @@
             this.ExitAppToolStripMenuItem.Text = "Exit Application";
             this.ExitAppToolStripMenuItem.Click += new System.EventHandler(this.ExitAppToolStripMenuItem_Click);
             // 
-            // editSelectionToolStripMenuItem
+            // AddCustomerToolStripMenuItem
             // 
-            this.editSelectionToolStripMenuItem.Name = "editSelectionToolStripMenuItem";
-            this.editSelectionToolStripMenuItem.Size = new System.Drawing.Size(132, 20);
-            this.editSelectionToolStripMenuItem.Text = "Edit Customer Details";
+            this.AddCustomerToolStripMenuItem.Name = "AddCustomerToolStripMenuItem";
+            this.AddCustomerToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
+            this.AddCustomerToolStripMenuItem.Text = "Add new Customer ";
+            this.AddCustomerToolStripMenuItem.Click += new System.EventHandler(this.AddCustomerToolStripMenuItem_Click);
             // 
             // deleteSelectedCustomerToolStripMenuItem
             // 
@@ -166,41 +142,6 @@
             this.createCustomerInvoiceToolStripMenuItem.Text = "Create Customer Invoice";
             this.createCustomerInvoiceToolStripMenuItem.Click += new System.EventHandler(this.createCustomerInvoiceToolStripMenuItem_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameOfPetDataGridViewTextBoxColumn,
-            this.breedTypeDataGridViewTextBoxColumn,
-            this.sizeCategoryDataGridViewTextBoxColumn,
-            this.sexDataGridViewTextBoxColumn,
-            this.ageAtFirstVisitDataGridViewTextBoxColumn,
-            this.primaryPhoneDataGridViewTextBoxColumn,
-            this.importantNotesDataGridViewTextBoxColumn,
-            this.photoDataGridViewImageColumn});
-            this.dataGridView1.DataSource = this.petCustomersBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 46);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(941, 150);
-            this.dataGridView1.TabIndex = 2;
-            // 
-            // furzaflynDataSet1
-            // 
-            this.furzaflynDataSet1.DataSetName = "furzaflynDataSet1";
-            this.furzaflynDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // furzaflynDataSet1BindingSource
-            // 
-            this.furzaflynDataSet1BindingSource.DataSource = this.furzaflynDataSet1;
-            this.furzaflynDataSet1BindingSource.Position = 0;
-            // 
-            // petCustomersBindingSource
-            // 
-            this.petCustomersBindingSource.DataMember = "PetCustomers";
-            this.petCustomersBindingSource.DataSource = this.furzaflynDataSet1;
-            // 
             // petCustomersTableAdapter
             // 
             this.petCustomersTableAdapter.ClearBeforeFill = true;
@@ -213,67 +154,109 @@
             this.tableAdapterManager1.PetCustomersTableAdapter = this.petCustomersTableAdapter;
             this.tableAdapterManager1.UpdateOrder = RapidApplicationAssignment.furzaflynDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // idDataGridViewTextBoxColumn
+            // furzaflynDataSet3
             // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Pet ID";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.furzaflynDataSet3.DataSetName = "furzaflynDataSet3";
+            this.furzaflynDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // nameOfPetDataGridViewTextBoxColumn
+            // petCustomersBindingSource1
             // 
-            this.nameOfPetDataGridViewTextBoxColumn.DataPropertyName = "NameOfPet";
-            this.nameOfPetDataGridViewTextBoxColumn.HeaderText = "Name of Pet";
-            this.nameOfPetDataGridViewTextBoxColumn.Name = "nameOfPetDataGridViewTextBoxColumn";
+            this.petCustomersBindingSource1.DataMember = "PetCustomers";
+            this.petCustomersBindingSource1.DataSource = this.furzaflynDataSet3;
             // 
-            // breedTypeDataGridViewTextBoxColumn
+            // petCustomersTableAdapter1
             // 
-            this.breedTypeDataGridViewTextBoxColumn.DataPropertyName = "BreedType";
-            this.breedTypeDataGridViewTextBoxColumn.HeaderText = "Breed/Mix Type";
-            this.breedTypeDataGridViewTextBoxColumn.Name = "breedTypeDataGridViewTextBoxColumn";
+            this.petCustomersTableAdapter1.ClearBeforeFill = true;
             // 
-            // sizeCategoryDataGridViewTextBoxColumn
+            // tableAdapterManager
             // 
-            this.sizeCategoryDataGridViewTextBoxColumn.DataPropertyName = "SizeCategory";
-            this.sizeCategoryDataGridViewTextBoxColumn.HeaderText = "Size Category";
-            this.sizeCategoryDataGridViewTextBoxColumn.Name = "sizeCategoryDataGridViewTextBoxColumn";
+            this.tableAdapterManager.AppointmentsLogTableAdapter = null;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.CustomerContactsTableAdapter = null;
+            this.tableAdapterManager.PetCustomersTableAdapter = this.petCustomersTableAdapter1;
+            this.tableAdapterManager.UpdateOrder = RapidApplicationAssignment.furzaflynDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // sexDataGridViewTextBoxColumn
+            // petCustomersDataGridView
             // 
-            this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
-            this.sexDataGridViewTextBoxColumn.HeaderText = "Sex";
-            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
+            this.petCustomersDataGridView.AutoGenerateColumns = false;
+            this.petCustomersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.petCustomersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewImageColumn1});
+            this.petCustomersDataGridView.DataSource = this.petCustomersBindingSource1;
+            this.petCustomersDataGridView.Location = new System.Drawing.Point(12, 40);
+            this.petCustomersDataGridView.Name = "petCustomersDataGridView";
+            this.petCustomersDataGridView.Size = new System.Drawing.Size(939, 220);
+            this.petCustomersDataGridView.TabIndex = 1;
             // 
-            // ageAtFirstVisitDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn1
             // 
-            this.ageAtFirstVisitDataGridViewTextBoxColumn.DataPropertyName = "AgeAtFirstVisit";
-            this.ageAtFirstVisitDataGridViewTextBoxColumn.HeaderText = "Age at First Visit";
-            this.ageAtFirstVisitDataGridViewTextBoxColumn.Name = "ageAtFirstVisitDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "PetID";
+            this.dataGridViewTextBoxColumn1.HeaderText = "PetID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             // 
-            // primaryPhoneDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn2
             // 
-            this.primaryPhoneDataGridViewTextBoxColumn.DataPropertyName = "PrimaryPhone";
-            this.primaryPhoneDataGridViewTextBoxColumn.HeaderText = "Primary Phone #";
-            this.primaryPhoneDataGridViewTextBoxColumn.Name = "primaryPhoneDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NameOfPet";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NameOfPet";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
-            // importantNotesDataGridViewTextBoxColumn
+            // dataGridViewTextBoxColumn3
             // 
-            this.importantNotesDataGridViewTextBoxColumn.DataPropertyName = "ImportantNotes";
-            this.importantNotesDataGridViewTextBoxColumn.HeaderText = "Important Notes";
-            this.importantNotesDataGridViewTextBoxColumn.Name = "importantNotesDataGridViewTextBoxColumn";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "BreedType";
+            this.dataGridViewTextBoxColumn3.HeaderText = "BreedType";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // photoDataGridViewImageColumn
+            // dataGridViewTextBoxColumn4
             // 
-            this.photoDataGridViewImageColumn.DataPropertyName = "Photo";
-            this.photoDataGridViewImageColumn.HeaderText = "Photo";
-            this.photoDataGridViewImageColumn.Name = "photoDataGridViewImageColumn";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "SizeCategory";
+            this.dataGridViewTextBoxColumn4.HeaderText = "SizeCategory";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sex";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Sex";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "AgeAtFirstVisit";
+            this.dataGridViewTextBoxColumn6.HeaderText = "AgeAtFirstVisit";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "PrimaryPhone";
+            this.dataGridViewTextBoxColumn7.HeaderText = "PrimaryPhone";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "ImportantNotes";
+            this.dataGridViewTextBoxColumn8.HeaderText = "ImportantNotes";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "Photo";
+            this.dataGridViewImageColumn1.HeaderText = "Photo";
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // Directory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(963, 379);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(963, 386);
+            this.Controls.Add(this.petCustomersDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
@@ -282,25 +265,18 @@
             this.Text = "Customer Directory";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Directory_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customersBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomersDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private furzaflynDataSet furzaflynDataSet;
-        private System.Windows.Forms.BindingSource customersBindingSource;
-        private furzaflynDataSetTableAdapters.CustomersTableAdapter customersTableAdapter;
-        private furzaflynDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem MainMenuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem HomeScreenToolStripMenuItem;
@@ -319,23 +295,25 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.ToolStripMenuItem editSelectionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteSelectedCustomerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createCustomerInvoiceToolStripMenuItem;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource furzaflynDataSet1BindingSource;
-        private furzaflynDataSet1 furzaflynDataSet1;
         private System.Windows.Forms.BindingSource petCustomersBindingSource;
         private furzaflynDataSet1TableAdapters.PetCustomersTableAdapter petCustomersTableAdapter;
         private furzaflynDataSet1TableAdapters.TableAdapterManager tableAdapterManager1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameOfPetDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn breedTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sizeCategoryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ageAtFirstVisitDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn primaryPhoneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importantNotesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewImageColumn photoDataGridViewImageColumn;
+        private furzaflynDataSet3 furzaflynDataSet3;
+        private System.Windows.Forms.BindingSource petCustomersBindingSource1;
+        private furzaflynDataSet3TableAdapters.PetCustomersTableAdapter petCustomersTableAdapter1;
+        private furzaflynDataSet3TableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView petCustomersDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
     }
 }

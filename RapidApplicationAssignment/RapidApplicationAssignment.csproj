@@ -114,6 +114,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>furzaflynDataSet11.xsd</DependentUpon>
     </Compile>
+    <Compile Include="furzaflynDataSet21.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>furzaflynDataSet21.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="furzaflynDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>furzaflynDataSet31.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +196,28 @@
     </None>
     <None Include="furzaflynDataSet11.xss">
       <DependentUpon>furzaflynDataSet11.xsd</DependentUpon>
+    </None>
+    <None Include="furzaflynDataSet21.xsc">
+      <DependentUpon>furzaflynDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="furzaflynDataSet21.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>furzaflynDataSet21.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="furzaflynDataSet21.xss">
+      <DependentUpon>furzaflynDataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="furzaflynDataSet31.xsc">
+      <DependentUpon>furzaflynDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="furzaflynDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>furzaflynDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="furzaflynDataSet31.xss">
+      <DependentUpon>furzaflynDataSet31.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

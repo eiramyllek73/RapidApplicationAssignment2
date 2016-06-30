@@ -48,7 +48,9 @@ namespace RapidApplicationAssignment
 
         private void AboutThisApplicationToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+            About about = new About();
+            this.Hide();
+            about.ShowDialog();
         }
 
         private void ExitAppToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -66,19 +68,16 @@ namespace RapidApplicationAssignment
             }
         }
 
-        private void customersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.customersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.furzaflynDataSet);
-
-        }
 
         /**
         * This method will load the initial values into each text box.
         */
         private void AddCustomerForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'furzaflynDataSet3.CustomerContacts' table. You can move, or remove it, as needed.
+            this.customerContactsTableAdapter.Fill(this.furzaflynDataSet3.CustomerContacts);
+            // TODO: This line of code loads data into the 'furzaflynDataSet3.PetCustomers' table. You can move, or remove it, as needed.
+            this.petCustomersTableAdapter.Fill(this.furzaflynDataSet3.PetCustomers);
             // Set the defaults that the form will begin with when it is initialized
             nameOfPetTextBox.Select();
             nameOfPetTextBox.Focus();
@@ -94,33 +93,7 @@ namespace RapidApplicationAssignment
         {
             try
             {
-                // Add all input to the text boxes
-               // NameOfPet pet = new NameOfPet();
-                nameOfPetTextBox.Text = NameOfPet.ToString();
-                breedTypeTextBox.Text = BreedType.ToString();
-                sizeCategoryTextBox.Text = SizeCategory.ToString();
-                ageAtFirstApptTextBox.Text = AgeAtFirstAppt.ToString();
-                primaryContactFirstNameTextBox.Text = PrimaryContactFirstName.ToString();
-                primaryContactLastNameTextBox.Text = PrimaryContactLastName.ToString();
-                primaryContactPhoneTextBox.Text = PrimaryContactPhone.ToString();
-                emailTextBox.Text = Email.ToString();
-                secondaryContactInfoTextBox.Text = SecondaryContactInfo.ToString();
-                vetInfoTextBox.Text = VetInfo.ToString();
-         
-                customersTableAdapter.Insert
-                    (CustomerID,
-                    NameOfPet,
-                    BreedType,
-                    SizeCategory,
-                    AgeAtFirstAppt,
-                    PrimaryContactFirstName,
-                    PrimaryContactLastName,
-                    PrimaryContactPhone, 
-                    Email,
-                    SecondaryContactInfo,
-                    VetInfo,
-                    ImportantNotes,
-                    Photo);
+
             }
             catch (Exception ex)
             {
@@ -128,13 +101,13 @@ namespace RapidApplicationAssignment
                     + ex.Message, "Exception Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            RefreshDataset();
+            //RefreshDataset();
         }
 
-        private void RefreshDataset()
-        {
-            this.customersTableAdapter.Fill(this.furzaflynDataSet.Customers);
-        }
+       // private void RefreshDataset()
+       // {
+       //     this.customersTableAdapter.Fill(this.furzaflynDataSet.Customers);
+       // }
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
@@ -147,7 +120,7 @@ namespace RapidApplicationAssignment
             {
                 nameOfPetTextBox.Clear();
                 breedTypeTextBox.Clear();
-                sizeCategoryTextBox.Clear();
+                
                 ageAtFirstApptTextBox.Clear();
                 primaryContactFirstNameTextBox.Clear();
                 primaryContactLastNameTextBox.Clear();
@@ -168,16 +141,27 @@ namespace RapidApplicationAssignment
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
 
             // If user clicks yes, close application - if no, remain on current form
-            if (returnDialogueResult == DialogResult.No)
-            {
-                
-            }
-            else
+            if (returnDialogueResult == DialogResult.Yes)
             {
                 // Exit the application
                 Application.Exit();
             }
               
+        }
+
+        private void ExitAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult returnDialogueResult;
+
+            returnDialogueResult = MessageBox.Show("Are you sure you want to quit this application?", "Confirmation Required:",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            // If user clicks yes, close application - if no, remain on current form
+            if (returnDialogueResult == DialogResult.Yes)
+            {
+                // Exit the application
+                Application.Exit();
+            }
         }
     }
 }

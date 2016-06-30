@@ -20,25 +20,18 @@ namespace RapidApplicationAssignment
     {
         //   PRIVATE VARIABLES
         private ToolStripMenuItem selectedToolStripMenuItem = null;
-        private ToolStripButton addNew = null;
 
         public Directory()
         {
             InitializeComponent();
         }
 
-        private void customersBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.customersBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.furzaflynDataSet);
 
-        }
 
         private void Directory_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'furzaflynDataSet1.PetCustomers' table. You can move, or remove it, as needed.
-            this.petCustomersTableAdapter.Fill(this.furzaflynDataSet1.PetCustomers);
+            // TODO: This line of code loads data into the 'furzaflynDataSet3.PetCustomers' table. You can move, or remove it, as needed.
+            this.petCustomersTableAdapter1.Fill(this.furzaflynDataSet3.PetCustomers);
 
         }
 
@@ -86,6 +79,13 @@ namespace RapidApplicationAssignment
             InvoiceForm invoice = new InvoiceForm();
             this.Hide();
             invoice.ShowDialog();
+        }
+
+        private void AddCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddCustomerForm addCustomer = new AddCustomerForm();
+            this.Hide();
+            addCustomer.ShowDialog();
         }
     }
 }
