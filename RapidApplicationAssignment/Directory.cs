@@ -37,8 +37,8 @@ namespace RapidApplicationAssignment
 
         private void Directory_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'furzaflynDataSet.Customers' table. You can move, or remove it, as needed.
-            this.customersTableAdapter.Fill(this.furzaflynDataSet.Customers);
+            // TODO: This line of code loads data into the 'furzaflynDataSet1.PetCustomers' table. You can move, or remove it, as needed.
+            this.petCustomersTableAdapter.Fill(this.furzaflynDataSet1.PetCustomers);
 
         }
 
@@ -79,28 +79,7 @@ namespace RapidApplicationAssignment
             }
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
-        {
-            
-            addNew = (ToolStripButton)sender;
 
-            AddCustomerForm addCust = new AddCustomerForm();
-            this.Hide();
-            addCust.ShowDialog();
-        }
-
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                this.customersTableAdapter.Fill(this.furzaflynDataSet.Customers);
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-
-        }
 
         private void createCustomerInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
         {
