@@ -21,6 +21,8 @@ namespace RapidApplicationAssignment
         //   PRIVATE VARIABLES
         private ToolStripMenuItem selectedToolStripMenuItem = null;
 
+        public static string GetCurrentDirectory { get; internal set; }
+
         public Directory()
         {
             InitializeComponent();

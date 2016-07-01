@@ -59,6 +59,9 @@
             this.AddToInvoiceButton = new System.Windows.Forms.Button();
             this.ResetButton = new System.Windows.Forms.Button();
             this.DateLabel = new System.Windows.Forms.Label();
+            this.SaveInvoiceButton = new System.Windows.Forms.Button();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.InvoiceInfoGroupBox.SuspendLayout();
             this.AmountDueGroupBox.SuspendLayout();
@@ -102,7 +105,6 @@
             this.HomeScreenToolStripMenuItem.Name = "HomeScreenToolStripMenuItem";
             this.HomeScreenToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.HomeScreenToolStripMenuItem.Text = "Go to Home Screen";
-            this.HomeScreenToolStripMenuItem.Click += new System.EventHandler(this.HomeScreenToolStripMenuItem_Click);
             // 
             // AboutThisApplicationToolStripMenuItem
             // 
@@ -122,18 +124,17 @@
             this.ExitAppToolStripMenuItem.Name = "ExitAppToolStripMenuItem";
             this.ExitAppToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.ExitAppToolStripMenuItem.Text = "Exit Application";
-            this.ExitAppToolStripMenuItem.Click += new System.EventHandler(this.ExitAppToolStripMenuItem_Click);
             // 
             // PrintInvoiceButton
             // 
             this.PrintInvoiceButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.PrintInvoiceButton.Location = new System.Drawing.Point(527, 393);
+            this.PrintInvoiceButton.Location = new System.Drawing.Point(487, 393);
             this.PrintInvoiceButton.Name = "PrintInvoiceButton";
             this.PrintInvoiceButton.Size = new System.Drawing.Size(94, 30);
             this.PrintInvoiceButton.TabIndex = 8;
             this.PrintInvoiceButton.Text = "Print Invoice";
             this.PrintInvoiceButton.UseVisualStyleBackColor = false;
-            this.PrintInvoiceButton.Click += new System.EventHandler(this.PrintInvoiceButton_Click);
+            this.PrintInvoiceButton.Click += new System.EventHandler(this.PrintInvoiceButton_Click_1);
             // 
             // printDocument1
             // 
@@ -248,7 +249,8 @@
             this.ServicesInfoGroupBox.Size = new System.Drawing.Size(560, 157);
             this.ServicesInfoGroupBox.TabIndex = 0;
             this.ServicesInfoGroupBox.TabStop = false;
-            this.ServicesInfoGroupBox.Text = "Please select a service, then select a size. for your customer.  ";
+            this.ServicesInfoGroupBox.Text = "Please select a service and then the customer\'s size in order to determine price " +
+    "before adding to invoice.  ";
             // 
             // SizeCategoryGroupBox
             // 
@@ -324,6 +326,7 @@
             this.MedicatedRadioButton.TabStop = true;
             this.MedicatedRadioButton.Text = "Medicated Shampoo";
             this.MedicatedRadioButton.UseVisualStyleBackColor = true;
+            this.MedicatedRadioButton.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // FullSpaRadioButton
             // 
@@ -335,6 +338,7 @@
             this.FullSpaRadioButton.TabStop = true;
             this.FullSpaRadioButton.Text = "Full Spa Package";
             this.FullSpaRadioButton.UseVisualStyleBackColor = true;
+            this.FullSpaRadioButton.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // FleaTrtRadioButton
             // 
@@ -346,6 +350,7 @@
             this.FleaTrtRadioButton.TabStop = true;
             this.FleaTrtRadioButton.Text = "Flea Treatment";
             this.FleaTrtRadioButton.UseVisualStyleBackColor = true;
+            this.FleaTrtRadioButton.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // AddToInvoiceButton
             // 
@@ -355,7 +360,7 @@
             this.AddToInvoiceButton.Name = "AddToInvoiceButton";
             this.AddToInvoiceButton.Size = new System.Drawing.Size(109, 38);
             this.AddToInvoiceButton.TabIndex = 7;
-            this.AddToInvoiceButton.Text = "Add to Total";
+            this.AddToInvoiceButton.Text = "Add to Invoice";
             this.AddToInvoiceButton.UseVisualStyleBackColor = false;
             this.AddToInvoiceButton.Click += new System.EventHandler(this.AddToInvoiceButton_Click);
             // 
@@ -381,11 +386,33 @@
             this.DateLabel.TabIndex = 0;
             this.DateLabel.Text = "(Date)";
             // 
+            // SaveInvoiceButton
+            // 
+            this.SaveInvoiceButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.SaveInvoiceButton.Location = new System.Drawing.Point(342, 393);
+            this.SaveInvoiceButton.Name = "SaveInvoiceButton";
+            this.SaveInvoiceButton.Size = new System.Drawing.Size(90, 30);
+            this.SaveInvoiceButton.TabIndex = 9;
+            this.SaveInvoiceButton.Text = "Save to File";
+            this.SaveInvoiceButton.UseVisualStyleBackColor = false;
+            this.SaveInvoiceButton.Click += new System.EventHandler(this.SaveInvoiceButton_Click);
+            // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
             // InvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(640, 428);
+            this.Controls.Add(this.SaveInvoiceButton);
             this.Controls.Add(this.DateLabel);
             this.Controls.Add(this.InvoiceInfoGroupBox);
             this.Controls.Add(this.PetNameLabel);
@@ -446,5 +473,8 @@
         private System.Windows.Forms.GroupBox ServicesGroupBox;
         private System.Windows.Forms.Label DateLabel;
         private System.Windows.Forms.GroupBox SizeCategoryGroupBox;
+        private System.Windows.Forms.Button SaveInvoiceButton;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
