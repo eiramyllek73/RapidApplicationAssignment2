@@ -2,6 +2,9 @@
  * Due Date: June 23, 2016
  * Purpose: This application will manage customers and their appointment information
  * Purpose of this form:  This form displays the Customer data from the customers table in the local db, with enabled CRUD functionality
+ * 
+ * RESOURCES USED FOR REFERENCE:  
+ * https://www.youtube.com/watch?v=KfQmQD52EPQ
  */
 
 using System;

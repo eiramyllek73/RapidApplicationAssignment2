@@ -1,4 +1,15 @@
-﻿using System;
+﻿/* Programmer: Kelly McAlpine (200269425)
+ * Due Date: June 23, 2016
+ * Purpose: This application will manage customers and their appointment information
+ * Purpose of this form:  This form creates an invoice that subtotals inputted service prices, calculates the current HST tax rate, then outputs a final total.  
+ * This form will also save the invoice to a time-stamped text file as well as print the details.
+ * 
+ * RESOURCES USED FOR REFERENCE:  
+ * Lesson 6 CoffeeSales - Anju Chawla (Sept 2014), Lesson 8 BulkCoffeeSales - Anju Chawla (Nov 2014), VBAutoCentre Assignment - Kelly McAlpine (Oct 2014)
+ * https://msdn.microsoft.com/en-us/library/system.console.readline(v=vs.110).aspx
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,28 +24,35 @@ namespace RapidApplicationAssignment
 {
     public partial class InvoiceForm : Form
     {
-        // PRIVATE VARIABLES
+        // ***PRIVATE VARIABLES*** //
+        private ToolStripMenuItem selectedToolStripMenuItem;
         private RadioButton selectedRadioButton = null;
         private string selectedRadioButtonString = null;
         private string selectedComboBoxString = null;
-        private const int MAX_SERVICES_Integer = 12;  // Number of services to be saved to invoice    
-        private ServicesUsed[] listedServices = new ServicesUsed[MAX_SERVICES_Integer];  // List Array to save services inputted
+        // Number of services to be saved to invoice
+        private const int MAX_SERVICES_Integer = 12;
+        // List Array to save services inputted
+        private ServicesUsed[] listedServices = new ServicesUsed[MAX_SERVICES_Integer];  
         private int serviceListInteger = 0;
         private decimal priceTotalDecimal = 0;
         private decimal servicesPriceDecimal;
-        private decimal[,] priceDecimal = {
-                                        {50.00m, 60.00m, 75.00m, 90.00m},
-                                        {2.00m, 3.00m, 4.50m, 5.75m},
-                                        {10.00m, 12.00m, 15.00m, 20.00m }
-                                      };
         private decimal subTotalDecimal;
         private int rowInteger, columnInteger = -1;
+        // For printing
         private StreamWriter custInvoiceStreamWriter;
-        private DateTime now = DateTime.Now; // Current System Time and Date
+        // Current System Time and Date
+        private DateTime now = DateTime.Now; 
         private decimal totalTaxDecimal;
         private decimal totalAmountDecimal;
+        // 2D Array to store prices
+        private decimal[,] priceDecimal =
+        {
+            {50.00m, 60.00m, 75.00m, 90.00m},
+            {2.00m, 3.00m, 4.50m, 5.75m},
+            {10.00m, 12.00m, 15.00m, 20.00m}
+        };
 
-        // CONSTANT VARIABLES
+        // ***CONSTANT VARIABLES*** //
         const decimal smlSpaDecimal = 50.00m;
         const decimal medSpaDecimal = 60.00m;
         const decimal lrgSpaDecimal = 75.00m;
@@ -49,16 +67,17 @@ namespace RapidApplicationAssignment
         const decimal xlrgFleaDecimal = 20.00m;
         const decimal TAX_RATE_Decimal = .13m;
 
+        public InvoiceForm()
+        {
+            InitializeComponent();
+        }
+
+        // Useful for holding direct values instead of referencing objects
         private struct ServicesUsed
         {
             public string sizeString;
             public string serviceString;
             public decimal priceDecimal;
-        }
-
-        public InvoiceForm()
-        {
-            InitializeComponent();
         }
 
         /**
@@ -69,14 +88,16 @@ namespace RapidApplicationAssignment
             DateLabel.Text = DateTime.Now.ToLongDateString();
             FullSpaRadioButton.Select();
             SizeOptionComboBox.Focus();
-
         }
 
-        // Click action for Reset button - clears the form
+        /**
+        * This Click action method will the form when the reset button is clicked
+        */
         private void ResetButton_Click(object sender, EventArgs e)
         {
-            // Confirmation message for user before clearing inputs/outputs
-            DialogResult responseDialogResult = MessageBox.Show("Are you sure you want to clear the contents of this invoice?", "Confirmation Required:  ", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            // Confirmation message will display for user first before clearing all fields
+            DialogResult responseDialogResult = MessageBox.Show("Are you sure you want to clear the contents of this invoice?",
+                "Confirmation Required:  ", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
 
             if (responseDialogResult == System.Windows.Forms.DialogResult.Yes)
             {
@@ -98,7 +119,163 @@ namespace RapidApplicationAssignment
             }
         }
 
-        // This 2-D Array will display the price of service based on combo box selection
+        /**
+        * This method will take the radio button that was clicked, and assign the event to a new RadioButton.  
+        * It also supports the ability to display a price (price values stored in 2D array) based on radio button selection (service) + combo box selection (animal size)
+        */
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            selectedRadioButton = (RadioButton)sender;
+            selectedRadioButtonString = selectedRadioButton.Name;
+
+            // Error testing for purpose of writing variables to console
+            Console.Write(selectedComboBoxString + "\n");
+            Console.Write(selectedRadioButtonString + "\n");
+
+            if (columnInteger == -1)
+            {
+                selectedComboBoxString = "";
+            }
+            else
+            {
+                selectedComboBoxString = SizeOptionComboBox.Items[columnInteger].ToString();
+            }
+            if (columnInteger != -1)
+            {
+                // Determine the price based on which Service radio button is checked + which size is selected.
+                switch (selectedRadioButtonString)
+                {
+                    case "FullSpaRadioButton":
+                        switch (selectedComboBoxString)
+                        {
+                            case "Small":
+                                listedServices[serviceListInteger].sizeString = "Small";
+                                listedServices[serviceListInteger].serviceString = "Full Spa Package";
+                                columnInteger = 0;
+                                rowInteger = 0;
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                            case "Medium":
+                                listedServices[serviceListInteger].sizeString = "Medium";
+                                listedServices[serviceListInteger].serviceString = "Full Spa Package";
+                                columnInteger = 1;
+                                rowInteger = 0;
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                            case "Large":
+                                listedServices[serviceListInteger].sizeString = "Large";
+                                listedServices[serviceListInteger].serviceString = "Full Spa Package";
+                                columnInteger = 2;
+                                rowInteger = 0;
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                            case "XLarge":
+                                columnInteger = 3;
+                                rowInteger = 0;
+                                listedServices[serviceListInteger].sizeString = "XLarge";
+                                listedServices[serviceListInteger].serviceString = "Full Spa Package";
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                        }
+                        break;
+
+                    case "MedicatedRadioButton":
+                        switch (selectedComboBoxString)
+                        {
+                            case "Small":
+                                listedServices[serviceListInteger].sizeString = "Small";
+                                listedServices[serviceListInteger].serviceString = "Medicated Shampoo";
+                                columnInteger = 0;
+                                rowInteger = 1;
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                            case "Medium":
+                                listedServices[serviceListInteger].sizeString = "Medium";
+                                listedServices[serviceListInteger].serviceString = "Medicated Shampoo";
+                                columnInteger = 1;
+                                rowInteger = 1;
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                            case "Large":
+                                listedServices[serviceListInteger].sizeString = "Large";
+                                listedServices[serviceListInteger].serviceString = "Medicated Shampoo";
+                                columnInteger = 2;
+                                rowInteger = 1;
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                            case "XLarge":
+                                columnInteger = 3;
+                                rowInteger = 1;
+                                listedServices[serviceListInteger].sizeString = "XLarge";
+                                listedServices[serviceListInteger].serviceString = "Medicated Shampoo";
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                        }
+                        break;
+
+                    case "FleaTrtRadioButton":
+                        switch (selectedComboBoxString)
+                        {
+                            case "Small":
+                                listedServices[serviceListInteger].sizeString = "Small";
+                                listedServices[serviceListInteger].serviceString = "Flea Treatment   ";
+                                columnInteger = 0;
+                                rowInteger = 2;
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                            case "Medium":
+                                listedServices[serviceListInteger].sizeString = "Medium";
+                                listedServices[serviceListInteger].serviceString = "Flea Treatment   ";
+                                columnInteger = 1;
+                                rowInteger = 2;
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                            case "Large":
+                                listedServices[serviceListInteger].sizeString = "Large";
+                                listedServices[serviceListInteger].serviceString = "Flea Treatment   ";
+                                columnInteger = 2;
+                                rowInteger = 2;
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                            case "XLarge":
+                                columnInteger = 3;
+                                rowInteger = 2;
+                                listedServices[serviceListInteger].sizeString = "XLarge";
+                                listedServices[serviceListInteger].serviceString = "Flea Treatment   ";
+                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
+                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
+                                break;
+                        }
+                        break;
+
+                    default:
+                        listedServices[serviceListInteger].sizeString = "Small";
+                        listedServices[serviceListInteger].serviceString = "FullSpaRadioButton";
+                        columnInteger = 0;
+                        rowInteger = 0;
+                        break;
+                } // End of Switch Statement
+
+                // Display the price in the Price text box
+                PriceTextBox.Text = servicesPriceDecimal.ToString("c");
+            }
+        }
+
+        /**
+        * This method will display a price (price values stored in 2D array) based on combo box selection (animal size) after a radio button (service) is checked
+        */
         private void SizeOptionComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Find Price of service based on selected size category
@@ -117,8 +294,6 @@ namespace RapidApplicationAssignment
             Console.Write(selectedRadioButtonString + "\n");
             if (columnInteger != -1)
             {
-
-
                 // Determine the price based on which Service radio button is checked + which size is selected.
                 switch (selectedRadioButtonString)
                 {
@@ -245,19 +420,20 @@ namespace RapidApplicationAssignment
                         break;
                 } // End of Switch Statement
 
-
-
                 // Display the price
                 PriceTextBox.Text = servicesPriceDecimal.ToString("c");
             }
-
         }
 
+        /**
+         * This method enables the user to calculate a running total of each/every selection made while also incorporating the HST tax rate
+         */
         private void AddToInvoiceButton_Click(object sender, EventArgs e)
         {
             // LOCAL VARIABLES
             decimal salesTaxDecimal;
             decimal amountDueDecimal;
+
             // Allow maximum number of services entered into form
             if ((PriceTextBox.Text).Equals("$0.00"))
             {
@@ -289,7 +465,6 @@ namespace RapidApplicationAssignment
                         }
 
                         // Calculations
-                        //subTotalDecimal = priceTotalDecimal++;
                         salesTaxDecimal = subTotalDecimal * TAX_RATE_Decimal;
                         amountDueDecimal = subTotalDecimal + salesTaxDecimal;
 
@@ -320,14 +495,12 @@ namespace RapidApplicationAssignment
             }
         }
 
-        private void printInvoiceButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        /**
+         * This method creates a formatted layout for the document to be printed, as well as displays a print-preview
+         */
         private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            //setting up the print page for preview and print
+            // Setting up the print page for preview and print
             Font printFont = new Font("Arial", 12);
             Font headingFont = new Font("Arial Black", 14, FontStyle.Bold);
             float lineHeightFloat = printFont.GetHeight();
@@ -337,14 +510,16 @@ namespace RapidApplicationAssignment
             float verticalPrintLocationFloat = e.MarginBounds.Top;
             SizeF fontSizeF = new SizeF();
             string formattedPriceString;
-            //if there are any transactions to be printed
+
+            // Check if there are any transactions to be printed
             if (serviceListInteger > 0)
             {
-                //print the heading
+                // Print the heading
                 e.Graphics.DrawString("Customer Invoice - " + String.Format("{0:yyyy/MM/dd hh:mm:ss tt}", now), headingFont, Brushes.Black,
                     col1HorizontalPrintLocationFloat, verticalPrintLocationFloat);
                 verticalPrintLocationFloat += lineHeightFloat * 2;
-                //headings to columns
+
+                // Format headings to the columns
                 e.Graphics.DrawString("Service", headingFont, Brushes.Black,
                    col1HorizontalPrintLocationFloat, verticalPrintLocationFloat);
                 e.Graphics.DrawString("Size", headingFont, Brushes.Black,
@@ -354,28 +529,26 @@ namespace RapidApplicationAssignment
 
                 verticalPrintLocationFloat += lineHeightFloat * 2;
 
-                //print the transactions
+                // Print the transactions
                 for (int index = 0; index < serviceListInteger; index++)
                 {
-                    //print the service
+                    // Print the service
                     e.Graphics.DrawString(listedServices[index].serviceString, printFont,
                         Brushes.Black, col1HorizontalPrintLocationFloat, verticalPrintLocationFloat);
-                    //print the size
+                    // Print the size
                     e.Graphics.DrawString(listedServices[index].sizeString, printFont,
                        Brushes.Black, col2HorizontalPrintLocationFloat, verticalPrintLocationFloat);
-                    //format and right align the price
+                    // Format the price to display as currency and aligned to the right
                     formattedPriceString = listedServices[index].priceDecimal.ToString("c");
-                    //measure string in this fone
+                    // Measure string in this font
                     fontSizeF = e.Graphics.MeasureString(formattedPriceString, printFont);
-                    //subtract width from column position
+                    // Subtract width from column position
                     col3HorizontalPrintLocationFloat = 550 - fontSizeF.Width;
-                    //print the price
+                    // Print the price totals
                     e.Graphics.DrawString(formattedPriceString, printFont,
                       Brushes.Black, col3HorizontalPrintLocationFloat, verticalPrintLocationFloat);
-
-                    //go to next printing position
+                    // Move to the next printing position
                     verticalPrintLocationFloat += lineHeightFloat;
-
 
                 }
                 verticalPrintLocationFloat += lineHeightFloat;
@@ -389,11 +562,11 @@ namespace RapidApplicationAssignment
                         Brushes.Black, col1HorizontalPrintLocationFloat, verticalPrintLocationFloat);
             }
 
-
-
-
         }
 
+        /**
+         * This method will save the invoice to a text file that is timestamped for unique ID purposes
+         */ 
         private void SaveInvoiceButton_Click(object sender, EventArgs e)
         {
             // Show a save dialog box and save the customers invoice
@@ -426,8 +599,10 @@ namespace RapidApplicationAssignment
                     // Copy the customer invoice to the file
                     for (int index = 0; index < serviceListInteger; index++)
                     {
-                        Console.WriteLine(listedServices[index].serviceString + "\t\t" + listedServices[index].sizeString + "\t\t" + listedServices[index].priceDecimal.ToString("c"));
-                        custInvoiceStreamWriter.WriteLine(listedServices[index].serviceString + "\t\t" + listedServices[index].sizeString + "\t\t" + listedServices[index].priceDecimal.ToString("c"));
+                        Console.WriteLine(listedServices[index].serviceString + "\t\t" + listedServices[index].sizeString + "\t\t" 
+                            + listedServices[index].priceDecimal.ToString("c"));
+                        custInvoiceStreamWriter.WriteLine(listedServices[index].serviceString + "\t\t" 
+                            + listedServices[index].sizeString + "\t\t" + listedServices[index].priceDecimal.ToString("c"));
                     }
                     Console.WriteLine("Subtotal:\t\t\t\t\t\t" + subTotalDecimal.ToString("c"));
                     custInvoiceStreamWriter.WriteLine("");
@@ -443,6 +618,43 @@ namespace RapidApplicationAssignment
             }
         }
 
+        private void HomeScreenToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dashboard dashboard = new Dashboard();
+            this.Hide();
+            dashboard.ShowDialog();
+        }
+
+        private void AboutThisApplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            this.Hide();
+            about.ShowDialog();
+        }
+
+        private void ExitAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DialogResult returnDialogueResult;
+
+            returnDialogueResult = MessageBox.Show("Are you sure you want to quit this application?", "Confirmation Required:",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
+
+            // If user clicks yes, close application - if no, remain on current form
+            if (returnDialogueResult == DialogResult.Yes)
+            {
+                // Exit the application
+                Application.Exit();
+            }
+        }
+
+        private void MainMenuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            selectedToolStripMenuItem = (ToolStripMenuItem)sender;
+        }
+
+        /**
+         * This method will display a previewed document then print it when user presses the print button
+         */
         private void PrintInvoiceButton_Click_1(object sender, EventArgs e)
         {
             //preview the transaction report and print if required
@@ -457,165 +669,8 @@ namespace RapidApplicationAssignment
             }
         }
 
-        /**
-         * This method will take the radio button that was clicked, and assign the event to a new RadioButton.
-        */
-        private void radioButton_CheckedChanged(object sender, EventArgs e)
-        {
-            selectedRadioButton = (RadioButton)sender;
-            selectedRadioButtonString = selectedRadioButton.Name;
 
-            Console.Write(selectedComboBoxString + "\n");
-            Console.Write(selectedRadioButtonString + "\n");
-
-            if (columnInteger == -1)
-            {
-                selectedComboBoxString = "";
-            }
-            else
-            {
-                selectedComboBoxString = SizeOptionComboBox.Items[columnInteger].ToString();
-            }
-            if (columnInteger != -1)
-            {
-
-                // Determine the price based on which Service radio button is checked + which size is selected.
-                switch (selectedRadioButtonString)
-                {
-                    case "FullSpaRadioButton":
-                        switch (selectedComboBoxString)
-                        {
-                            case "Small":
-                                listedServices[serviceListInteger].sizeString = "Small";
-                                listedServices[serviceListInteger].serviceString = "Full Spa Package";
-                                columnInteger = 0;
-                                rowInteger = 0;
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                            case "Medium":
-                                listedServices[serviceListInteger].sizeString = "Medium";
-                                listedServices[serviceListInteger].serviceString = "Full Spa Package";
-                                columnInteger = 1;
-                                rowInteger = 0;
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                            case "Large":
-                                listedServices[serviceListInteger].sizeString = "Large";
-                                listedServices[serviceListInteger].serviceString = "Full Spa Package";
-                                columnInteger = 2;
-                                rowInteger = 0;
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                            case "XLarge":
-                                columnInteger = 3;
-                                rowInteger = 0;
-                                listedServices[serviceListInteger].sizeString = "XLarge";
-                                listedServices[serviceListInteger].serviceString = "Full Spa Package";
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                        }
-                        break;
-
-                    case "MedicatedRadioButton":
-                        switch (selectedComboBoxString)
-                        {
-                            case "Small":
-                                listedServices[serviceListInteger].sizeString = "Small";
-                                listedServices[serviceListInteger].serviceString = "Medicated Shampoo";
-                                columnInteger = 0;
-                                rowInteger = 1;
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                            case "Medium":
-                                listedServices[serviceListInteger].sizeString = "Medium";
-                                listedServices[serviceListInteger].serviceString = "Medicated Shampoo";
-                                columnInteger = 1;
-                                rowInteger = 1;
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                            case "Large":
-                                listedServices[serviceListInteger].sizeString = "Large";
-                                listedServices[serviceListInteger].serviceString = "Medicated Shampoo";
-                                columnInteger = 2;
-                                rowInteger = 1;
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                            case "XLarge":
-                                columnInteger = 3;
-                                rowInteger = 1;
-                                listedServices[serviceListInteger].sizeString = "XLarge";
-                                listedServices[serviceListInteger].serviceString = "Medicated Shampoo";
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                        }
-                        break;
-
-                    case "FleaTrtRadioButton":
-                        switch (selectedComboBoxString)
-                        {
-                            case "Small":
-                                listedServices[serviceListInteger].sizeString = "Small";
-                                listedServices[serviceListInteger].serviceString = "Flea Treatment   ";
-                                columnInteger = 0;
-                                rowInteger = 2;
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                            case "Medium":
-                                listedServices[serviceListInteger].sizeString = "Medium";
-                                listedServices[serviceListInteger].serviceString = "Flea Treatment   ";
-                                columnInteger = 1;
-                                rowInteger = 2;
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                            case "Large":
-                                listedServices[serviceListInteger].sizeString = "Large";
-                                listedServices[serviceListInteger].serviceString = "Flea Treatment   ";
-                                columnInteger = 2;
-                                rowInteger = 2;
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                            case "XLarge":
-                                columnInteger = 3;
-                                rowInteger = 2;
-                                listedServices[serviceListInteger].sizeString = "XLarge";
-                                listedServices[serviceListInteger].serviceString = "Flea Treatment   ";
-                                servicesPriceDecimal = priceDecimal[rowInteger, columnInteger];
-                                listedServices[serviceListInteger].priceDecimal = servicesPriceDecimal;
-                                break;
-                        }
-                        break;
-
-                    default:
-                        listedServices[serviceListInteger].sizeString = "Small";
-                        listedServices[serviceListInteger].serviceString = "FullSpaRadioButton";
-                        columnInteger = 0;
-                        rowInteger = 0;
-                        break;
-                } // End of Switch Statement
-
-
-                // Display the price
-                PriceTextBox.Text = servicesPriceDecimal.ToString("c");
-            }
-        }
     }
-
-    // Directs the user back to main dashboard upon Home Screen selection from main menu
-  
-
-
    
 
 }

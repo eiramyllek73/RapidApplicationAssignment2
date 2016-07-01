@@ -95,6 +95,7 @@
             this.MainMenuToolStripMenuItem.Name = "MainMenuToolStripMenuItem";
             this.MainMenuToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.MainMenuToolStripMenuItem.Text = "Main Menu";
+            this.MainMenuToolStripMenuItem.Click += new System.EventHandler(this.MainMenuToolStripMenuItem_Click);
             // 
             // HomeScreenToolStripMenuItem
             // 
@@ -105,6 +106,7 @@
             this.HomeScreenToolStripMenuItem.Name = "HomeScreenToolStripMenuItem";
             this.HomeScreenToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.HomeScreenToolStripMenuItem.Text = "Go to Home Screen";
+            this.HomeScreenToolStripMenuItem.Click += new System.EventHandler(this.HomeScreenToolStripMenuItem_Click);
             // 
             // AboutThisApplicationToolStripMenuItem
             // 
@@ -115,6 +117,7 @@
             this.AboutThisApplicationToolStripMenuItem.Name = "AboutThisApplicationToolStripMenuItem";
             this.AboutThisApplicationToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.AboutThisApplicationToolStripMenuItem.Text = "About this Application";
+            this.AboutThisApplicationToolStripMenuItem.Click += new System.EventHandler(this.AboutThisApplicationToolStripMenuItem_Click);
             // 
             // ExitAppToolStripMenuItem
             // 
@@ -124,6 +127,7 @@
             this.ExitAppToolStripMenuItem.Name = "ExitAppToolStripMenuItem";
             this.ExitAppToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.ExitAppToolStripMenuItem.Text = "Exit Application";
+            this.ExitAppToolStripMenuItem.Click += new System.EventHandler(this.ExitAppToolStripMenuItem_Click);
             // 
             // PrintInvoiceButton
             // 
