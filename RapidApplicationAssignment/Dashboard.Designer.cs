@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.CurrentDateLabel = new System.Windows.Forms.Label();
             this.MainMenuGroupBox = new System.Windows.Forms.GroupBox();
+            this.CreateInvoiceRadioButton = new System.Windows.Forms.RadioButton();
             this.LogApptRadioButton = new System.Windows.Forms.RadioButton();
             this.ViewDirectoryRadioButton = new System.Windows.Forms.RadioButton();
             this.MainMenuToolTipLabel = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.CurrentTimeLabel = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.CompanyLogoBox = new System.Windows.Forms.PictureBox();
-            this.CreateInvoiceRadioButton = new System.Windows.Forms.RadioButton();
             this.MainMenuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyLogoBox)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +73,18 @@
             this.MainMenuGroupBox.TabStop = false;
             this.MainMenuGroupBox.Text = "What would you like to do?";
             // 
+            // CreateInvoiceRadioButton
+            // 
+            this.CreateInvoiceRadioButton.AutoSize = true;
+            this.CreateInvoiceRadioButton.Location = new System.Drawing.Point(9, 129);
+            this.CreateInvoiceRadioButton.Name = "CreateInvoiceRadioButton";
+            this.CreateInvoiceRadioButton.Size = new System.Drawing.Size(156, 17);
+            this.CreateInvoiceRadioButton.TabIndex = 3;
+            this.CreateInvoiceRadioButton.TabStop = true;
+            this.CreateInvoiceRadioButton.Text = "Create Invoice for Customer";
+            this.CreateInvoiceRadioButton.UseVisualStyleBackColor = true;
+            this.CreateInvoiceRadioButton.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
+            // 
             // LogApptRadioButton
             // 
             this.LogApptRadioButton.AutoSize = true;
@@ -83,6 +95,7 @@
             this.LogApptRadioButton.TabStop = true;
             this.LogApptRadioButton.Text = "Log New Appointment for Customer";
             this.LogApptRadioButton.UseVisualStyleBackColor = true;
+            this.LogApptRadioButton.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // ViewDirectoryRadioButton
             // 
@@ -94,6 +107,7 @@
             this.ViewDirectoryRadioButton.TabStop = true;
             this.ViewDirectoryRadioButton.Text = "View Customer Directory";
             this.ViewDirectoryRadioButton.UseVisualStyleBackColor = true;
+            this.ViewDirectoryRadioButton.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // MainMenuToolTipLabel
             // 
@@ -157,17 +171,6 @@
             this.CompanyLogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CompanyLogoBox.TabIndex = 9;
             this.CompanyLogoBox.TabStop = false;
-            // 
-            // CreateInvoiceRadioButton
-            // 
-            this.CreateInvoiceRadioButton.AutoSize = true;
-            this.CreateInvoiceRadioButton.Location = new System.Drawing.Point(9, 129);
-            this.CreateInvoiceRadioButton.Name = "CreateInvoiceRadioButton";
-            this.CreateInvoiceRadioButton.Size = new System.Drawing.Size(156, 17);
-            this.CreateInvoiceRadioButton.TabIndex = 3;
-            this.CreateInvoiceRadioButton.TabStop = true;
-            this.CreateInvoiceRadioButton.Text = "Create Invoice for Customer";
-            this.CreateInvoiceRadioButton.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 

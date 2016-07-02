@@ -1,4 +1,14 @@
-﻿using System;
+﻿/* Programmer: Kelly McAlpine (200269425)
+ * Due Date: June 23, 2016
+ * Purpose: This application will manage customers and their appointment information
+ * Purpose of this form:  This form creates an invoice that subtotals inputted service prices, calculates the current HST tax rate, then outputs a final total.  
+ * This form will also save the invoice to a time-stamped text file as well as print the details.
+ * 
+ * RESOURCES USED FOR REFERENCE:  
+ * https://www.youtube.com/watch?v=KfQmQD52EPQ
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;

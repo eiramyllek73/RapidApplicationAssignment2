@@ -19,7 +19,7 @@ namespace RapidApplicationAssignment
 
     public partial class Dashboard : Form
     {
-        // PRIVATE VARIABLES
+        // ***PRIVATE VARIABLES*** //
         private RadioButton selectedRadioButton = null;
 
         public Dashboard()
@@ -62,7 +62,7 @@ namespace RapidApplicationAssignment
             try
             {
                 // if user does not make a selection
-                if (!ViewDirectoryRadioButton.Checked && !LogApptRadioButton.Checked)
+                if (!ViewDirectoryRadioButton.Checked && !LogApptRadioButton.Checked && !CreateInvoiceRadioButton.Checked)
                 {
 
                     MessageBox.Show("A selection is required in order to proceed.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,9 +71,9 @@ namespace RapidApplicationAssignment
                 {
                     if (ViewDirectoryRadioButton.Checked)
                     {
-                       Directory directory = new Directory();
-                       this.Hide();
-                       directory.ShowDialog();   
+                        Directory directory = new Directory();
+                        this.Hide();
+                        directory.ShowDialog();
                     }
 
                     else if (LogApptRadioButton.Checked)
@@ -82,7 +82,12 @@ namespace RapidApplicationAssignment
                         this.Hide();
                         appt.ShowDialog();
                     }
-
+                    else if(CreateInvoiceRadioButton.Checked)
+                    {
+                        InvoiceForm invoice = new InvoiceForm();
+                        this.Hide();
+                        invoice.ShowDialog();
+                    }
                 } // End of else     
                             
             } // End of try

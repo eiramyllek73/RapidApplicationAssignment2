@@ -428,6 +428,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "InvoiceForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Invoice";
             this.Load += new System.EventHandler(this.InvoiceForm_Load);
             this.menuStrip1.ResumeLayout(false);
