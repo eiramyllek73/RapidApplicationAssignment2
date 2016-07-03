@@ -41,44 +41,59 @@
             System.Windows.Forms.Label secondaryContactInfoLabel;
             System.Windows.Forms.Label vetInfoLabel;
             System.Windows.Forms.Label importantNotesLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCustomerForm));
             System.Windows.Forms.Label SexOfPetLabel;
             System.Windows.Forms.Label petIDLabel;
             System.Windows.Forms.Label primaryAddressLabel;
             System.Windows.Forms.Label primaryAlternateInfoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddCustomerForm));
             this.customerIDTextBox = new System.Windows.Forms.TextBox();
+            this.customerContactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.petCustomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.furzaflynDataSet3 = new RapidApplicationAssignment.furzaflynDataSet3();
             this.nameOfPetTextBox = new System.Windows.Forms.TextBox();
+            this.petCustomerBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.breedTypeTextBox = new System.Windows.Forms.TextBox();
+            this.petCustomerBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.ageAtFirstApptTextBox = new System.Windows.Forms.TextBox();
+            this.petCustomerBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.primaryContactFirstNameTextBox = new System.Windows.Forms.TextBox();
+            this.customerContactBindingSource5 = new System.Windows.Forms.BindingSource(this.components);
             this.primaryContactLastNameTextBox = new System.Windows.Forms.TextBox();
+            this.customerContactBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.primaryContactPhoneTextBox = new System.Windows.Forms.TextBox();
+            this.customerContactBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.customerContactBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.secondaryContactInfoTextBox = new System.Windows.Forms.TextBox();
+            this.customerContactBindingSource7 = new System.Windows.Forms.BindingSource(this.components);
             this.vetInfoTextBox = new System.Windows.Forms.TextBox();
+            this.customerContactBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.importantNotesTextBox = new System.Windows.Forms.TextBox();
+            this.petCustomerBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.MainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HomeScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutThisApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.UpLoadImageButton = new System.Windows.Forms.Button();
             this.ResetButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.imagePictureBox = new System.Windows.Forms.PictureBox();
-            this.furzaflynDataSet3 = new RapidApplicationAssignment.furzaflynDataSet3();
-            this.petCustomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.petCustomersTableAdapter = new RapidApplicationAssignment.furzaflynDataSet3TableAdapters.PetCustomersTableAdapter();
             this.tableAdapterManager = new RapidApplicationAssignment.furzaflynDataSet3TableAdapters.TableAdapterManager();
-            this.petIDTextBox = new System.Windows.Forms.TextBox();
-            this.customerContactsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.customerContactsTableAdapter = new RapidApplicationAssignment.furzaflynDataSet3TableAdapters.CustomerContactsTableAdapter();
+            this.petIDTextBox = new System.Windows.Forms.TextBox();
             this.primaryAddressTextBox = new System.Windows.Forms.TextBox();
+            this.customerContactBindingSource6 = new System.Windows.Forms.BindingSource(this.components);
             this.primaryAlternateInfoTextBox = new System.Windows.Forms.TextBox();
-            this.ExitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.customerContactBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             this.SexOfPetComboBox = new System.Windows.Forms.ComboBox();
+            this.petCustomerBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.SizeCategoryComboBox = new System.Windows.Forms.ComboBox();
+            this.petCustomerBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.PetInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.ContactInfoGroupBox = new System.Windows.Forms.GroupBox();
+            this.petCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             customerIDLabel = new System.Windows.Forms.Label();
             nameOfPetLabel = new System.Windows.Forms.Label();
             breedTypeLabel = new System.Windows.Forms.Label();
@@ -95,13 +110,28 @@
             petIDLabel = new System.Windows.Forms.Label();
             primaryAddressLabel = new System.Windows.Forms.Label();
             primaryAlternateInfoLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource6)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource2)).BeginInit();
             this.PetInfoGroupBox.SuspendLayout();
             this.ContactInfoGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // customerIDLabel
@@ -213,6 +243,43 @@
             importantNotesLabel.TabIndex = 0;
             importantNotesLabel.Text = "Notes:";
             // 
+            // SexOfPetLabel
+            // 
+            SexOfPetLabel.AutoSize = true;
+            SexOfPetLabel.Location = new System.Drawing.Point(272, 32);
+            SexOfPetLabel.Name = "SexOfPetLabel";
+            SexOfPetLabel.Size = new System.Drawing.Size(28, 13);
+            SexOfPetLabel.TabIndex = 0;
+            SexOfPetLabel.Text = "Sex:";
+            // 
+            // petIDLabel
+            // 
+            petIDLabel.AutoSize = true;
+            petIDLabel.Location = new System.Drawing.Point(701, 262);
+            petIDLabel.Name = "petIDLabel";
+            petIDLabel.Size = new System.Drawing.Size(40, 13);
+            petIDLabel.TabIndex = 0;
+            petIDLabel.Text = "Pet ID:";
+            petIDLabel.Visible = false;
+            // 
+            // primaryAddressLabel
+            // 
+            primaryAddressLabel.AutoSize = true;
+            primaryAddressLabel.Location = new System.Drawing.Point(60, 55);
+            primaryAddressLabel.Name = "primaryAddressLabel";
+            primaryAddressLabel.Size = new System.Drawing.Size(85, 13);
+            primaryAddressLabel.TabIndex = 0;
+            primaryAddressLabel.Text = "Primary Address:";
+            // 
+            // primaryAlternateInfoLabel
+            // 
+            primaryAlternateInfoLabel.AutoSize = true;
+            primaryAlternateInfoLabel.Location = new System.Drawing.Point(349, 110);
+            primaryAlternateInfoLabel.Name = "primaryAlternateInfoLabel";
+            primaryAlternateInfoLabel.Size = new System.Drawing.Size(110, 13);
+            primaryAlternateInfoLabel.TabIndex = 35;
+            primaryAlternateInfoLabel.Text = "Primary Alternate Info:";
+            // 
             // customerIDTextBox
             // 
             this.customerIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactsBindingSource, "CustomerID", true));
@@ -222,88 +289,143 @@
             this.customerIDTextBox.TabIndex = 0;
             this.customerIDTextBox.Visible = false;
             // 
+            // customerContactsBindingSource
+            // 
+            this.customerContactsBindingSource.DataMember = "FK_CustomerContacts_ToTable";
+            this.customerContactsBindingSource.DataSource = this.petCustomersBindingSource;
+            // 
+            // petCustomersBindingSource
+            // 
+            this.petCustomersBindingSource.DataMember = "PetCustomers";
+            this.petCustomersBindingSource.DataSource = this.furzaflynDataSet3;
+            // 
+            // furzaflynDataSet3
+            // 
+            this.furzaflynDataSet3.DataSetName = "furzaflynDataSet3";
+            this.furzaflynDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // nameOfPetTextBox
             // 
-            this.nameOfPetTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomersBindingSource, "NameOfPet", true));
+            this.nameOfPetTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomerBindingSource4, "NameOfPet", true));
             this.nameOfPetTextBox.Location = new System.Drawing.Point(81, 28);
             this.nameOfPetTextBox.Name = "nameOfPetTextBox";
             this.nameOfPetTextBox.Size = new System.Drawing.Size(183, 20);
             this.nameOfPetTextBox.TabIndex = 1;
             // 
+            // petCustomerBindingSource4
+            // 
+            this.petCustomerBindingSource4.DataSource = typeof(RapidApplicationAssignment.PetCustomer);
+            // 
             // breedTypeTextBox
             // 
-            this.breedTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomersBindingSource, "BreedType", true));
+            this.breedTypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomerBindingSource5, "BreedType", true));
             this.breedTypeTextBox.Location = new System.Drawing.Point(81, 70);
             this.breedTypeTextBox.Name = "breedTypeTextBox";
             this.breedTypeTextBox.Size = new System.Drawing.Size(183, 20);
             this.breedTypeTextBox.TabIndex = 4;
             // 
+            // petCustomerBindingSource5
+            // 
+            this.petCustomerBindingSource5.DataSource = typeof(RapidApplicationAssignment.PetCustomer);
+            // 
             // ageAtFirstApptTextBox
             // 
-            this.ageAtFirstApptTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomersBindingSource, "AgeAtFirstVisit", true));
+            this.ageAtFirstApptTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomerBindingSource3, "AgeAtFirstVisit", true));
             this.ageAtFirstApptTextBox.Location = new System.Drawing.Point(394, 70);
             this.ageAtFirstApptTextBox.Name = "ageAtFirstApptTextBox";
             this.ageAtFirstApptTextBox.Size = new System.Drawing.Size(228, 20);
             this.ageAtFirstApptTextBox.TabIndex = 4;
             // 
+            // petCustomerBindingSource3
+            // 
+            this.petCustomerBindingSource3.DataSource = typeof(RapidApplicationAssignment.PetCustomer);
+            // 
             // primaryContactFirstNameTextBox
             // 
-            this.primaryContactFirstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactsBindingSource, "PrimaryFname", true));
+            this.primaryContactFirstNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactBindingSource5, "PrimaryFname", true));
             this.primaryContactFirstNameTextBox.Location = new System.Drawing.Point(147, 29);
             this.primaryContactFirstNameTextBox.Name = "primaryContactFirstNameTextBox";
             this.primaryContactFirstNameTextBox.Size = new System.Drawing.Size(153, 20);
             this.primaryContactFirstNameTextBox.TabIndex = 8;
             // 
+            // customerContactBindingSource5
+            // 
+            this.customerContactBindingSource5.DataSource = typeof(RapidApplicationAssignment.CustomerContact);
+            // 
             // primaryContactLastNameTextBox
             // 
-            this.primaryContactLastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactsBindingSource, "PrimaryLname", true));
+            this.primaryContactLastNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactBindingSource1, "PrimaryLname", true));
             this.primaryContactLastNameTextBox.Location = new System.Drawing.Point(465, 29);
             this.primaryContactLastNameTextBox.Name = "primaryContactLastNameTextBox";
             this.primaryContactLastNameTextBox.Size = new System.Drawing.Size(157, 20);
             this.primaryContactLastNameTextBox.TabIndex = 9;
             // 
+            // customerContactBindingSource1
+            // 
+            this.customerContactBindingSource1.DataSource = typeof(RapidApplicationAssignment.CustomerContact);
+            // 
             // primaryContactPhoneTextBox
             // 
-            this.primaryContactPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactsBindingSource, "PrimaryPhone", true));
+            this.primaryContactPhoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactBindingSource2, "PrimaryPhone", true));
             this.primaryContactPhoneTextBox.Location = new System.Drawing.Point(465, 55);
             this.primaryContactPhoneTextBox.Name = "primaryContactPhoneTextBox";
             this.primaryContactPhoneTextBox.Size = new System.Drawing.Size(157, 20);
             this.primaryContactPhoneTextBox.TabIndex = 11;
             // 
+            // customerContactBindingSource2
+            // 
+            this.customerContactBindingSource2.DataSource = typeof(RapidApplicationAssignment.CustomerContact);
+            // 
             // emailTextBox
             // 
-            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactsBindingSource, "PrimaryEmail", true));
+            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactBindingSource3, "PrimaryEmail", true));
             this.emailTextBox.Location = new System.Drawing.Point(465, 81);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(157, 20);
             this.emailTextBox.TabIndex = 12;
             // 
+            // customerContactBindingSource3
+            // 
+            this.customerContactBindingSource3.DataSource = typeof(RapidApplicationAssignment.CustomerContact);
+            // 
             // secondaryContactInfoTextBox
             // 
-            this.secondaryContactInfoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactsBindingSource, "SecondaryContactInfo", true));
+            this.secondaryContactInfoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactBindingSource7, "SecondaryContactInfo", true));
             this.secondaryContactInfoTextBox.Location = new System.Drawing.Point(147, 143);
             this.secondaryContactInfoTextBox.Multiline = true;
             this.secondaryContactInfoTextBox.Name = "secondaryContactInfoTextBox";
             this.secondaryContactInfoTextBox.Size = new System.Drawing.Size(153, 80);
             this.secondaryContactInfoTextBox.TabIndex = 14;
             // 
+            // customerContactBindingSource7
+            // 
+            this.customerContactBindingSource7.DataSource = typeof(RapidApplicationAssignment.CustomerContact);
+            // 
             // vetInfoTextBox
             // 
-            this.vetInfoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactsBindingSource, "VetInfo", true));
+            this.vetInfoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactBindingSource, "VetInfo", true));
             this.vetInfoTextBox.Location = new System.Drawing.Point(445, 118);
             this.vetInfoTextBox.Multiline = true;
             this.vetInfoTextBox.Name = "vetInfoTextBox";
             this.vetInfoTextBox.Size = new System.Drawing.Size(172, 83);
             this.vetInfoTextBox.TabIndex = 7;
             // 
+            // customerContactBindingSource
+            // 
+            this.customerContactBindingSource.DataSource = typeof(RapidApplicationAssignment.CustomerContact);
+            // 
             // importantNotesTextBox
             // 
-            this.importantNotesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomersBindingSource, "ImportantNotes", true));
+            this.importantNotesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomerBindingSource6, "ImportantNotes", true));
             this.importantNotesTextBox.Location = new System.Drawing.Point(81, 115);
             this.importantNotesTextBox.Multiline = true;
             this.importantNotesTextBox.Name = "importantNotesTextBox";
             this.importantNotesTextBox.Size = new System.Drawing.Size(263, 86);
             this.importantNotesTextBox.TabIndex = 6;
+            // 
+            // petCustomerBindingSource6
+            // 
+            this.petCustomerBindingSource6.DataSource = typeof(RapidApplicationAssignment.PetCustomer);
             // 
             // MainMenuToolStripMenuItem
             // 
@@ -342,6 +464,16 @@
             this.AboutThisApplicationToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.AboutThisApplicationToolStripMenuItem.Text = "About this Application";
             this.AboutThisApplicationToolStripMenuItem.Click += new System.EventHandler(this.AboutThisApplicationToolStripMenuItem_Click_1);
+            // 
+            // ExitAppToolStripMenuItem
+            // 
+            this.ExitAppToolStripMenuItem.AccessibleDescription = "This main menu option will close or end this application for the user.";
+            this.ExitAppToolStripMenuItem.AccessibleName = "ExitAppMenuOption";
+            this.ExitAppToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
+            this.ExitAppToolStripMenuItem.Name = "ExitAppToolStripMenuItem";
+            this.ExitAppToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.ExitAppToolStripMenuItem.Text = "Exit Application";
+            this.ExitAppToolStripMenuItem.Click += new System.EventHandler(this.ExitAppToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
@@ -398,16 +530,6 @@
             this.imagePictureBox.TabIndex = 5;
             this.imagePictureBox.TabStop = false;
             // 
-            // furzaflynDataSet3
-            // 
-            this.furzaflynDataSet3.DataSetName = "furzaflynDataSet3";
-            this.furzaflynDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // petCustomersBindingSource
-            // 
-            this.petCustomersBindingSource.DataMember = "PetCustomers";
-            this.petCustomersBindingSource.DataSource = this.furzaflynDataSet3;
-            // 
             // petCustomersTableAdapter
             // 
             this.petCustomersTableAdapter.ClearBeforeFill = true;
@@ -420,24 +542,9 @@
             this.tableAdapterManager.PetCustomersTableAdapter = this.petCustomersTableAdapter;
             this.tableAdapterManager.UpdateOrder = RapidApplicationAssignment.furzaflynDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
-            // SexOfPetLabel
+            // customerContactsTableAdapter
             // 
-            SexOfPetLabel.AutoSize = true;
-            SexOfPetLabel.Location = new System.Drawing.Point(272, 32);
-            SexOfPetLabel.Name = "SexOfPetLabel";
-            SexOfPetLabel.Size = new System.Drawing.Size(28, 13);
-            SexOfPetLabel.TabIndex = 0;
-            SexOfPetLabel.Text = "Sex:";
-            // 
-            // petIDLabel
-            // 
-            petIDLabel.AutoSize = true;
-            petIDLabel.Location = new System.Drawing.Point(701, 262);
-            petIDLabel.Name = "petIDLabel";
-            petIDLabel.Size = new System.Drawing.Size(40, 13);
-            petIDLabel.TabIndex = 0;
-            petIDLabel.Text = "Pet ID:";
-            petIDLabel.Visible = false;
+            this.customerContactsTableAdapter.ClearBeforeFill = true;
             // 
             // petIDTextBox
             // 
@@ -448,77 +555,67 @@
             this.petIDTextBox.TabIndex = 0;
             this.petIDTextBox.Visible = false;
             // 
-            // customerContactsBindingSource
-            // 
-            this.customerContactsBindingSource.DataMember = "FK_CustomerContacts_ToTable";
-            this.customerContactsBindingSource.DataSource = this.petCustomersBindingSource;
-            // 
-            // customerContactsTableAdapter
-            // 
-            this.customerContactsTableAdapter.ClearBeforeFill = true;
-            // 
-            // primaryAddressLabel
-            // 
-            primaryAddressLabel.AutoSize = true;
-            primaryAddressLabel.Location = new System.Drawing.Point(60, 55);
-            primaryAddressLabel.Name = "primaryAddressLabel";
-            primaryAddressLabel.Size = new System.Drawing.Size(85, 13);
-            primaryAddressLabel.TabIndex = 0;
-            primaryAddressLabel.Text = "Primary Address:";
-            // 
             // primaryAddressTextBox
             // 
-            this.primaryAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactsBindingSource, "PrimaryAddress", true));
+            this.primaryAddressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactBindingSource6, "PrimaryAddress", true));
             this.primaryAddressTextBox.Location = new System.Drawing.Point(147, 55);
             this.primaryAddressTextBox.Multiline = true;
             this.primaryAddressTextBox.Name = "primaryAddressTextBox";
             this.primaryAddressTextBox.Size = new System.Drawing.Size(153, 82);
             this.primaryAddressTextBox.TabIndex = 10;
             // 
-            // primaryAlternateInfoLabel
+            // customerContactBindingSource6
             // 
-            primaryAlternateInfoLabel.AutoSize = true;
-            primaryAlternateInfoLabel.Location = new System.Drawing.Point(349, 110);
-            primaryAlternateInfoLabel.Name = "primaryAlternateInfoLabel";
-            primaryAlternateInfoLabel.Size = new System.Drawing.Size(110, 13);
-            primaryAlternateInfoLabel.TabIndex = 35;
-            primaryAlternateInfoLabel.Text = "Primary Alternate Info:";
+            this.customerContactBindingSource6.DataSource = typeof(RapidApplicationAssignment.CustomerContact);
             // 
             // primaryAlternateInfoTextBox
             // 
-            this.primaryAlternateInfoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactsBindingSource, "PrimaryAlternateInfo", true));
+            this.primaryAlternateInfoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.customerContactBindingSource4, "PrimaryAlternateInfo", true));
             this.primaryAlternateInfoTextBox.Location = new System.Drawing.Point(465, 107);
             this.primaryAlternateInfoTextBox.Multiline = true;
             this.primaryAlternateInfoTextBox.Name = "primaryAlternateInfoTextBox";
             this.primaryAlternateInfoTextBox.Size = new System.Drawing.Size(157, 116);
             this.primaryAlternateInfoTextBox.TabIndex = 13;
             // 
-            // ExitAppToolStripMenuItem
+            // customerContactBindingSource4
             // 
-            this.ExitAppToolStripMenuItem.AccessibleDescription = "This main menu option will close or end this application for the user.";
-            this.ExitAppToolStripMenuItem.AccessibleName = "ExitAppMenuOption";
-            this.ExitAppToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
-            this.ExitAppToolStripMenuItem.Name = "ExitAppToolStripMenuItem";
-            this.ExitAppToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.ExitAppToolStripMenuItem.Text = "Exit Application";
-            this.ExitAppToolStripMenuItem.Click += new System.EventHandler(this.ExitAppToolStripMenuItem_Click);
+            this.customerContactBindingSource4.DataSource = typeof(RapidApplicationAssignment.CustomerContact);
             // 
             // SexOfPetComboBox
             // 
-            this.SexOfPetComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomersBindingSource, "Sex", true));
+            this.SexOfPetComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomerBindingSource1, "Sex", true));
             this.SexOfPetComboBox.FormattingEnabled = true;
+            this.SexOfPetComboBox.Items.AddRange(new object[] {
+            "Female",
+            "Male"});
             this.SexOfPetComboBox.Location = new System.Drawing.Point(302, 28);
             this.SexOfPetComboBox.Name = "SexOfPetComboBox";
             this.SexOfPetComboBox.Size = new System.Drawing.Size(96, 21);
             this.SexOfPetComboBox.TabIndex = 2;
+            this.SexOfPetComboBox.SelectedIndexChanged += new System.EventHandler(this.SexOfPetComboBox_SelectedIndexChanged);
+            // 
+            // petCustomerBindingSource1
+            // 
+            this.petCustomerBindingSource1.DataSource = typeof(RapidApplicationAssignment.PetCustomer);
             // 
             // SizeCategoryComboBox
             // 
+            this.SizeCategoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.petCustomerBindingSource2, "SizeCategory", true));
             this.SizeCategoryComboBox.FormattingEnabled = true;
+            this.SizeCategoryComboBox.Items.AddRange(new object[] {
+            "Small",
+            "Medium",
+            "Large",
+            "XLarge"});
             this.SizeCategoryComboBox.Location = new System.Drawing.Point(501, 29);
             this.SizeCategoryComboBox.Name = "SizeCategoryComboBox";
             this.SizeCategoryComboBox.Size = new System.Drawing.Size(121, 21);
             this.SizeCategoryComboBox.TabIndex = 3;
+            this.SizeCategoryComboBox.SelectedIndexChanged += new System.EventHandler(this.SizeCategoryComboBox_SelectedIndexChanged);
+            // 
+            // petCustomerBindingSource2
+            // 
+            this.petCustomerBindingSource2.DataSource = typeof(RapidApplicationAssignment.PetCustomer);
             // 
             // PetInfoGroupBox
             // 
@@ -568,6 +665,10 @@
             this.ContactInfoGroupBox.TabStop = false;
             this.ContactInfoGroupBox.Text = "Contact Information";
             // 
+            // petCustomerBindingSource
+            // 
+            this.petCustomerBindingSource.DataSource = typeof(RapidApplicationAssignment.PetCustomer);
+            // 
             // AddCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -590,16 +691,31 @@
             this.Text = "Add New Customer to Directory:     *These fields are required";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.AddCustomerForm_FormClosed);
             this.Load += new System.EventHandler(this.AddCustomerForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource6)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imagePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.customerContactsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customerContactBindingSource4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource2)).EndInit();
             this.PetInfoGroupBox.ResumeLayout(false);
             this.PetInfoGroupBox.PerformLayout();
             this.ContactInfoGroupBox.ResumeLayout(false);
             this.ContactInfoGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,5 +755,20 @@
         private System.Windows.Forms.ComboBox SizeCategoryComboBox;
         private System.Windows.Forms.GroupBox PetInfoGroupBox;
         private System.Windows.Forms.GroupBox ContactInfoGroupBox;
+        private System.Windows.Forms.BindingSource petCustomerBindingSource4;
+        private System.Windows.Forms.BindingSource petCustomerBindingSource5;
+        private System.Windows.Forms.BindingSource petCustomerBindingSource3;
+        private System.Windows.Forms.BindingSource customerContactBindingSource5;
+        private System.Windows.Forms.BindingSource customerContactBindingSource1;
+        private System.Windows.Forms.BindingSource customerContactBindingSource2;
+        private System.Windows.Forms.BindingSource customerContactBindingSource3;
+        private System.Windows.Forms.BindingSource customerContactBindingSource7;
+        private System.Windows.Forms.BindingSource customerContactBindingSource;
+        private System.Windows.Forms.BindingSource petCustomerBindingSource6;
+        private System.Windows.Forms.BindingSource customerContactBindingSource6;
+        private System.Windows.Forms.BindingSource customerContactBindingSource4;
+        private System.Windows.Forms.BindingSource petCustomerBindingSource1;
+        private System.Windows.Forms.BindingSource petCustomerBindingSource2;
+        private System.Windows.Forms.BindingSource petCustomerBindingSource;
     }
 }

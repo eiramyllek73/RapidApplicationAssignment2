@@ -1,6 +1,6 @@
 ﻿namespace RapidApplicationAssignment
 {
-    partial class Directory
+    partial class DirectoryForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,48 +29,138 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Directory));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectoryForm));
+            this.PetCustomerDataGridView = new System.Windows.Forms.DataGridView();
+            this.petCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.petIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameOfPetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.breedTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sizeCategoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.sexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.ageAtFirstVisitDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.primaryPhoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importantNotesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.photoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HomeScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutThisApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.AddCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.deleteSelectedCustomerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.createCustomerInvoiceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.furzaflynDataSet3 = new RapidApplicationAssignment.furzaflynDataSet3();
-            this.petCustomersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.petCustomersTableAdapter1 = new RapidApplicationAssignment.furzaflynDataSet3TableAdapters.PetCustomersTableAdapter();
-            this.tableAdapterManager = new RapidApplicationAssignment.furzaflynDataSet3TableAdapters.TableAdapterManager();
-            this.petCustomersDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.RefreshToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.EditToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.DeleteToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.SaveToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.AddNewToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            ((System.ComponentModel.ISupportInitialize)(this.PetCustomerDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petCustomersDataGridView)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // PetCustomerDataGridView
+            // 
+            this.PetCustomerDataGridView.AllowUserToAddRows = false;
+            this.PetCustomerDataGridView.AutoGenerateColumns = false;
+            this.PetCustomerDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.PetCustomerDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.PetCustomerDataGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.PetCustomerDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.PetCustomerDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.petIDDataGridViewTextBoxColumn,
+            this.nameOfPetDataGridViewTextBoxColumn,
+            this.breedTypeDataGridViewTextBoxColumn,
+            this.sizeCategoryDataGridViewTextBoxColumn,
+            this.sexDataGridViewTextBoxColumn,
+            this.ageAtFirstVisitDataGridViewTextBoxColumn,
+            this.primaryPhoneDataGridViewTextBoxColumn,
+            this.importantNotesDataGridViewTextBoxColumn,
+            this.photoDataGridViewImageColumn});
+            this.PetCustomerDataGridView.DataSource = this.petCustomerBindingSource;
+            this.PetCustomerDataGridView.Location = new System.Drawing.Point(12, 52);
+            this.PetCustomerDataGridView.Name = "PetCustomerDataGridView";
+            this.PetCustomerDataGridView.Size = new System.Drawing.Size(491, 198);
+            this.PetCustomerDataGridView.TabIndex = 0;
+            // 
+            // petCustomerBindingSource
+            // 
+            this.petCustomerBindingSource.DataSource = typeof(RapidApplicationAssignment.PetCustomer);
+            // 
+            // petIDDataGridViewTextBoxColumn
+            // 
+            this.petIDDataGridViewTextBoxColumn.DataPropertyName = "PetID";
+            this.petIDDataGridViewTextBoxColumn.HeaderText = "PetID";
+            this.petIDDataGridViewTextBoxColumn.Name = "petIDDataGridViewTextBoxColumn";
+            this.petIDDataGridViewTextBoxColumn.Width = 59;
+            // 
+            // nameOfPetDataGridViewTextBoxColumn
+            // 
+            this.nameOfPetDataGridViewTextBoxColumn.DataPropertyName = "NameOfPet";
+            this.nameOfPetDataGridViewTextBoxColumn.HeaderText = "Pet\'s Name:";
+            this.nameOfPetDataGridViewTextBoxColumn.Name = "nameOfPetDataGridViewTextBoxColumn";
+            this.nameOfPetDataGridViewTextBoxColumn.Width = 89;
+            // 
+            // breedTypeDataGridViewTextBoxColumn
+            // 
+            this.breedTypeDataGridViewTextBoxColumn.DataPropertyName = "BreedType";
+            this.breedTypeDataGridViewTextBoxColumn.HeaderText = "Breed/Mix:";
+            this.breedTypeDataGridViewTextBoxColumn.Name = "breedTypeDataGridViewTextBoxColumn";
+            this.breedTypeDataGridViewTextBoxColumn.Width = 84;
+            // 
+            // sizeCategoryDataGridViewTextBoxColumn
+            // 
+            this.sizeCategoryDataGridViewTextBoxColumn.DataPropertyName = "SizeCategory";
+            this.sizeCategoryDataGridViewTextBoxColumn.HeaderText = "Pet\'s Size:";
+            this.sizeCategoryDataGridViewTextBoxColumn.Name = "sizeCategoryDataGridViewTextBoxColumn";
+            this.sizeCategoryDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sizeCategoryDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.sizeCategoryDataGridViewTextBoxColumn.Width = 81;
+            // 
+            // sexDataGridViewTextBoxColumn
+            // 
+            this.sexDataGridViewTextBoxColumn.DataPropertyName = "Sex";
+            this.sexDataGridViewTextBoxColumn.HeaderText = "Sex F/M:";
+            this.sexDataGridViewTextBoxColumn.Name = "sexDataGridViewTextBoxColumn";
+            this.sexDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.sexDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.sexDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // ageAtFirstVisitDataGridViewTextBoxColumn
+            // 
+            this.ageAtFirstVisitDataGridViewTextBoxColumn.DataPropertyName = "AgeAtFirstVisit";
+            this.ageAtFirstVisitDataGridViewTextBoxColumn.HeaderText = "Age at 1st Visit:";
+            this.ageAtFirstVisitDataGridViewTextBoxColumn.Name = "ageAtFirstVisitDataGridViewTextBoxColumn";
+            this.ageAtFirstVisitDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // primaryPhoneDataGridViewTextBoxColumn
+            // 
+            this.primaryPhoneDataGridViewTextBoxColumn.DataPropertyName = "PrimaryPhone";
+            this.primaryPhoneDataGridViewTextBoxColumn.HeaderText = "Primary Contact Phone:";
+            this.primaryPhoneDataGridViewTextBoxColumn.Name = "primaryPhoneDataGridViewTextBoxColumn";
+            this.primaryPhoneDataGridViewTextBoxColumn.Width = 131;
+            // 
+            // importantNotesDataGridViewTextBoxColumn
+            // 
+            this.importantNotesDataGridViewTextBoxColumn.DataPropertyName = "ImportantNotes";
+            this.importantNotesDataGridViewTextBoxColumn.HeaderText = "Important Notes:";
+            this.importantNotesDataGridViewTextBoxColumn.Name = "importantNotesDataGridViewTextBoxColumn";
+            this.importantNotesDataGridViewTextBoxColumn.Width = 101;
+            // 
+            // photoDataGridViewImageColumn
+            // 
+            this.photoDataGridViewImageColumn.DataPropertyName = "Photo";
+            this.photoDataGridViewImageColumn.HeaderText = "Photo:";
+            this.photoDataGridViewImageColumn.Name = "photoDataGridViewImageColumn";
+            this.photoDataGridViewImageColumn.Width = 44;
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.MainMenuToolStripMenuItem,
-            this.AddCustomerToolStripMenuItem,
-            this.deleteSelectedCustomerToolStripMenuItem,
-            this.createCustomerInvoiceToolStripMenuItem});
+            this.MainMenuToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(963, 24);
@@ -87,10 +177,10 @@
             this.HomeScreenToolStripMenuItem,
             this.AboutThisApplicationToolStripMenuItem,
             this.ExitAppToolStripMenuItem});
+            this.MainMenuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.MainMenuToolStripMenuItem.Name = "MainMenuToolStripMenuItem";
-            this.MainMenuToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.MainMenuToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
             this.MainMenuToolStripMenuItem.Text = "Main Menu";
-            this.MainMenuToolStripMenuItem.Click += new System.EventHandler(this.MainMenuToolStripMenuItem_Click);
             // 
             // HomeScreenToolStripMenuItem
             // 
@@ -99,9 +189,8 @@
             this.HomeScreenToolStripMenuItem.AccessibleName = "HomeScreenMenuOption";
             this.HomeScreenToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
             this.HomeScreenToolStripMenuItem.Name = "HomeScreenToolStripMenuItem";
-            this.HomeScreenToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.HomeScreenToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.HomeScreenToolStripMenuItem.Text = "Go to Home Screen";
-            this.HomeScreenToolStripMenuItem.Click += new System.EventHandler(this.HomeScreenToolStripMenuItem_Click);
             // 
             // AboutThisApplicationToolStripMenuItem
             // 
@@ -110,9 +199,8 @@
             this.AboutThisApplicationToolStripMenuItem.AccessibleName = "AboutAppMenuOption";
             this.AboutThisApplicationToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
             this.AboutThisApplicationToolStripMenuItem.Name = "AboutThisApplicationToolStripMenuItem";
-            this.AboutThisApplicationToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.AboutThisApplicationToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.AboutThisApplicationToolStripMenuItem.Text = "About this Application";
-            this.AboutThisApplicationToolStripMenuItem.Click += new System.EventHandler(this.AboutThisApplicationToolStripMenuItem_Click);
             // 
             // ExitAppToolStripMenuItem
             // 
@@ -120,135 +208,21 @@
             this.ExitAppToolStripMenuItem.AccessibleName = "ExitAppMenuOption";
             this.ExitAppToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
             this.ExitAppToolStripMenuItem.Name = "ExitAppToolStripMenuItem";
-            this.ExitAppToolStripMenuItem.Size = new System.Drawing.Size(193, 22);
+            this.ExitAppToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
             this.ExitAppToolStripMenuItem.Text = "Exit Application";
-            this.ExitAppToolStripMenuItem.Click += new System.EventHandler(this.ExitAppToolStripMenuItem_Click);
-            // 
-            // AddCustomerToolStripMenuItem
-            // 
-            this.AddCustomerToolStripMenuItem.Name = "AddCustomerToolStripMenuItem";
-            this.AddCustomerToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
-            this.AddCustomerToolStripMenuItem.Text = "Add new Customer ";
-            this.AddCustomerToolStripMenuItem.Click += new System.EventHandler(this.AddCustomerToolStripMenuItem_Click);
-            // 
-            // deleteSelectedCustomerToolStripMenuItem
-            // 
-            this.deleteSelectedCustomerToolStripMenuItem.Name = "deleteSelectedCustomerToolStripMenuItem";
-            this.deleteSelectedCustomerToolStripMenuItem.Size = new System.Drawing.Size(151, 20);
-            this.deleteSelectedCustomerToolStripMenuItem.Text = "View Customer Appt Log";
-            // 
-            // createCustomerInvoiceToolStripMenuItem
-            // 
-            this.createCustomerInvoiceToolStripMenuItem.Name = "createCustomerInvoiceToolStripMenuItem";
-            this.createCustomerInvoiceToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
-            this.createCustomerInvoiceToolStripMenuItem.Text = "Create Customer Invoice";
-            this.createCustomerInvoiceToolStripMenuItem.Click += new System.EventHandler(this.createCustomerInvoiceToolStripMenuItem_Click);
-            // 
-            // furzaflynDataSet3
-            // 
-            this.furzaflynDataSet3.DataSetName = "furzaflynDataSet3";
-            this.furzaflynDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // petCustomersBindingSource1
-            // 
-            this.petCustomersBindingSource1.DataMember = "PetCustomers";
-            this.petCustomersBindingSource1.DataSource = this.furzaflynDataSet3;
-            // 
-            // petCustomersTableAdapter1
-            // 
-            this.petCustomersTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.AppointmentsLogTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CustomerContactsTableAdapter = null;
-            this.tableAdapterManager.PetCustomersTableAdapter = this.petCustomersTableAdapter1;
-            this.tableAdapterManager.UpdateOrder = RapidApplicationAssignment.furzaflynDataSet3TableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // petCustomersDataGridView
-            // 
-            this.petCustomersDataGridView.AllowUserToAddRows = false;
-            this.petCustomersDataGridView.AutoGenerateColumns = false;
-            this.petCustomersDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.petCustomersDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewImageColumn1});
-            this.petCustomersDataGridView.DataSource = this.petCustomersBindingSource1;
-            this.petCustomersDataGridView.Location = new System.Drawing.Point(12, 84);
-            this.petCustomersDataGridView.Name = "petCustomersDataGridView";
-            this.petCustomersDataGridView.RowHeadersWidth = 60;
-            this.petCustomersDataGridView.Size = new System.Drawing.Size(939, 220);
-            this.petCustomersDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "PetID";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Pet ID#:";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NameOfPet";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Pet\'s Name:";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "BreedType";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Breed/Mix:";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "SizeCategory";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Size Category:";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Sex";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Sex M/F:";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "AgeAtFirstVisit";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Age at 1st Visit:";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "PrimaryPhone";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Primary Phone#:";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "ImportantNotes";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Notes:";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.DataPropertyName = "Photo";
-            this.dataGridViewImageColumn1.HeaderText = "Photo:";
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.RefreshToolStripButton,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4});
+            this.toolStripSeparator4,
+            this.AddNewToolStripButton,
+            this.toolStripSeparator1,
+            this.EditToolStripButton,
+            this.toolStripSeparator2,
+            this.DeleteToolStripButton,
+            this.toolStripSeparator3,
+            this.SaveToolStripButton});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(963, 25);
@@ -257,60 +231,88 @@
             // 
             // RefreshToolStripButton
             // 
-            this.RefreshToolStripButton.Image = ((System.Drawing.Image)(resources.GetObject("RefreshToolStripButton.Image")));
+            this.RefreshToolStripButton.Image = global::RapidApplicationAssignment.Properties.Resources.repeat_1;
             this.RefreshToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.RefreshToolStripButton.Name = "RefreshToolStripButton";
             this.RefreshToolStripButton.Size = new System.Drawing.Size(66, 22);
             this.RefreshToolStripButton.Text = "Refresh";
+            this.RefreshToolStripButton.Click += new System.EventHandler(this.RefreshToolStripButton_Click);
             // 
-            // toolStripButton2
+            // EditToolStripButton
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "toolStripButton2";
+            this.EditToolStripButton.Image = global::RapidApplicationAssignment.Properties.Resources.edit;
+            this.EditToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EditToolStripButton.Name = "EditToolStripButton";
+            this.EditToolStripButton.Size = new System.Drawing.Size(47, 22);
+            this.EditToolStripButton.Text = "Edit";
+            this.EditToolStripButton.Click += new System.EventHandler(this.EditToolStripButton_Click);
             // 
-            // toolStripButton3
+            // DeleteToolStripButton
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "toolStripButton3";
+            this.DeleteToolStripButton.Image = global::RapidApplicationAssignment.Properties.Resources.error;
+            this.DeleteToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.DeleteToolStripButton.Name = "DeleteToolStripButton";
+            this.DeleteToolStripButton.Size = new System.Drawing.Size(60, 22);
+            this.DeleteToolStripButton.Text = "Delete";
+            this.DeleteToolStripButton.Click += new System.EventHandler(this.DeleteToolStripButton_Click);
             // 
-            // toolStripButton4
+            // SaveToolStripButton
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "toolStripButton4";
+            this.SaveToolStripButton.Image = global::RapidApplicationAssignment.Properties.Resources.save;
+            this.SaveToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.SaveToolStripButton.Name = "SaveToolStripButton";
+            this.SaveToolStripButton.Size = new System.Drawing.Size(51, 22);
+            this.SaveToolStripButton.Text = "Save";
+            this.SaveToolStripButton.Click += new System.EventHandler(this.SaveToolStripButton_Click);
             // 
-            // Directory
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // AddNewToolStripButton
+            // 
+            this.AddNewToolStripButton.Image = global::RapidApplicationAssignment.Properties.Resources.add_1;
+            this.AddNewToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddNewToolStripButton.Name = "AddNewToolStripButton";
+            this.AddNewToolStripButton.Size = new System.Drawing.Size(76, 22);
+            this.AddNewToolStripButton.Text = "Add New";
+            this.AddNewToolStripButton.Click += new System.EventHandler(this.AddNewToolStripButton_Click);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // DirectoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(963, 386);
             this.Controls.Add(this.toolStrip1);
-            this.Controls.Add(this.petCustomersDataGridView);
+            this.Controls.Add(this.PetCustomerDataGridView);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Directory";
+            this.Name = "DirectoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customer Directory";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Directory_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.PetCustomerDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.petCustomerBindingSource)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.furzaflynDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petCustomersBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.petCustomersDataGridView)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -319,11 +321,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem MainMenuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem HomeScreenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem AboutThisApplicationToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem ExitAppToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
@@ -337,27 +334,31 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
-        private System.Windows.Forms.ToolStripMenuItem AddCustomerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem deleteSelectedCustomerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem createCustomerInvoiceToolStripMenuItem;
-        private furzaflynDataSet3 furzaflynDataSet3;
-        private System.Windows.Forms.BindingSource petCustomersBindingSource1;
-        private furzaflynDataSet3TableAdapters.PetCustomersTableAdapter petCustomersTableAdapter1;
-        private furzaflynDataSet3TableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView petCustomersDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridView PetCustomerDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn petIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameOfPetDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn breedTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn sizeCategoryDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn sexDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ageAtFirstVisitDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn primaryPhoneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importantNotesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn photoDataGridViewImageColumn;
+        private System.Windows.Forms.BindingSource petCustomerBindingSource;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem MainMenuToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HomeScreenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutThisApplicationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitAppToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton RefreshToolStripButton;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripButton AddNewToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton EditToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton DeleteToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton SaveToolStripButton;
     }
 }

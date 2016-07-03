@@ -47,8 +47,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -71,11 +82,17 @@
     <Compile Include="AddCustomer.Designer.cs">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </Compile>
+    <Compile Include="AppointmentsLog.cs">
+      <DependentUpon>PetCustomerModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="ApptHistory.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApptHistory.Designer.cs">
       <DependentUpon>ApptHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerContact.cs">
+      <DependentUpon>PetCustomerModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CustomerProfile.cs">
       <SubType>Form</SubType>
@@ -135,6 +152,24 @@
     </Compile>
     <Compile Include="LogAppointment.Designer.cs">
       <DependentUpon>LogAppointment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PetCustomer.cs">
+      <DependentUpon>PetCustomerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetCustomerModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetCustomerModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetCustomerModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetCustomerModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PetCustomerModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PetCustomerModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -219,6 +254,16 @@
     <None Include="furzaflynDataSet31.xss">
       <DependentUpon>furzaflynDataSet31.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="PetCustomerModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PetCustomerModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="packages.config" />
+    <None Include="PetCustomerModel.edmx.diagram">
+      <DependentUpon>PetCustomerModel.edmx</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\CustomerContact.datasource" />
+    <None Include="Properties\DataSources\PetCustomer.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -257,11 +302,34 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>furzaflyn.mdf</DependentUpon>
     </Content>
+    <Content Include="PetCustomerModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PetCustomerModel.edmx</DependentUpon>
+      <LastGenOutput>PetCustomerModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PetCustomerModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PetCustomerModel.edmx</DependentUpon>
+      <LastGenOutput>PetCustomerModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Resources\add-1.png" />
+    <None Include="Resources\save1.png" />
+    <None Include="Resources\add-11.png" />
+    <Content Include="Resources\edit.png" />
+    <None Include="Resources\edit1.png" />
+    <Content Include="Resources\error.png" />
+    <None Include="Resources\error1.png" />
+    <Content Include="Resources\repeat-1.png" />
+    <None Include="Resources\repeat-11.png" />
+    <Content Include="Resources\save.png" />
     <None Include="Resources\iPhone-0461.jpg" />
     <None Include="Resources\iPhone-046.jpg" />
     <None Include="Resources\Glyphish-Glyphish-82-dog-paw.ico" />
     <None Include="Resources\DefaultImage.jpg" />
     <None Include="Resources\FurzaFlyn-Logo-WebSize.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

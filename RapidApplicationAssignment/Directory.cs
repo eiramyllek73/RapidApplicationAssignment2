@@ -19,24 +19,24 @@ using System.Windows.Forms;
 
 namespace RapidApplicationAssignment
 {
-    public partial class Directory : Form
+    public partial class DirectoryForm : Form
     {
+        furzaflynEntities db;
+
         //   PRIVATE VARIABLES
         private ToolStripMenuItem selectedToolStripMenuItem = null;
 
         public static string GetCurrentDirectory { get; internal set; }
 
-        public Directory()
+        public DirectoryForm()
         {
             InitializeComponent();
         }
 
-
-
         private void Directory_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'furzaflynDataSet3.PetCustomers' table. You can move, or remove it, as needed.
-            this.petCustomersTableAdapter1.Fill(this.furzaflynDataSet3.PetCustomers);
+            db = new furzaflynEntities();
+            petCustomerBindingSource.DataSource = db.PetCustomers.ToList();
 
         }
 
@@ -86,11 +86,84 @@ namespace RapidApplicationAssignment
             invoice.ShowDialog();
         }
 
-        private void AddCustomerToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void RefreshToolStripButton_Click(object sender, EventArgs e)
         {
-            AddCustomerForm addCustomer = new AddCustomerForm();
-            this.Hide();
-            addCustomer.ShowDialog();
+            petCustomerBindingSource.DataSource = db.PetCustomers.ToList();
+        }
+
+        private async void AddNewToolStripButton_Click(object sender, EventArgs e)
+        {
+            using (AddCustomerForm addCustomer = new AddCustomerForm(new PetCustomer()))
+            {
+                if (addCustomer.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        petCustomerBindingSource.Add(addCustomer.petCustomerInfo);
+                        db.PetCustomers.Add(addCustomer.petCustomerInfo);
+                        await db.SaveChangesAsync();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+
+        }
+
+        private async void EditToolStripButton_Click(object sender, EventArgs e)
+        {
+            PetCustomer obj = petCustomerBindingSource.Current as PetCustomer;
+
+            if (obj != null)
+            {
+                using (AddCustomerForm addCust = new AddCustomerForm(obj))
+                {
+                    if (addCust.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            petCustomerBindingSource.EndEdit();
+                            await db.SaveChangesAsync();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+            }
+        }
+
+
+        private void DeleteToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to delete this customer record?", "Confirmation Required: ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                for (int i = 0; i < PetCustomerDataGridView.SelectedRows.Count; i++)
+                {
+                    db.PetCustomers.Remove(PetCustomerDataGridView.SelectedRows[i].DataBoundItem as PetCustomer);
+                    petCustomerBindingSource.RemoveAt(PetCustomerDataGridView.SelectedRows[i].Index);
+                }
+            }
+        }
+
+        private async void SaveToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you want to save these changes?", "Confirmation Required:  ", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {
+                    petCustomerBindingSource.EndEdit();
+                    await db.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

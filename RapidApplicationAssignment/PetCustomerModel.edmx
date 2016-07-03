@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="furzaflynModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppointmentsLog">
+          <Key>
+            <PropertyRef Name="AppointmentID" />
+          </Key>
+          <Property Name="AppointmentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOfPet" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="AppointmentDate" Type="date" Nullable="false" />
+          <Property Name="ApptTimeTotal" Type="decimal" Precision="2" Scale="1" Nullable="false" />
+          <Property Name="Comments" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="CustomerContacts">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NameOfPet" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimaryFname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimaryLname" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="PrimaryEmail" Type="varchar" MaxLength="50" />
+          <Property Name="PrimaryAddress" Type="varchar(max)" />
+          <Property Name="PrimaryAlternateInfo" Type="varchar(max)" />
+          <Property Name="SecondaryContactInfo" Type="varchar(max)" />
+          <Property Name="VetInfo" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="PetCustomers">
+          <Key>
+            <PropertyRef Name="PetID" />
+          </Key>
+          <Property Name="PetID" Type="int" Nullable="false" />
+          <Property Name="NameOfPet" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BreedType" Type="varchar" MaxLength="50" />
+          <Property Name="SizeCategory" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sex" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="AgeAtFirstVisit" Type="varchar" MaxLength="50" />
+          <Property Name="PrimaryPhone" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="ImportantNotes" Type="varchar(max)" />
+          <Property Name="Photo" Type="image" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_AppointmentsLog_ToTable' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_AppointmentsLog_ToTable" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_AppointmentsLog_ToTable_1' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_AppointmentsLog_ToTable_1" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_CustomerContacts_ToTable' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_CustomerContacts_ToTable" />-->
+        <!--Errors Found During Generation:
+warning 6035: The relationship 'FK_PetCustomers_ToTable' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="FK_PetCustomers_ToTable" />-->
+        <EntityContainer Name="furzaflynModelStoreContainer">
+          <EntitySet Name="AppointmentsLog" EntityType="Self.AppointmentsLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerContacts" EntityType="Self.CustomerContacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PetCustomers" EntityType="Self.PetCustomers" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="furzaflynModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AppointmentsLog">
+          <Key>
+            <PropertyRef Name="AppointmentID" />
+          </Key>
+          <Property Name="AppointmentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOfPet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AppointmentDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="ApptTimeTotal" Type="Decimal" Precision="2" Scale="1" Nullable="false" />
+          <Property Name="Comments" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CustomerContact">
+          <Key>
+            <PropertyRef Name="CustomerID" />
+          </Key>
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NameOfPet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaryFname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaryLname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PrimaryEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrimaryAddress" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="PrimaryAlternateInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="SecondaryContactInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="VetInfo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="PetCustomer">
+          <Key>
+            <PropertyRef Name="PetID" />
+          </Key>
+          <Property Name="PetID" Type="Int32" Nullable="false" />
+          <Property Name="NameOfPet" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BreedType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SizeCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sex" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AgeAtFirstVisit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PrimaryPhone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ImportantNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="furzaflynEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppointmentsLogs" EntityType="Self.AppointmentsLog" />
+          <EntitySet Name="CustomerContacts" EntityType="Self.CustomerContact" />
+          <EntitySet Name="PetCustomers" EntityType="Self.PetCustomer" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="furzaflynModelStoreContainer" CdmEntityContainer="furzaflynEntities">
+          <EntitySetMapping Name="AppointmentsLogs">
+            <EntityTypeMapping TypeName="furzaflynModel.AppointmentsLog">
+              <MappingFragment StoreEntitySet="AppointmentsLog">
+                <ScalarProperty Name="AppointmentID" ColumnName="AppointmentID" />
+                <ScalarProperty Name="NameOfPet" ColumnName="NameOfPet" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="AppointmentDate" ColumnName="AppointmentDate" />
+                <ScalarProperty Name="ApptTimeTotal" ColumnName="ApptTimeTotal" />
+                <ScalarProperty Name="Comments" ColumnName="Comments" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerContacts">
+            <EntityTypeMapping TypeName="furzaflynModel.CustomerContact">
+              <MappingFragment StoreEntitySet="CustomerContacts">
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="NameOfPet" ColumnName="NameOfPet" />
+                <ScalarProperty Name="PrimaryFname" ColumnName="PrimaryFname" />
+                <ScalarProperty Name="PrimaryLname" ColumnName="PrimaryLname" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="PrimaryEmail" ColumnName="PrimaryEmail" />
+                <ScalarProperty Name="PrimaryAddress" ColumnName="PrimaryAddress" />
+                <ScalarProperty Name="PrimaryAlternateInfo" ColumnName="PrimaryAlternateInfo" />
+                <ScalarProperty Name="SecondaryContactInfo" ColumnName="SecondaryContactInfo" />
+                <ScalarProperty Name="VetInfo" ColumnName="VetInfo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PetCustomers">
+            <EntityTypeMapping TypeName="furzaflynModel.PetCustomer">
+              <MappingFragment StoreEntitySet="PetCustomers">
+                <ScalarProperty Name="PetID" ColumnName="PetID" />
+                <ScalarProperty Name="NameOfPet" ColumnName="NameOfPet" />
+                <ScalarProperty Name="BreedType" ColumnName="BreedType" />
+                <ScalarProperty Name="SizeCategory" ColumnName="SizeCategory" />
+                <ScalarProperty Name="Sex" ColumnName="Sex" />
+                <ScalarProperty Name="AgeAtFirstVisit" ColumnName="AgeAtFirstVisit" />
+                <ScalarProperty Name="PrimaryPhone" ColumnName="PrimaryPhone" />
+                <ScalarProperty Name="ImportantNotes" ColumnName="ImportantNotes" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

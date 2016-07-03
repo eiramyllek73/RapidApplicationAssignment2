@@ -24,7 +24,11 @@ namespace RapidApplicationAssignment
     {
         //   PRIVATE VARIABLES
         private ToolStripMenuItem selectedToolStripMenuItem = null;
-        private int CustomerID;
+        private ComboBox selectedSexOfPetComboBox = null;
+        private ComboBox selectedSizeComboBox = null;
+        private string selectedSexOfPetComboBoxString = null;
+        private string selectedSizeComboBoxString = null;
+        private int PetCustomerID;
         private string NameOfPet;
         private string BreedType;
         private string SizeCategory;
@@ -37,11 +41,46 @@ namespace RapidApplicationAssignment
         private string VetInfo;
         private string ImportantNotes;
         private byte[] Photo;
+        private PetCustomer petCustomer;
 
+        public PetCustomer petCustomerInfo
+        {
+            get { return petCustomerBindingSource.Current as PetCustomer; }
+        }
+
+        public CustomerContact petContactInfo
+        {
+          get  { return customerContactBindingSource.Current as CustomerContact; }
+        }
+
+        public AddCustomerForm(PetCustomer obj, CustomerContact custObj)
+        {
+            InitializeComponent();
+            petCustomerBindingSource.DataSource = obj;
+            customerContactBindingSource.DataSource = custObj;
+
+            // Display choices from both drop down boxes
+            if (selectedSexOfPetComboBox.SelectedIndex != -1)
+            {
+                selectedSexOfPetComboBoxString = selectedSexOfPetComboBox.Items.ToString();
+            }
+            else selectedSexOfPetComboBoxString = "";
+
+            if (selectedSizeComboBox.SelectedIndex != -1)
+            {
+                selectedSizeComboBoxString = selectedSizeComboBox.Items.ToString();
+            }
+            else selectedSizeComboBoxString = "";
+          
+        }
 
         public AddCustomerForm()
         {
-            InitializeComponent();
+        }
+
+        public AddCustomerForm(PetCustomer petCustomer)
+        {
+            this.petCustomer = petCustomer;
         }
 
         private void MainMenuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,7 +142,10 @@ namespace RapidApplicationAssignment
         {
             try
             {
-
+                // 
+                petCustomerBindingSource.EndEdit();
+                customerContactBindingSource.EndEdit();
+                DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
             {
@@ -111,13 +153,8 @@ namespace RapidApplicationAssignment
                     + ex.Message, "Exception Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            //RefreshDataset();
+           
         }
-
-       // private void RefreshDataset()
-       // {
-       //     this.customersTableAdapter.Fill(this.furzaflynDataSet.Customers);
-       // }
 
         private void ResetButton_Click(object sender, EventArgs e)
         {
@@ -126,19 +163,22 @@ namespace RapidApplicationAssignment
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
 
             // Clear the inputs
-            if (responseDialogResult == System.Windows.Forms.DialogResult.Yes)
+            if (responseDialogResult == DialogResult.Yes)
             {
                 nameOfPetTextBox.Clear();
-                breedTypeTextBox.Clear();
-                
+                SexOfPetComboBox.SelectedIndex = -1;
+                SizeCategoryComboBox.SelectedIndex = -1;
+                breedTypeTextBox.Clear();                
                 ageAtFirstApptTextBox.Clear();
+                importantNotesTextBox.Clear();
+                vetInfoTextBox.Clear();
                 primaryContactFirstNameTextBox.Clear();
                 primaryContactLastNameTextBox.Clear();
+                primaryAddressTextBox.Clear();
                 primaryContactPhoneTextBox.Clear();
                 emailTextBox.Clear();
+                primaryAlternateInfoTextBox.Clear();
                 secondaryContactInfoTextBox.Clear();
-                vetInfoTextBox.Clear();
-                importantNotesTextBox.Clear();
                 //imagePictureBox.Image.Dispose();
             }
         }
@@ -172,6 +212,24 @@ namespace RapidApplicationAssignment
                 // Exit the application
                 Application.Exit();
             }
+        }
+
+        private void SexOfPetComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (selectedSexOfPetComboBox.SelectedIndex != -1)
+            {
+                selectedSexOfPetComboBoxString = selectedSexOfPetComboBox.Items.ToString();
+            }
+            else selectedSexOfPetComboBoxString = "";
+        }
+
+        private void SizeCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (selectedSizeComboBox.SelectedIndex != -1)
+            {
+                selectedSizeComboBoxString = selectedSizeComboBox.Items.ToString();
+            }
+            else selectedSizeComboBoxString = "";
         }
     }
 }

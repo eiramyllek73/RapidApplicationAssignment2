@@ -62,7 +62,7 @@ namespace RapidApplicationAssignment
             try
             {
                 // if user does not make a selection
-                if (!ViewDirectoryRadioButton.Checked && !LogApptRadioButton.Checked && !CreateInvoiceRadioButton.Checked)
+                if (!ViewDirectoryRadioButton.Checked && !LogApptRadioButton.Checked && !CreateInvoiceRadioButton.Checked && !AddNewCustomerRadioButton.Checked)
                 {
 
                     MessageBox.Show("A selection is required in order to proceed.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -71,9 +71,15 @@ namespace RapidApplicationAssignment
                 {
                     if (ViewDirectoryRadioButton.Checked)
                     {
-                        Directory directory = new Directory();
+                        DirectoryForm directory = new DirectoryForm();
                         this.Hide();
                         directory.ShowDialog();
+                    }
+                    else if(AddNewCustomerRadioButton.Checked)
+                    {
+                        AddCustomerForm addCustomer = new AddCustomerForm();
+                        this.Hide();
+                        addCustomer.ShowDialog();
                     }
 
                     else if (LogApptRadioButton.Checked)
@@ -120,5 +126,9 @@ namespace RapidApplicationAssignment
 
         }
 
+        private void AddNewCsutomerRadioButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

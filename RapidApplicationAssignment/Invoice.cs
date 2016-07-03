@@ -577,7 +577,7 @@ namespace RapidApplicationAssignment
                 custInvoiceStreamWriter.Close();
             }
 
-            saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory;
+            saveFileDialog1.InitialDirectory = DirectoryForm.GetCurrentDirectory;
             saveFileDialog1.FileName = "customerInvoice_" + String.Format("{0:yyyyMMddHHmmss}", now);
             saveFileDialog1.DefaultExt = "txt";
             saveFileDialog1.Title = "Save Customer Invoice";
