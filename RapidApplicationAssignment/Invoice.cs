@@ -652,6 +652,13 @@ namespace RapidApplicationAssignment
             selectedToolStripMenuItem = (ToolStripMenuItem)sender;
         }
 
+        private void viewCustomerDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DirectoryForm directory = new DirectoryForm();
+            this.Hide();
+            directory.ShowDialog();
+        }
+
         /**
          * This method will display a previewed document then print it when user presses the print button
          */

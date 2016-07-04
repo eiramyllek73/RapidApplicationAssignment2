@@ -85,12 +85,6 @@
     <Compile Include="AppointmentsLog.cs">
       <DependentUpon>PetCustomerModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ApptHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ApptHistory.Designer.cs">
-      <DependentUpon>ApptHistory.cs</DependentUpon>
-    </Compile>
     <Compile Include="CustomerContact.cs">
       <DependentUpon>PetCustomerModel.tt</DependentUpon>
     </Compile>
@@ -118,29 +112,12 @@
     <Compile Include="EditCustomer.Designer.cs">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="furzaflynDataSet.cs">
-      <DependentUpon>furzaflynDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="furzaflynDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>furzaflynDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="furzaflynDataSet11.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>furzaflynDataSet11.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="furzaflynDataSet21.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>furzaflynDataSet21.xsd</DependentUpon>
-    </Compile>
     <Compile Include="furzaflynDataSet31.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>furzaflynDataSet31.xsd</DependentUpon>
     </Compile>
+    <Compile Include="furzaflynDataSet3TableAdapters\AppointmentLogTableAdapter.cs" />
     <Compile Include="Invoice.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,9 +156,6 @@
     <EmbeddedResource Include="AddCustomer.resx">
       <DependentUpon>AddCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ApptHistory.resx">
-      <DependentUpon>ApptHistory.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomerProfile.resx">
       <DependentUpon>CustomerProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,39 +184,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="furzaflynDataSet.xsc">
-      <DependentUpon>furzaflynDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>furzaflynDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="furzaflynDataSet.xss">
-      <DependentUpon>furzaflynDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet11.xsc">
-      <DependentUpon>furzaflynDataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet11.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>furzaflynDataSet11.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="furzaflynDataSet11.xss">
-      <DependentUpon>furzaflynDataSet11.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet21.xsc">
-      <DependentUpon>furzaflynDataSet21.xsd</DependentUpon>
-    </None>
-    <None Include="furzaflynDataSet21.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>furzaflynDataSet21.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="furzaflynDataSet21.xss">
-      <DependentUpon>furzaflynDataSet21.xsd</DependentUpon>
-    </None>
     <None Include="furzaflynDataSet31.xsc">
       <DependentUpon>furzaflynDataSet31.xsd</DependentUpon>
     </None>
@@ -319,6 +260,8 @@
     <None Include="Resources\edit1.png" />
     <Content Include="Resources\error.png" />
     <None Include="Resources\error1.png" />
+    <None Include="Resources\IMG_0112.png" />
+    <None Include="Resources\IMG_01121.png" />
     <Content Include="Resources\repeat-1.png" />
     <None Include="Resources\repeat-11.png" />
     <Content Include="Resources\save.png" />

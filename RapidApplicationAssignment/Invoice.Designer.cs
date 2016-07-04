@@ -62,6 +62,7 @@
             this.SaveInvoiceButton = new System.Windows.Forms.Button();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.viewCustomerDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.InvoiceInfoGroupBox.SuspendLayout();
             this.AmountDueGroupBox.SuspendLayout();
@@ -89,6 +90,7 @@
             this.MainMenuToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.MainMenuToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.HomeScreenToolStripMenuItem,
+            this.viewCustomerDirectoryToolStripMenuItem,
             this.AboutThisApplicationToolStripMenuItem,
             this.ExitAppToolStripMenuItem});
             this.MainMenuToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
@@ -104,7 +106,7 @@
             this.HomeScreenToolStripMenuItem.AccessibleName = "HomeScreenMenuOption";
             this.HomeScreenToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
             this.HomeScreenToolStripMenuItem.Name = "HomeScreenToolStripMenuItem";
-            this.HomeScreenToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.HomeScreenToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.HomeScreenToolStripMenuItem.Text = "Go to Home Screen";
             this.HomeScreenToolStripMenuItem.Click += new System.EventHandler(this.HomeScreenToolStripMenuItem_Click);
             // 
@@ -115,7 +117,7 @@
             this.AboutThisApplicationToolStripMenuItem.AccessibleName = "AboutAppMenuOption";
             this.AboutThisApplicationToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
             this.AboutThisApplicationToolStripMenuItem.Name = "AboutThisApplicationToolStripMenuItem";
-            this.AboutThisApplicationToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.AboutThisApplicationToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.AboutThisApplicationToolStripMenuItem.Text = "About this Application";
             this.AboutThisApplicationToolStripMenuItem.Click += new System.EventHandler(this.AboutThisApplicationToolStripMenuItem_Click);
             // 
@@ -125,7 +127,7 @@
             this.ExitAppToolStripMenuItem.AccessibleName = "ExitAppMenuOption";
             this.ExitAppToolStripMenuItem.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuItem;
             this.ExitAppToolStripMenuItem.Name = "ExitAppToolStripMenuItem";
-            this.ExitAppToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.ExitAppToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
             this.ExitAppToolStripMenuItem.Text = "Exit Application";
             this.ExitAppToolStripMenuItem.Click += new System.EventHandler(this.ExitAppToolStripMenuItem_Click);
             // 
@@ -411,6 +413,13 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // viewCustomerDirectoryToolStripMenuItem
+            // 
+            this.viewCustomerDirectoryToolStripMenuItem.Name = "viewCustomerDirectoryToolStripMenuItem";
+            this.viewCustomerDirectoryToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.viewCustomerDirectoryToolStripMenuItem.Text = "View Customer Directory";
+            this.viewCustomerDirectoryToolStripMenuItem.Click += new System.EventHandler(this.viewCustomerDirectoryToolStripMenuItem_Click);
+            // 
             // InvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -481,5 +490,6 @@
         private System.Windows.Forms.Button SaveInvoiceButton;
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem viewCustomerDirectoryToolStripMenuItem;
     }
 }

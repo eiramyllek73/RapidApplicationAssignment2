@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.CurrentDateLabel = new System.Windows.Forms.Label();
             this.MainMenuGroupBox = new System.Windows.Forms.GroupBox();
+            this.AddNewCustomerRadioButton = new System.Windows.Forms.RadioButton();
             this.CreateInvoiceRadioButton = new System.Windows.Forms.RadioButton();
-            this.LogApptRadioButton = new System.Windows.Forms.RadioButton();
             this.ViewDirectoryRadioButton = new System.Windows.Forms.RadioButton();
             this.MainMenuToolTipLabel = new System.Windows.Forms.Label();
             this.ExitButton = new System.Windows.Forms.Button();
@@ -41,7 +41,6 @@
             this.CurrentTimeLabel = new System.Windows.Forms.Label();
             this.Timer = new System.Windows.Forms.Timer(this.components);
             this.CompanyLogoBox = new System.Windows.Forms.PictureBox();
-            this.AddNewCustomerRadioButton = new System.Windows.Forms.RadioButton();
             this.MainMenuGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CompanyLogoBox)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +52,7 @@
             this.CurrentDateLabel.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.CurrentDateLabel.AutoSize = true;
             this.CurrentDateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentDateLabel.Location = new System.Drawing.Point(262, 40);
+            this.CurrentDateLabel.Location = new System.Drawing.Point(326, 40);
             this.CurrentDateLabel.Name = "CurrentDateLabel";
             this.CurrentDateLabel.Size = new System.Drawing.Size(42, 13);
             this.CurrentDateLabel.TabIndex = 0;
@@ -66,20 +65,31 @@
             this.MainMenuGroupBox.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.MainMenuGroupBox.Controls.Add(this.AddNewCustomerRadioButton);
             this.MainMenuGroupBox.Controls.Add(this.CreateInvoiceRadioButton);
-            this.MainMenuGroupBox.Controls.Add(this.LogApptRadioButton);
             this.MainMenuGroupBox.Controls.Add(this.ViewDirectoryRadioButton);
             this.MainMenuGroupBox.Controls.Add(this.MainMenuToolTipLabel);
-            this.MainMenuGroupBox.Location = new System.Drawing.Point(256, 89);
+            this.MainMenuGroupBox.Location = new System.Drawing.Point(320, 89);
             this.MainMenuGroupBox.Name = "MainMenuGroupBox";
             this.MainMenuGroupBox.Size = new System.Drawing.Size(245, 159);
             this.MainMenuGroupBox.TabIndex = 6;
             this.MainMenuGroupBox.TabStop = false;
             this.MainMenuGroupBox.Text = "What would you like to do?";
             // 
+            // AddNewCustomerRadioButton
+            // 
+            this.AddNewCustomerRadioButton.AutoSize = true;
+            this.AddNewCustomerRadioButton.Location = new System.Drawing.Point(6, 93);
+            this.AddNewCustomerRadioButton.Name = "AddNewCustomerRadioButton";
+            this.AddNewCustomerRadioButton.Size = new System.Drawing.Size(143, 17);
+            this.AddNewCustomerRadioButton.TabIndex = 4;
+            this.AddNewCustomerRadioButton.TabStop = true;
+            this.AddNewCustomerRadioButton.Text = "Register a new Customer";
+            this.AddNewCustomerRadioButton.UseVisualStyleBackColor = true;
+
+            // 
             // CreateInvoiceRadioButton
             // 
             this.CreateInvoiceRadioButton.AutoSize = true;
-            this.CreateInvoiceRadioButton.Location = new System.Drawing.Point(9, 126);
+            this.CreateInvoiceRadioButton.Location = new System.Drawing.Point(6, 126);
             this.CreateInvoiceRadioButton.Name = "CreateInvoiceRadioButton";
             this.CreateInvoiceRadioButton.Size = new System.Drawing.Size(156, 17);
             this.CreateInvoiceRadioButton.TabIndex = 3;
@@ -88,22 +98,10 @@
             this.CreateInvoiceRadioButton.UseVisualStyleBackColor = true;
             this.CreateInvoiceRadioButton.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
-            // LogApptRadioButton
-            // 
-            this.LogApptRadioButton.AutoSize = true;
-            this.LogApptRadioButton.Location = new System.Drawing.Point(9, 103);
-            this.LogApptRadioButton.Name = "LogApptRadioButton";
-            this.LogApptRadioButton.Size = new System.Drawing.Size(192, 17);
-            this.LogApptRadioButton.TabIndex = 2;
-            this.LogApptRadioButton.TabStop = true;
-            this.LogApptRadioButton.Text = "Log New Appointment for Customer";
-            this.LogApptRadioButton.UseVisualStyleBackColor = true;
-            this.LogApptRadioButton.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
-            // 
             // ViewDirectoryRadioButton
             // 
             this.ViewDirectoryRadioButton.AutoSize = true;
-            this.ViewDirectoryRadioButton.Location = new System.Drawing.Point(9, 57);
+            this.ViewDirectoryRadioButton.Location = new System.Drawing.Point(6, 58);
             this.ViewDirectoryRadioButton.Name = "ViewDirectoryRadioButton";
             this.ViewDirectoryRadioButton.Size = new System.Drawing.Size(140, 17);
             this.ViewDirectoryRadioButton.TabIndex = 1;
@@ -126,7 +124,7 @@
             this.ExitButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ExitButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitButton.Location = new System.Drawing.Point(396, 271);
+            this.ExitButton.Location = new System.Drawing.Point(460, 271);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(105, 38);
             this.ExitButton.TabIndex = 5;
@@ -139,7 +137,7 @@
             this.OKButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.OKButton.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.OKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.OKButton.Location = new System.Drawing.Point(256, 271);
+            this.OKButton.Location = new System.Drawing.Point(320, 271);
             this.OKButton.Name = "OKButton";
             this.OKButton.Size = new System.Drawing.Size(101, 38);
             this.OKButton.TabIndex = 4;
@@ -153,7 +151,7 @@
             this.CurrentTimeLabel.AccessibleName = "CurrentTimeLabel";
             this.CurrentTimeLabel.AutoSize = true;
             this.CurrentTimeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentTimeLabel.Location = new System.Drawing.Point(393, 40);
+            this.CurrentTimeLabel.Location = new System.Drawing.Point(457, 40);
             this.CurrentTimeLabel.Name = "CurrentTimeLabel";
             this.CurrentTimeLabel.Size = new System.Drawing.Size(42, 13);
             this.CurrentTimeLabel.TabIndex = 0;
@@ -171,22 +169,10 @@
             this.CompanyLogoBox.Image = global::RapidApplicationAssignment.Properties.Resources.FurzaFlyn_Logo_WebSize;
             this.CompanyLogoBox.Location = new System.Drawing.Point(12, 12);
             this.CompanyLogoBox.Name = "CompanyLogoBox";
-            this.CompanyLogoBox.Size = new System.Drawing.Size(229, 236);
+            this.CompanyLogoBox.Size = new System.Drawing.Size(299, 297);
             this.CompanyLogoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.CompanyLogoBox.TabIndex = 9;
             this.CompanyLogoBox.TabStop = false;
-            // 
-            // AddNewCustomerRadioButton
-            // 
-            this.AddNewCustomerRadioButton.AutoSize = true;
-            this.AddNewCustomerRadioButton.Location = new System.Drawing.Point(9, 80);
-            this.AddNewCustomerRadioButton.Name = "AddNewCustomerRadioButton";
-            this.AddNewCustomerRadioButton.Size = new System.Drawing.Size(143, 17);
-            this.AddNewCustomerRadioButton.TabIndex = 4;
-            this.AddNewCustomerRadioButton.TabStop = true;
-            this.AddNewCustomerRadioButton.Text = "Register a new Customer";
-            this.AddNewCustomerRadioButton.UseVisualStyleBackColor = true;
-            this.AddNewCustomerRadioButton.CheckedChanged += new System.EventHandler(this.AddNewCsutomerRadioButton_CheckedChanged);
             // 
             // Dashboard
             // 
@@ -194,7 +180,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(577, 342);
+            this.ClientSize = new System.Drawing.Size(577, 323);
             this.Controls.Add(this.CurrentTimeLabel);
             this.Controls.Add(this.OKButton);
             this.Controls.Add(this.CompanyLogoBox);
@@ -218,7 +204,6 @@
         #endregion
         private System.Windows.Forms.Label CurrentDateLabel;
         private System.Windows.Forms.GroupBox MainMenuGroupBox;
-        private System.Windows.Forms.RadioButton LogApptRadioButton;
         private System.Windows.Forms.RadioButton ViewDirectoryRadioButton;
         private System.Windows.Forms.Label MainMenuToolTipLabel;
         private System.Windows.Forms.Button ExitButton;

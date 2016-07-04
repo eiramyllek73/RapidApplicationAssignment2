@@ -22,42 +22,34 @@ namespace RapidApplicationAssignment
 {
     public partial class AddCustomerForm : Form
     {
-        //   PRIVATE VARIABLES
+        // ***PRIVATE VARIABLES***
         private ToolStripMenuItem selectedToolStripMenuItem = null;
         private ComboBox selectedSexOfPetComboBox = null;
         private ComboBox selectedSizeComboBox = null;
         private string selectedSexOfPetComboBoxString = null;
         private string selectedSizeComboBoxString = null;
-        private int PetCustomerID;
-        private string NameOfPet;
-        private string BreedType;
-        private string SizeCategory;
-        private string AgeAtFirstAppt;
-        private string PrimaryContactFirstName;
-        private string PrimaryContactLastName;
-        private string PrimaryContactPhone;
-        private string Email;
-        private string SecondaryContactInfo;
-        private string VetInfo;
-        private string ImportantNotes;
-        private byte[] Photo;
-        private PetCustomer petCustomer;
+        private PetCustomer petObj;
+        private CustomerContact conObj;
 
         public PetCustomer petCustomerInfo
         {
-            get { return petCustomerBindingSource.Current as PetCustomer; }
+            get { return petCustomerBindingSource2.Current as PetCustomer; }
         }
 
         public CustomerContact petContactInfo
         {
-          get  { return customerContactBindingSource.Current as CustomerContact; }
+          get  { return customerContactBindingSource2.Current as CustomerContact; }
+        }
+        
+        public AddCustomerForm()
+        {
+            InitializeComponent();      
         }
 
-        public AddCustomerForm(PetCustomer obj, CustomerContact custObj)
+        public AddCustomerForm(PetCustomer petObj, CustomerContact conObj)
         {
-            InitializeComponent();
-            petCustomerBindingSource.DataSource = obj;
-            customerContactBindingSource.DataSource = custObj;
+            petCustomerBindingSource2.DataSource = petObj;
+            customerContactBindingSource2.DataSource = conObj;
 
             // Display choices from both drop down boxes
             if (selectedSexOfPetComboBox.SelectedIndex != -1)
@@ -71,16 +63,6 @@ namespace RapidApplicationAssignment
                 selectedSizeComboBoxString = selectedSizeComboBox.Items.ToString();
             }
             else selectedSizeComboBoxString = "";
-          
-        }
-
-        public AddCustomerForm()
-        {
-        }
-
-        public AddCustomerForm(PetCustomer petCustomer)
-        {
-            this.petCustomer = petCustomer;
         }
 
         private void MainMenuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -117,20 +99,15 @@ namespace RapidApplicationAssignment
             }
         }
 
-
         /**
         * This method will load the initial values into each text box.
         */
         private void AddCustomerForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'furzaflynDataSet3.CustomerContacts' table. You can move, or remove it, as needed.
-            this.customerContactsTableAdapter.Fill(this.furzaflynDataSet3.CustomerContacts);
-            // TODO: This line of code loads data into the 'furzaflynDataSet3.PetCustomers' table. You can move, or remove it, as needed.
-            this.petCustomersTableAdapter.Fill(this.furzaflynDataSet3.PetCustomers);
-            // Set the defaults that the form will begin with when it is initialized
             nameOfPetTextBox.Select();
             nameOfPetTextBox.Focus();
-
+            SexOfPetComboBox.SelectedIndex = -1;
+            SizeCategoryComboBox.SelectedIndex = -1;
         }
 
         private void UpLoadImageButton_Click(object sender, EventArgs e)
@@ -143,8 +120,8 @@ namespace RapidApplicationAssignment
             try
             {
                 // 
-                petCustomerBindingSource.EndEdit();
-                customerContactBindingSource.EndEdit();
+                petCustomerBindingSource2.EndEdit();
+                customerContactBindingSource2.EndEdit();
                 DialogResult = DialogResult.OK;
             }
             catch (Exception ex)
@@ -183,22 +160,6 @@ namespace RapidApplicationAssignment
             }
         }
 
-        private void AddCustomerForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            DialogResult returnDialogueResult;
-
-            returnDialogueResult = MessageBox.Show("Are you sure you want to quit this application?", "Confirmation Required:",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
-
-            // If user clicks yes, close application - if no, remain on current form
-            if (returnDialogueResult == DialogResult.Yes)
-            {
-                // Exit the application
-                Application.Exit();
-            }
-              
-        }
-
         private void ExitAppToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DialogResult returnDialogueResult;
@@ -216,20 +177,69 @@ namespace RapidApplicationAssignment
 
         private void SexOfPetComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (selectedSexOfPetComboBox.SelectedIndex != -1)
+            if (selectedSexOfPetComboBox.SelectedIndex == -1)
             {
-                selectedSexOfPetComboBoxString = selectedSexOfPetComboBox.Items.ToString();
+                selectedSexOfPetComboBoxString = "";
             }
-            else selectedSexOfPetComboBoxString = "";
+            else if (selectedSexOfPetComboBox.SelectedIndex == 0)
+            {
+                selectedSexOfPetComboBox.Text = "Female";
+                selectedSexOfPetComboBoxString = selectedSexOfPetComboBox.SelectedIndex.ToString();
+            }
+            else if (selectedSexOfPetComboBox.SelectedIndex == 1)
+            {
+                selectedSexOfPetComboBox.Text = "Male";
+                selectedSexOfPetComboBoxString = selectedSexOfPetComboBox.SelectedIndex.ToString();
+            }
         }
 
         private void SizeCategoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (selectedSizeComboBox.SelectedIndex != -1)
+            if (selectedSizeComboBox.SelectedIndex == -1)
             {
-                selectedSizeComboBoxString = selectedSizeComboBox.Items.ToString();
+                selectedSizeComboBoxString = "";
             }
-            else selectedSizeComboBoxString = "";
+            else if (selectedSizeComboBox.SelectedIndex == 0)
+            {
+                selectedSizeComboBox.Text = "Small";
+                selectedSizeComboBoxString = selectedSizeComboBox.SelectedIndex.ToString();
+            }
+            else if (selectedSizeComboBox.SelectedIndex == 1)
+            {
+                selectedSizeComboBox.Text = "Medium";
+                selectedSizeComboBoxString = selectedSizeComboBox.SelectedIndex.ToString();
+            }
+            else if (selectedSizeComboBox.SelectedIndex == 2)
+            {
+                selectedSizeComboBox.Text = "Large";
+                selectedSizeComboBoxString = selectedSizeComboBox.SelectedIndex.ToString();
+            }
+            else if (selectedSizeComboBox.SelectedIndex == 3)
+            {
+                selectedSizeComboBox.Text = "XLarge";
+                selectedSizeComboBoxString = selectedSizeComboBox.SelectedIndex.ToString();
+            }
+        }
+
+        private void SaveButton1_Click(object sender, EventArgs e)
+        {
+            CustomerProfileForm profile = new CustomerProfileForm();
+            this.Hide();
+            profile.ShowDialog();
+        }
+
+        private void viewCustomerDirectoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DirectoryForm directory = new DirectoryForm();
+            this.Hide();
+            directory.ShowDialog();
+        }
+
+        private void createInvoiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            InvoiceForm invoice = new InvoiceForm();
+            this.Hide();
+            invoice.ShowDialog();
         }
     }
 }

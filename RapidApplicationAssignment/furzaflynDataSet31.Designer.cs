@@ -3736,7 +3736,9 @@ SELECT PetID, NameOfPet, BreedType, SizeCategory, Sex, AgeAtFirstVisit, PrimaryP
                 return count;
             }
         }
-        
+
+        internal AppointmentLogTableAdapter AppointmentLogTableAdapter { get; set; }
+
         /// <summary>
         ///Update rows in top-down order.
         ///</summary>

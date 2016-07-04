@@ -123,6 +123,26 @@ namespace RapidApplicationAssignment.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IMG_0112 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_0112", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap IMG_01121 {
+            get {
+                object obj = ResourceManager.GetObject("IMG_01121", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap iPhone_046 {
             get {
                 object obj = ResourceManager.GetObject("iPhone-046", resourceCulture);

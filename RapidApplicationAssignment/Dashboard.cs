@@ -62,7 +62,7 @@ namespace RapidApplicationAssignment
             try
             {
                 // if user does not make a selection
-                if (!ViewDirectoryRadioButton.Checked && !LogApptRadioButton.Checked && !CreateInvoiceRadioButton.Checked && !AddNewCustomerRadioButton.Checked)
+                if (!ViewDirectoryRadioButton.Checked && !CreateInvoiceRadioButton.Checked && !AddNewCustomerRadioButton.Checked)
                 {
 
                     MessageBox.Show("A selection is required in order to proceed.", "Selection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -82,12 +82,6 @@ namespace RapidApplicationAssignment
                         addCustomer.ShowDialog();
                     }
 
-                    else if (LogApptRadioButton.Checked)
-                    {
-                        ApptHistoryForm appt = new ApptHistoryForm();
-                        this.Hide();
-                        appt.ShowDialog();
-                    }
                     else if(CreateInvoiceRadioButton.Checked)
                     {
                         InvoiceForm invoice = new InvoiceForm();
@@ -123,12 +117,6 @@ namespace RapidApplicationAssignment
                 // Exit the application
                 Application.Exit();
             }
-
-        }
-
-        private void AddNewCsutomerRadioButton_CheckedChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
