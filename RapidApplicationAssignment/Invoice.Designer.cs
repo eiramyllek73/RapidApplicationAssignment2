@@ -32,12 +32,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.MainMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HomeScreenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewCustomerDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AboutThisApplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ExitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.PrintInvoiceButton = new System.Windows.Forms.Button();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
-            this.InvoiceTitleLabel = new System.Windows.Forms.Label();
-            this.PetNameLabel = new System.Windows.Forms.Label();
             this.InvoiceInfoGroupBox = new System.Windows.Forms.GroupBox();
             this.AmountDueGroupBox = new System.Windows.Forms.GroupBox();
             this.TotalTextBox = new System.Windows.Forms.TextBox();
@@ -62,7 +61,8 @@
             this.SaveInvoiceButton = new System.Windows.Forms.Button();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.viewCustomerDirectoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.PetNameLabel = new System.Windows.Forms.Label();
+            this.InvoiceTitleLabel = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.InvoiceInfoGroupBox.SuspendLayout();
             this.AmountDueGroupBox.SuspendLayout();
@@ -110,6 +110,13 @@
             this.HomeScreenToolStripMenuItem.Text = "Go to Home Screen";
             this.HomeScreenToolStripMenuItem.Click += new System.EventHandler(this.HomeScreenToolStripMenuItem_Click);
             // 
+            // viewCustomerDirectoryToolStripMenuItem
+            // 
+            this.viewCustomerDirectoryToolStripMenuItem.Name = "viewCustomerDirectoryToolStripMenuItem";
+            this.viewCustomerDirectoryToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.viewCustomerDirectoryToolStripMenuItem.Text = "View Customer Directory";
+            this.viewCustomerDirectoryToolStripMenuItem.Click += new System.EventHandler(this.viewCustomerDirectoryToolStripMenuItem_Click);
+            // 
             // AboutThisApplicationToolStripMenuItem
             // 
             this.AboutThisApplicationToolStripMenuItem.AccessibleDescription = "This main menu option takes the user to a screen that provides further informatio" +
@@ -145,24 +152,6 @@
             // printDocument1
             // 
             this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
-            // 
-            // InvoiceTitleLabel
-            // 
-            this.InvoiceTitleLabel.AutoSize = true;
-            this.InvoiceTitleLabel.Location = new System.Drawing.Point(20, 28);
-            this.InvoiceTitleLabel.Name = "InvoiceTitleLabel";
-            this.InvoiceTitleLabel.Size = new System.Drawing.Size(72, 13);
-            this.InvoiceTitleLabel.TabIndex = 0;
-            this.InvoiceTitleLabel.Text = "Invoice for:";
-            // 
-            // PetNameLabel
-            // 
-            this.PetNameLabel.AutoSize = true;
-            this.PetNameLabel.Location = new System.Drawing.Point(140, 28);
-            this.PetNameLabel.Name = "PetNameLabel";
-            this.PetNameLabel.Size = new System.Drawing.Size(85, 13);
-            this.PetNameLabel.TabIndex = 0;
-            this.PetNameLabel.Text = "(Name of Pet)";
             // 
             // InvoiceInfoGroupBox
             // 
@@ -413,12 +402,24 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // viewCustomerDirectoryToolStripMenuItem
+            // PetNameLabel
             // 
-            this.viewCustomerDirectoryToolStripMenuItem.Name = "viewCustomerDirectoryToolStripMenuItem";
-            this.viewCustomerDirectoryToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.viewCustomerDirectoryToolStripMenuItem.Text = "View Customer Directory";
-            this.viewCustomerDirectoryToolStripMenuItem.Click += new System.EventHandler(this.viewCustomerDirectoryToolStripMenuItem_Click);
+            this.PetNameLabel.AutoSize = true;
+            this.PetNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PetNameLabel.Location = new System.Drawing.Point(98, 28);
+            this.PetNameLabel.Name = "PetNameLabel";
+            this.PetNameLabel.Size = new System.Drawing.Size(47, 13);
+            this.PetNameLabel.TabIndex = 0;
+            this.PetNameLabel.Text = "Spencer";
+            // 
+            // InvoiceTitleLabel
+            // 
+            this.InvoiceTitleLabel.AutoSize = true;
+            this.InvoiceTitleLabel.Location = new System.Drawing.Point(20, 28);
+            this.InvoiceTitleLabel.Name = "InvoiceTitleLabel";
+            this.InvoiceTitleLabel.Size = new System.Drawing.Size(72, 13);
+            this.InvoiceTitleLabel.TabIndex = 0;
+            this.InvoiceTitleLabel.Text = "Invoice for:";
             // 
             // InvoiceForm
             // 
@@ -464,8 +465,6 @@
         private System.Windows.Forms.ToolStripMenuItem ExitAppToolStripMenuItem;
         private System.Windows.Forms.Button PrintInvoiceButton;
         private System.Drawing.Printing.PrintDocument printDocument1;
-        private System.Windows.Forms.Label InvoiceTitleLabel;
-        private System.Windows.Forms.Label PetNameLabel;
         private System.Windows.Forms.GroupBox InvoiceInfoGroupBox;
         private System.Windows.Forms.Label TotalLabel;
         private System.Windows.Forms.Label TaxLabel;
@@ -491,5 +490,7 @@
         private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.ToolStripMenuItem viewCustomerDirectoryToolStripMenuItem;
+        private System.Windows.Forms.Label PetNameLabel;
+        private System.Windows.Forms.Label InvoiceTitleLabel;
     }
 }
